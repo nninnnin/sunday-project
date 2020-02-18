@@ -6,6 +6,8 @@ html,body{
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
 /* font face */
 
 /* 위와 같은 방식은 해당 어플리케이션(=웹페이지, 혹은 웹사이트)의 서버에서 웹폰트를 포함하지 않을 때 CDN처럼 해당 폰트 resource 가 있는 외부 서버에서 폰트를 불러오는 것. 따라서 로딩 시간이 단점이 될 수 있다. */
@@ -33,16 +35,27 @@ header{
 
 nav{
     text-align: center;
-    padding: 1em;
+    padding: 2em;
     background-color: #bbecd3;
 }
 
-nav button{
-    color: white;
-    padding:0.5em;
+nav a{
+
+    padding: 0.6em 0.8em;
     background-color: rgba(30,130,76,1);
+    
+    /* font settings */
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 1em;
-    font-weight: 500;
+    font-weight: 550;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    vertical-align: baseline;
+}
+nav a:visited{
+    color:white;
+    font-style: normal;
 }
 
 
@@ -82,9 +95,13 @@ aside{
 
 /* footer */
 footer{
+    color:white;
     background-color: rgba(30,130,76,1);
     text-align: center;
-    padding: 1em;
+    padding: 2em;
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:0.8em;
 }
 
 
