@@ -9,6 +9,9 @@
         @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
         @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
     </style>
+
+    <!-- to use fontawesome -->
+    <script src="https://kit.fontawesome.com/58673910ce.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
@@ -27,27 +30,104 @@
         <div class="contents">
             <!-- main section -->
             <section>
-                <div class="article">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.</div>
+                <div class="article">
+                    <div>
+                        <h2>first article</h2>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
+                    </div>
+                    <div>
+                        <h2>second article</h2>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
+                    </div>
+                </div>
 
-                <div class="drawing">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sint explicabo vel enim ullam eos nemo nesciunt voluptatibus soluta molestias provident sunt praesentium, nostrum modi dignissimos. Esse asperiores, molestias tempore repudiandae reiciendis tempora quaerat culpa, similique voluptate inventore labore perferendis harum? Voluptatem doloremque praesentium aspernatur provident facere, quasi minima, porro natus non ab consequatur quibusdam tempora similique expedita delectus deleniti et a velit, autem qui quisquam blanditiis! Commodi incidunt nesciunt hic ipsam totam sit dignissimos? Voluptatem inventore eligendi modi, iusto corrupti similique, nemo quas consectetur earum cupiditate amet, alias pariatur illo minima tempora commodi facilis aliquid officia provident totam assumenda.</div>
+                <div class="drawing">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
             </section>
     
             <!-- side section -->
             <aside>
-                aside Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, veritatis suscipit iste vero incidunt excepturi quo sequi eligendi cupiditate earum quas in quasi animi culpa minima exercitationem quos fuga itaque accusamus doloremque ex ab ipsam. Cumque vero tempore laborum eum mollitia dignissimos, quia, quod voluptatum debitis, provident dicta odit accusamus.
+                <!-- test
+                <div>
+                    div1
+                    <div>1.1</div>
+                    <div>1.2</div>
+                </div>
+                -->
+
+                <div>
+                    <b>CONTACT</b>
+                    <br>
+    
+                    <i></i> 이동규 / Justin Lee
+                    <br>
+                    <i></i> nninnnin7@gmail.com
+                    <br>
+                    <i></i> justindglee.com
+    
+                    <br><br>
+    
+                    <b>INSTAGRAM</b>
+                    <br>
+    
+                    <div id="instagram-embed">
+                        <img alt="instagram-image" id="img1" width=100%>
+                    </div>
+                </div>
+
             </aside>
         </div>
 
         <!-- footer -->
         <footer>
-            Justin's blog &copy;
+            Justin's blog&copy;
             <br>
             2020 ~
         </footer>
+
+        <i class="fas fa-chevron-circle-up fa-2x" id="home"></i>
     </div>
 
     <script>
-    
+
+        // get a picture from instagram
+        async function getPicture(){
+            const res = await fetch('https://www.instagram.com/p/B8tCX49plkG/media');
+            console.log(res);
+            const data = await res.blob();
+            console.log(data);
+            
+            //const insta = document.getElementById('instagram-embed');
+            //insta.innerHTML = data.html;
+            const img1 = document.getElementById('img1');
+
+            const objectURL = URL.createObjectURL(data);
+            img1.src = objectURL;
+            
+        };
+        getPicture();
+
+
+
+        // get the top of the page
+        function backHome(){
+            
+        }
+        const upArrow = document.getElementById('home');
+        upArrow.addEventListener('click', ()=>{
+            console.log('clicked!');
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+        
+        window.onscroll = ()=>{
+            console.log('scrolllll');
+        }
+
     </script>
 </body>
 </html>
