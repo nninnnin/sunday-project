@@ -19,12 +19,20 @@ html,body{
     src: url(https://fonts.googleapis.com/css?family=Nanum+Gothic:400,800) format("woff2")
 }
 
+
+/* container */
+.container{
+    background-color: #bbecd3;
+}
+
+
 /* header */
 
 header{
 }
 
 .logo{
+    background-color: white;
     color: rgb(43, 43, 43);
     text-align: center;
     padding:1em;
@@ -38,13 +46,12 @@ header{
 nav{
     text-align: center;
     padding: 2em;
-    background-color: #bbecd3;
+    background-color: rgba(30,130,76,1);
 }
 
 nav a{
-
     padding: 0.6em 0.8em;
-    background-color: rgba(30,130,76,1);
+    
     
     /* font settings */
     color: white;
@@ -60,14 +67,13 @@ nav a:visited{
     font-style: normal;
 }
 nav a:hover{
-    background-color:black;
+    background-color: black;
 }
 
 
 /* contents */
 div .contents{
     /* size and aligning */
-    max-width:80vw;
     margin:0 auto;
 
     /* grid */
@@ -88,16 +94,18 @@ section .article{
     padding: 1em;
     background-color: #fff;
 }
+/* grid container */
 section .drawing{
-    padding: 1em;
     background-color: #fff;
-
+    padding: 2%; /* have to same with grid-gap */ 
     display:grid;
-    grid-gap:1em;
+    grid-gap:2%;
+    grid-template-columns: 1fr 1fr;
 }
+
+/* grid item */
 .drawing > div{
-    background-color: blue;
-    padding:1em
+    width:100%;
 }
 aside{
     padding:1rem;
@@ -143,16 +151,54 @@ footer{
     bottom:10px;
 }
 
+@keyframes myAnimation{
+    0%{
+      opacity: 1;
+      transform: rotateX(90deg);
+    }
+    50%{
+      opacity: 0.5;
+      transform: rotateX(0deg);
+    }
+    100%{
+      display: none;
+      opacity: 0;
+      transform: rotateX(90deg);
+    }
+}
+
 
 /* 0 ~ 600px */
 @media only screen and (max-width: 600px){
+    /* top button show-up */
+    #home{
+        display:block;
+    }
+
+    .logo{
+        background-color: rgba(30,130,76,1);
+        color: #fff;
+        padding:0.7em;
+        font-size:1.1em;
+    }
+    
+    nav{
+        display:none;
+    }
+
     div .contents{
         color:blue;
         max-width:100%;
     }
 
-    #home{
-        display:block;
+    footer{
+        text-align: center;
+        padding: 1.2em;
+        font-size:0.8em;
+    }
+
+    #since{
+        display:none;
     }
 }
 
