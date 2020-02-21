@@ -8,6 +8,11 @@ html,body{
     scroll-behavior:smooth;
 }
 
+/* variables*/
+:root {
+    --main-bg-color: rgba(30,130,76,1);
+}
+
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 
 /* font face */
@@ -19,6 +24,11 @@ html,body{
     src: url(https://fonts.googleapis.com/css?family=Nanum+Gothic:400,800) format("woff2")
 }
 
+a:visited{
+    color:white;
+    font-style: normal;
+}
+
 
 /* container */
 .container{
@@ -28,8 +38,6 @@ html,body{
 
 /* header */
 
-header{
-}
 
 .logo{
     background-color: white;
@@ -42,11 +50,43 @@ header{
     font-size:2em;
 }
 
+#hamburger{
+    display:none;
+    float:right;
+    line-height: 27px;
+    position:relative;
+    right:5px;
+}
+
+#pop-up{
+    display:none;
+    background-color: white;
+    color:white;
+    position: absolute;
+    right:0;
+    box-shadow: 1px 1px 4px black;
+    width:33vw;
+}
+#pop-up div{
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+}
+#pop-up a{
+    background-color: var(--main-bg-color);
+    padding:1.2em;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+}
+#pop-up a:hover{
+    background-color: black;
+}
 
 nav{
     text-align: center;
     padding: 2em;
-    background-color: rgba(30,130,76,1);
+    background-color: var(--main-bg-color);
 }
 
 nav a{
@@ -136,7 +176,7 @@ aside > div{ /* only for direct children (divs) */
 /* footer */
 footer{
     color:white;
-    background-color: rgba(30,130,76,1);
+    background-color: var(--main-bg-color);
     text-align: center;
     padding: 1.5em;
 
@@ -145,38 +185,26 @@ footer{
 }
 
 #home{
+    color:white;
+    text-shadow: 2px 4px 3px black;
     display: none;
     position:fixed;
-    right:10px;
-    bottom:10px;
+    right:15px;
+    bottom:15px;
 }
-
-@keyframes myAnimation{
-    0%{
-      opacity: 1;
-      transform: rotateX(90deg);
-    }
-    50%{
-      opacity: 0.5;
-      transform: rotateX(0deg);
-    }
-    100%{
-      display: none;
-      opacity: 0;
-      transform: rotateX(90deg);
-    }
+.appear{
+    display:block !important;
 }
 
 
 /* 0 ~ 600px */
 @media only screen and (max-width: 600px){
-    /* top button show-up */
-    #home{
+    #hamburger{
         display:block;
     }
 
     .logo{
-        background-color: rgba(30,130,76,1);
+        background-color: var(--main-bg-color);
         color: #fff;
         padding:0.7em;
         font-size:1.1em;
@@ -204,6 +232,9 @@ footer{
 
 /* 601px 1100px */
 @media only screen and (min-width: 601px){
+    #pop-up{
+        display:none !important;
+    }
     div .contents{
         color:brown;
         max-width:80%;
@@ -212,6 +243,9 @@ footer{
 
 /* 1101px~ */
 @media only screen and (min-width: 1101px){
+    #pop-up{
+        display:none !important;
+    }
     div .contents{
         color:red;
         max-width:80%;

@@ -17,14 +17,30 @@
     <div class="container">
         <!-- header -->
         <header>
-            <div class="logo">Justin's blog</div>
+            <div class="logo">
+                Justin's blog
+                <a href="/">
+                    <i class="fa fa-bars fa-lg" id="hamburger"></i>
+                </a>
+            </div>
+
             <nav>
-                <a href="">profile</a>
-                <a href="">projects</a>
-                <a href="">gallery</a>
-                <a href="">diary</a>
-                <a href="">visitor</a>
+                <a href="#profile">profile</a>
+                <a href="#projects">projects</a>
+                <a href="#gallery">gallery</a>
+                <a href="#diary">diary</a>
+                <a href="#visitor">visitor</a>
             </nav>
+
+            <div id="pop-up">
+                <div class="flex-container">
+                    <a href="#profile">profile</a>
+                    <a href="#projects">projects</a>
+                    <a href="#gallery">gallery</a>
+                    <a href="#diary">diary</a>
+                    <a href="#visitor">visitor</a>
+                </div>
+            </div>
         </header>
 
         <div class="contents">
@@ -89,10 +105,22 @@
             <span id="since">2020 ~</span>
         </footer>
 
-        <i class="fas fa-chevron-circle-up fa-lg" id="home"></i>
+        <i class="fas fa-chevron-circle-up fa-2x" id="home"></i>
     </div>
 
     <script>
+        // hamburger menu pop-up
+        const bars = document.getElementById('hamburger');
+        const popup = document.getElementById('pop-up');
+        bars.addEventListener('click',(e)=>{
+            e.preventDefault();
+            if(popup.classList[0]==='appear'){
+                popup.classList.remove('appear');
+            }else{
+                popup.classList.add('appear');
+            }
+        });
+        
 
         // get a picture from instagram
         async function getPicture(){
@@ -112,13 +140,20 @@
         getPicture();
 
 
+        // show up the homeBtn
+        function popUpHomeBtn(){
+            if(document.body.scrollTop > 250 || document.documentElement.scrollTop > 250){
+                console.log('popup!');
+                homeBtn.classList.add('appear');
+            }else{
+                homeBtn.classList.remove('appear');
+            }
+        }
+
 
         // get the top of the page
-        function backHome(){
-            
-        }
-        const upArrow = document.getElementById('home');
-        upArrow.addEventListener('click', ()=>{
+        const homeBtn = document.getElementById('home');
+        homeBtn.addEventListener('click', ()=>{
             console.log('clicked!');
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
@@ -126,8 +161,8 @@
         
         window.onscroll = ()=>{
             console.log('scrolllll');
+            popUpHomeBtn();
         }
-
     </script>
 </body>
 </html>
