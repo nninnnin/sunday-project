@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/nninnnin/sunday-project/issues"
   },
-  "homepage": "https://github.com/nninnnin/sunday-project#readme"
+  "homepage": "https://github.com/nninnnin/sunday-project#readme",
+  "dependencies": {
+    "ejs": "^3.0.1"
+  }
 }

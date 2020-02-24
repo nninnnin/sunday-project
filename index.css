@@ -4,8 +4,6 @@ html,body{
     margin:0;
     padding:0;
     box-sizing: border-box;
-
-    scroll-behavior:smooth;
 }
 
 /* variables*/
@@ -24,9 +22,10 @@ html,body{
     src: url(https://fonts.googleapis.com/css?family=Nanum+Gothic:400,800) format("woff2")
 }
 
-a:visited{
+a{
     color:white;
     font-style: normal;
+    text-decoration: none;
 }
 
 
@@ -49,6 +48,7 @@ a:visited{
     font-family: Oswald;
     font-size:2em;
 }
+.logo a{color:black;}
 
 #hamburger{
     display:none;
@@ -85,7 +85,7 @@ a:visited{
 
 nav{
     text-align: center;
-    padding: 2em;
+    padding: 1.5em;
     background-color: var(--main-bg-color);
 }
 
@@ -190,7 +190,7 @@ footer{
     display: none;
     position:fixed;
     right:15px;
-    bottom:15px;
+    bottom:25px;
 }
 .appear{
     display:block !important;
@@ -209,6 +209,7 @@ footer{
         padding:0.7em;
         font-size:1.1em;
     }
+    .logo a{color:white;}
     
     nav{
         display:none;

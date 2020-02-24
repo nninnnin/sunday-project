@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인페이지</title>
+    <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="index.css">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
@@ -12,20 +13,23 @@
 
     <!-- to use fontawesome -->
     <script src="https://kit.fontawesome.com/58673910ce.js" crossorigin="anonymous"></script>
+
+    <!-- index.js -->
+    <script src="index.js"></script>
 </head>
 <body>
     <div class="container">
         <!-- header -->
         <header>
             <div class="logo">
-                Justin's blog
+                <a href="/">Justin's blog</a>
                 <a href="/">
                     <i class="fa fa-bars fa-lg" id="hamburger"></i>
                 </a>
             </div>
 
             <nav>
-                <a href="#profile">profile</a>
+                <a href="profile.html">profile</a>
                 <a href="#projects">projects</a>
                 <a href="#gallery">gallery</a>
                 <a href="#diary">diary</a>
@@ -142,7 +146,7 @@
 
         // show up the homeBtn
         function popUpHomeBtn(){
-            if(document.body.scrollTop > 250 || document.documentElement.scrollTop > 250){
+            if(window.innerWidth<=600 && (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250)){
                 console.log('popup!');
                 homeBtn.classList.add('appear');
             }else{
