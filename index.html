@@ -4,18 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인페이지</title>
-    <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="index.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
-        @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
-    </style>
+    <link rel="stylesheet" href="common.css">
 
     <!-- to use fontawesome -->
     <script src="https://kit.fontawesome.com/58673910ce.js" crossorigin="anonymous"></script>
-
-    <!-- index.js -->
-    <script src="index.js"></script>
 </head>
 <body>
     <div class="container">
@@ -38,7 +31,7 @@
 
             <div id="pop-up">
                 <div class="flex-container">
-                    <a href="#profile">profile</a>
+                    <a href="profile.html">profile</a>
                     <a href="#projects">projects</a>
                     <a href="#gallery">gallery</a>
                     <a href="#diary">diary</a>
@@ -49,7 +42,8 @@
 
         <div class="contents">
             <!-- main section -->
-            <section>
+            <section class="main">
+                <!-- articles -->
                 <div class="article">
                     <div>
                         <h2>first article</h2>
@@ -60,13 +54,15 @@
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
                     </div>
                 </div>
-
+                
+                <!-- drawings -->
                 <div class="drawing">
                     <div><img src="https://picsum.photos/200" alt="" width=100%></div>
                     <div><img src="https://picsum.photos/200" alt="" width=100%></div>
                     <div><img src="https://picsum.photos/200" alt="" width=100%></div>
                     <div><img src="https://picsum.photos/200" alt="" width=100%></div>
                 </div>
+
             </section>
     
             <!-- side section -->
@@ -111,62 +107,6 @@
 
         <i class="fas fa-chevron-circle-up fa-2x" id="home"></i>
     </div>
-
-    <script>
-        // hamburger menu pop-up
-        const bars = document.getElementById('hamburger');
-        const popup = document.getElementById('pop-up');
-        bars.addEventListener('click',(e)=>{
-            e.preventDefault();
-            if(popup.classList[0]==='appear'){
-                popup.classList.remove('appear');
-            }else{
-                popup.classList.add('appear');
-            }
-        });
-        
-
-        // get a picture from instagram
-        async function getPicture(){
-            const res = await fetch('https://www.instagram.com/p/B8tCX49plkG/media');
-            console.log(res);
-            const data = await res.blob();
-            console.log(data);
-            
-            //const insta = document.getElementById('instagram-embed');
-            //insta.innerHTML = data.html;
-            const img1 = document.getElementById('img1');
-
-            const objectURL = URL.createObjectURL(data);
-            img1.src = objectURL;
-            
-        };
-        getPicture();
-
-
-        // show up the homeBtn
-        function popUpHomeBtn(){
-            if(window.innerWidth<=600 && (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250)){
-                console.log('popup!');
-                homeBtn.classList.add('appear');
-            }else{
-                homeBtn.classList.remove('appear');
-            }
-        }
-
-
-        // get the top of the page
-        const homeBtn = document.getElementById('home');
-        homeBtn.addEventListener('click', ()=>{
-            console.log('clicked!');
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        });
-        
-        window.onscroll = ()=>{
-            console.log('scrolllll');
-            popUpHomeBtn();
-        }
-    </script>
+    <script src="common.js"></script>
 </body>
 </html>

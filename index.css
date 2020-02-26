@@ -1,257 +1,103 @@
-/* css initialize */
-
-html,body{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-
-/* variables*/
-:root {
-    --main-bg-color: rgba(30,130,76,1);
-}
-
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
-
-/* font face */
-
-/* 위와 같은 방식은 해당 어플리케이션(=웹페이지, 혹은 웹사이트)의 서버에서 웹폰트를 포함하지 않을 때 CDN처럼 해당 폰트 resource 가 있는 외부 서버에서 폰트를 불러오는 것. 따라서 로딩 시간이 단점이 될 수 있다. */
-
-@font-face{
-    font-family: NanumGothic;
-    src: url(https://fonts.googleapis.com/css?family=Nanum+Gothic:400,800) format("woff2")
-}
-
-a{
-    color:white;
-    font-style: normal;
-    text-decoration: none;
-}
-
-
-/* container */
-.container{
-    background-color: #bbecd3;
-}
-
-
-/* header */
-
-
-.logo{
-    background-color: white;
-    color: rgb(43, 43, 43);
-    text-align: center;
-    padding:1em;
-
-    /* font family + fallbacks */
-    font-family: Oswald;
-    font-size:2em;
-}
-.logo a{color:black;}
-
-#hamburger{
-    display:none;
-    float:right;
-    line-height: 27px;
-    position:relative;
-    right:5px;
-}
-
-#pop-up{
-    display:none;
-    background-color: white;
-    color:white;
-    position: absolute;
-    right:0;
-    box-shadow: 1px 1px 4px black;
-    width:33vw;
-}
-#pop-up div{
-    display:flex;
-    flex-direction:column;
-    text-align:center;
-}
-#pop-up a{
-    background-color: var(--main-bg-color);
-    padding:1.2em;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-decoration: none;
-    letter-spacing: 1.5px;
-}
-#pop-up a:hover{
-    background-color: black;
-}
-
-nav{
-    text-align: center;
-    padding: 1.5em;
-    background-color: var(--main-bg-color);
-}
-
-nav a{
-    padding: 0.6em 0.8em;
-    
-    
-    /* font settings */
-    color: white;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1em;
-    font-weight: 550;
-    text-decoration: none;
-    letter-spacing: 1.5px;
-    vertical-align: baseline;
-}
-nav a:visited{
-    color:white;
-    font-style: normal;
-}
-nav a:hover{
-    background-color: black;
-}
-
-
 /* contents */
 div .contents{
-    /* size and aligning */
-    margin:0 auto;
-
-    /* grid */
-    display: grid;
-
-    /* font */
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
-    /* transition(animate) */
-    transition: max-width 0.5s ease;
-}
-
-section{
-    padding: 1em;
-    background-color: rgb(175, 214, 230);
-}
-section .article{
-    padding: 1em;
-    background-color: #fff;
-}
-/* grid container */
-section .drawing{
-    background-color: #fff;
-    padding: 2%; /* have to same with grid-gap */ 
+    /* grid! */
     display:grid;
-    grid-gap:2%;
-    grid-template-columns: 1fr 1fr;
 }
 
-/* grid item */
-.drawing > div{
-    width:100%;
-}
-aside{
-    padding:1rem;
-    background-color: pink;
-    line-height: 30px;
+    /* main */
+    .main{
+        background-color: black;
+        padding: 1em;
+    }
+    
+        section .article{
+            padding: 1em;
+            background-color: #fff;
+        }
 
-    font-size:0.8rem;
-}
+        /* grid container */
+        section .drawing{
+            margin-top:1em;
+            padding:1em;
+            display:grid;
+            grid-gap:1em;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            background-color: #fff;
+        }
+        
+            /* grid item */
+            .drawing > div{
+                background-color: pink;
+                align-self: stretch;
+            }
+        
+    /* aside */
+    aside{
+        padding:1rem;
+        background-color: white;
+        line-height: 30px;
+    }
 
-aside b{
-    font-size:0.8rem;
-}
-aside div{ /* for all descendent divs */
-    /* background-color: blue; */
-}
-aside > div{ /* only for direct children (divs) */
-    padding: 1.83rem 1rem;
-    background-color: #fff;
-    width:80%;
-    margin: 0 auto;
-}
+        aside b{
+            font-size:0.8rem;
+        }
+        aside div{ /* for all descendent divs */
+            /* background-color: blue; */
+        }
+        aside > div{ /* only for direct children (divs) */
+            background-color: #fff;
+        }
 
-#instagram-embed{
-    width:100%;
-    margin:1em auto;
-}
+        #instagram-embed{
+            width:100%;
+            margin:1em auto;
+        }
 
-/* footer */
-footer{
-    color:white;
-    background-color: var(--main-bg-color);
-    text-align: center;
-    padding: 1.5em;
-
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size:0.8em;
-}
-
-#home{
-    color:white;
-    text-shadow: 2px 4px 3px black;
-    display: none;
-    position:fixed;
-    right:15px;
-    bottom:25px;
-}
-.appear{
-    display:block !important;
-}
-
-
-/* 0 ~ 600px */
+/* 600px ~ */
 @media only screen and (max-width: 600px){
-    #hamburger{
+    div .contents{
+        margin: 0 auto;
+        font-family: 'Poor Story';
+    }
+    section{
         display:block;
     }
-
-    .logo{
-        background-color: var(--main-bg-color);
-        color: #fff;
-        padding:0.7em;
-        font-size:1.1em;
-    }
-    .logo a{color:white;}
-    
-    nav{
-        display:none;
+    .profile-info{
+        background-color: black;
+        color:white;
+        box-shadow: 0px 4px 10px black;
+        padding:2em;
     }
 
-    div .contents{
-        color:blue;
-        max-width:100%;
+    #img-wrapper img{
+        border-color:white;
     }
-
-    footer{
-        text-align: center;
-        padding: 1.2em;
-        font-size:0.8em;
-    }
-
-    #since{
-        display:none;
+    /* 홈버튼 필요없을듯 해서..임시방편 */
+    #home{
+        display:none !important;
     }
 }
 
 /* 601px 1100px */
 @media only screen and (min-width: 601px){
-    #pop-up{
-        display:none !important;
-    }
     div .contents{
-        color:brown;
-        max-width:80%;
+        max-width:50%;
+        /* box-shadow: 2px 3px 9px black; */
     }
 }
 
 /* 1101px~ */
 @media only screen and (min-width: 1101px){
-    #pop-up{
-        display:none !important;
-    }
     div .contents{
-        color:red;
-        max-width:80%;
-
-        /* grid columm changed */
+        grid-gap:1em;
         grid-template-columns: 70% 30%;
+    }
+
+    .main{
+        box-shadow: 1px 2px 5px black;
+    }
+    aside{
+        box-shadow: 2px 3px 9px black;
     }
 }

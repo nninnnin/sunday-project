@@ -1,4 +1,7 @@
 /* common.css */
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poor+Story&display=swap');
 
 /* css initialize */
 
@@ -14,11 +17,9 @@ html,body{
     --main-bg-color: rgba(30,130,76,1);
 }
 
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
 
 /* font face */
-
-/* 위와 같은 방식은 해당 어플리케이션(=웹페이지, 혹은 웹사이트)의 서버에서 웹폰트를 포함하지 않을 때 CDN처럼 해당 폰트 resource 가 있는 외부 서버에서 폰트를 불러오는 것. 따라서 로딩 시간이 단점이 될 수 있다. */
 
 @font-face{
     font-family: NanumGothic;
@@ -27,6 +28,8 @@ html,body{
 
 a{
     color:white;
+}
+header a{
     font-style: normal;
     text-decoration: none;
 }
@@ -94,6 +97,7 @@ nav{
 
 nav a{
     padding: 0.6em 0.8em;
+    border-radius: 5px;
     
     
     /* font settings */
@@ -103,7 +107,6 @@ nav a{
     font-weight: 550;
     text-decoration: none;
     letter-spacing: 1.5px;
-    vertical-align: baseline;
 }
 nav a:visited{
     color:white;
@@ -119,11 +122,12 @@ div .contents{
     /* size and aligning */
     margin:0 auto;
 
-    /* grid */
-    display: grid;
-
     /* font */
     font-family: 'Noto Sans KR', sans-serif;
+    font-size:13px; /* 기본사이즈! */
+
+    /* 기본 line height! */
+    line-height:2em;
 
     /* transition(animate) */
     transition: max-width 0.5s ease;
@@ -173,10 +177,11 @@ footer{
     }
 
     div .contents{
-        color:blue;
+        /* color:blue; */
         max-width:100%;
+        font-size:11px;
     }
-    
+
     footer{
         text-align: center;
         padding: 1.2em;
@@ -193,10 +198,6 @@ footer{
     #pop-up{
         display:none !important;
     }
-    div .contents{
-        color:brown;
-        max-width:80%;
-    }
 }
 
 /* 1101px~ */
@@ -205,10 +206,7 @@ footer{
         display:none !important;
     }
     div .contents{
-        color:red;
+        margin:1.5em auto;
         max-width:80%;
-
-        /* grid columm changed */
-        grid-template-columns: 70% 30%;
     }
 }

@@ -5,16 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인페이지</title>
     <link rel="stylesheet" href="common.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
-        @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
-    </style>
+    <link rel="stylesheet" href="profile.css">
 
     <!-- to use fontawesome -->
     <script src="https://kit.fontawesome.com/58673910ce.js" crossorigin="anonymous"></script>
-
-    <!-- index.js -->
-    <script src="index.js"></script>
 </head>
 <body>
     <div class="container">
@@ -37,7 +31,7 @@
 
             <div id="pop-up">
                 <div class="flex-container">
-                    <a href="#profile">profile</a>
+                    <a href="profile.html">profile</a>
                     <a href="#projects">projects</a>
                     <a href="#gallery">gallery</a>
                     <a href="#diary">diary</a>
@@ -46,37 +40,34 @@
             </div>
         </header>
 
+        <!-- contents -->
         <div class="contents">
             <!-- main section -->
             <section class="main">
-                <div>
-                    <h1>Profile</h1>
-                    <p>
-                        안녕하세요 이동규입니다. 저를 보러 여기까지 들어와주신 여러분에게 감사를 표합니다! 저는 과연 어떤 사람일까요? 저도 잘 모르겠지만 일단 제가 좋아하고 제가 가지고 있는 것들을 한번 소개해보면서, 저도 저를 조금 더 잘 알 수 있지 않을까 싶네요..이 소개글이 더 멋지게 발전하는 자신있는 내가 되는 그 날까지 하루하루 행복하고 재미있게 발전하는 사람이 되고 싶습니다.
-                    </p>
-
+                <!-- profile -->
+                <div class="profile-info" id="item1">
+                    <!-- profile image -->
+                    <div id="img-wrapper">
+                        <img src="src/profile.jpg" alt="profile">
+                    </div>
                     <br>
-
-                    <h2>favorites</h2>
-                    <b>음악</b>
-                    <ul>
-                        <li>cifika</li>
-                        <li>her</li>
-                        <li>e sens</li>
-                        <li>giriboy</li>
-                        <li>techno & ambient sounds</li>
-                    </ul>
-                    <b>분위기</b>
-                    <p>
-                        저는 정말 솔직하고 편안한 분위기와 사람들이 좋습니다. 그냥 서로 잘 알아서 본인들의 모습을 그대로 보여줄 수 있는 관계를 오래오래 유지할 수 있다면, 그게 바로 이상적인 관계와 자기세계의 구축이 아닐까요? 저는 아직 그런 순간을, 나 자신이 더 자유로울 수 있는 그런 관계들을 갈망하는 중입니다.
-                    </p>
-                    <b>Cafe</b>
-                    <p>
-                        카페를 좋아합니다.
-                    </p>
-                    <b>90-2000</b>
-                    <p>저의 어린 시절을 사랑하고 추억합니다. 그 시대를 그리워합니다. 포켓몬, 디지몬, 줄여입던 교복, 나이키 덩크와 리바이스 엔지니어드 진..</p>
+                    <!-- profile letter -->
+                    안녕하세요! 개발자 지망생 이동규입니다. 프론트엔드 개발자가 되기 위해 준비중에 있습니다.
                 </div>
+
+                <!-- form -->
+                <form class="input-form" action="" id="item2">
+                    <b>Contact me!</b>
+                    <br>
+                    <label for="name">이름:</label><br>
+                    <input type="text">
+                    <br>
+                    <label for="contact">연락처(email, kakao, phone):</label><br>
+                    <input type="text">
+                    <br>
+                    <label for="message">할말:</label><br>
+                    <textarea name="message" id="" cols="30" rows="10"></textarea>
+                </form>
             </section>
         </div>
 
@@ -88,63 +79,8 @@
         </footer>
 
         <i class="fas fa-chevron-circle-up fa-2x" id="home"></i>
+
+        <script src="common.js"></script>
     </div>
-
-    <script>
-        // hamburger menu pop-up
-        const bars = document.getElementById('hamburger');
-        const popup = document.getElementById('pop-up');
-        bars.addEventListener('click',(e)=>{
-            e.preventDefault();
-            if(popup.classList[0]==='appear'){
-                popup.classList.remove('appear');
-            }else{
-                popup.classList.add('appear');
-            }
-        });
-        
-
-        // get a picture from instagram
-        async function getPicture(){
-            const res = await fetch('https://www.instagram.com/p/B8tCX49plkG/media');
-            console.log(res);
-            const data = await res.blob();
-            console.log(data);
-            
-            //const insta = document.getElementById('instagram-embed');
-            //insta.innerHTML = data.html;
-            const img1 = document.getElementById('img1');
-
-            const objectURL = URL.createObjectURL(data);
-            img1.src = objectURL;
-            
-        };
-        getPicture();
-
-
-        // show up the homeBtn
-        function popUpHomeBtn(){
-            if(window.innerWidth<=600 && (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250)){
-                console.log('popup!');
-                homeBtn.classList.add('appear');
-            }else{
-                homeBtn.classList.remove('appear');
-            }
-        }
-
-
-        // get the top of the page
-        const homeBtn = document.getElementById('home');
-        homeBtn.addEventListener('click', ()=>{
-            console.log('clicked!');
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        });
-        
-        window.onscroll = ()=>{
-            console.log('scrolllll');
-            popUpHomeBtn();
-        }
-    </script>
 </body>
 </html>
