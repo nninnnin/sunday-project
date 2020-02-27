@@ -23,7 +23,7 @@ div .contents{
     text-align: center;
 }
 #img-wrapper img{
-    border: 1.5px black dashed;
+    border: 1.5px white dashed;
     border-radius: 100%;
     /* padding으로 사진과 border 간의 공간 만듦 */
     padding:0.5em;
@@ -56,9 +56,6 @@ label{
         padding:2em;
     }
 
-    #img-wrapper img{
-        border-color:white;
-    }
     /* 홈버튼 필요없을듯 해서..임시방편 */
     #home{
         display:none !important;

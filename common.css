@@ -116,6 +116,10 @@ nav a:hover{
     background-color: black;
 }
 
+.active{
+    background-color: black;
+}
+
 
 /* contents */
 div .contents{

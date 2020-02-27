@@ -22,10 +22,10 @@
             </div>
 
             <nav>
-                <a href="profile.html" class="active">profile</a>
+                <a href="profile.html">profile</a>
                 <a href="#projects">projects</a>
                 <a href="#gallery">gallery</a>
-                <a href="#diary" id="diary">diary</a>
+                <a href="#diary" class="active" onClick="goDiary">diary</a>
                 <a href="#visitor">visitor</a>
             </nav>
 
@@ -34,7 +34,7 @@
                     <a href="profile.html">profile</a>
                     <a href="#projects">projects</a>
                     <a href="#gallery">gallery</a>
-                    <a href="#diary" id="diary">diary</a>
+                    <a href="#diary" onClick="goDiary">diary</a>
                     <a href="#visitor">visitor</a>
                 </div>
             </div>
@@ -44,30 +44,7 @@
         <div class="contents">
             <!-- main section -->
             <section class="main">
-                <!-- profile -->
-                <div class="profile-info" id="item1">
-                    <!-- profile image -->
-                    <div id="img-wrapper">
-                        <img src="src/profile.jpg" alt="profile">
-                    </div>
-                    <br>
-                    <!-- profile letter -->
-                    안녕하세요! 개발자 지망생 이동규입니다. 프론트엔드 개발자가 되기 위해 준비중에 있습니다.
-                </div>
-
-                <!-- form -->
-                <form class="input-form" action="" id="item2">
-                    <b>Contact me!</b>
-                    <br>
-                    <label for="name">이름:</label><br>
-                    <input type="text">
-                    <br>
-                    <label for="contact">연락처(email, kakao, phone):</label><br>
-                    <input type="text">
-                    <br>
-                    <label for="message">할말:</label><br>
-                    <textarea name="message" id="" cols="30" rows="10"></textarea>
-                </form>
+                <h1>다이어리</h1>
             </section>
         </div>
 

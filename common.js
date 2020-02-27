@@ -1,3 +1,21 @@
+// // like spa with ajax
+// async function goDiary(e){
+//     e.preventDefault();
+//     const mainSection = document.querySelector('.contents');
+    
+
+//     /* fetching data */
+//     const response = await fetch('diary');
+//     const data = await response.text();
+
+//     mainSection.classList.remove('contents');
+//     mainSection.innerHTML=data;
+//     console.log(data);
+// }
+// const diaryLink = document.getElementById('diary');
+// diaryLink.addEventListener('click',goDiary);
+
+
 // hamburger menu pop-up
 const bars = document.getElementById('hamburger');
 const popup = document.getElementById('pop-up');
