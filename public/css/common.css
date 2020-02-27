@@ -113,11 +113,14 @@ nav a:visited{
     font-style: normal;
 }
 nav a:hover{
-    background-color: black;
+    color: black;
 }
 
 .active{
-    background-color: black;
+    font-weight: 900;
+}
+.active:visited{
+    color: black;
 }
 
 
