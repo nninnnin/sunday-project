@@ -46,10 +46,7 @@ async function getPicture(imgId){
 };
 
 /* 페이지에 따라 다른 instagram picture fetching */
-if(window.location.pathname==="/public/views/gallery.html"){
-    const imgId_1= 'B1dOF0YjAKS';
-    getPicture(imgId_1);
-}else{
+if(window.location.pathname==="/index.html" || window.location.pathname === '/'){
     const imgId = 'B8tCX49plkG';
     getPicture(imgId);
 }

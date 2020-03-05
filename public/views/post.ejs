@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>this template is made by ejs</h1>
+    <% for ( const key of Object.keys(profile) ) { %>
+        <span><%= key %> is <%= profile[key] %>  </span>
+    <% } %>
 </body>
 </html>

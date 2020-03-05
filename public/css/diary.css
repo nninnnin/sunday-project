@@ -39,7 +39,12 @@ img { /* 원리 알기 */
 .description span{
     color:grey;
     font-size: smaller;
+    cursor: pointer;
 }
+.description span:hover{
+    color:aliceblue;
+    text-decoration: underline;
+}   
 #date{
     float:right;
 }

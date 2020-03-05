@@ -99,7 +99,6 @@ nav a{
     padding: 0.6em 0.8em;
     border-radius: 3px;
     
-    
     /* font settings */
     color: white;
     font-family: 'Noto Sans KR', sans-serif;
@@ -113,11 +112,18 @@ nav a:visited{
     font-style: normal;
 }
 nav a:hover{
-    color: black;
+    text-decoration: underline;
+}
+nav a:active{
+    color:black;
+    font-size:1.2em;
+    transition:0.18s;
 }
 
 .active{
-    background-color: black;
+    text-decoration: underline;
+    color: black !important;
+    transition:2s;
 }
 
 

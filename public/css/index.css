@@ -20,6 +20,15 @@ div .contents{
                 padding:2em;
                 box-shadow: 1px 2px 5px black;
             }
+            .article > div:hover{
+                opacity: 0.5;
+                transition: 0.15s;
+                
+                cursor:pointer;
+            }
+            .article > div:active{
+                opacity: 0.9;
+            }
             .article h1{
                 text-indent: 0.5em;
             }
@@ -46,6 +55,10 @@ div .contents{
             /* grid item */
             .drawing > div{
                 background-color: pink;
+            }
+            .drawing > div:hover{
+                opacity: 0.6;
+                transition:0.2s;
             }
 
             img { /* 원리 알기 */
