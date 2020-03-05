@@ -1,8 +1,3 @@
-.newlogo{
-    color:red;
-}
-
-
 /* contents */
 div .contents{
     /* grid! */
@@ -38,16 +33,19 @@ div .contents{
 
         /* grid container */
         section .drawing{
-            margin-top:1em;
+            padding:1em;
+
             display:grid;
             grid-gap:1em;
             grid-template-columns: 1fr 1fr 1fr;
+
+            background-color: black;
+            border-top:1px white solid;
         }
         
             /* grid item */
             .drawing > div{
                 background-color: pink;
-                align-self: stretch;
             }
 
             img { /* 원리 알기 */
@@ -63,13 +61,14 @@ div .contents{
         padding:1rem;
         background-color: white;
         line-height: 30px;
+        box-shadow: 1px 2px 5px black;
     }
 
         aside b{
             font-size:0.8rem;
         }
         aside div{ /* for all descendent divs */
-            background-color: blue;
+            background-color: #fff;
         }
         aside > div{ /* only for direct children (divs) */
             background-color: #fff;
@@ -116,6 +115,9 @@ div .contents{
     div .contents{
         grid-template-columns: 70% 30%;
     }
+    .main{
+        box-shadow: 1px 2px 5px black;
+    }
     section .article{
         grid-template-columns: 1fr 1fr;
         grid-gap:1px;
@@ -124,9 +126,6 @@ div .contents{
         color:white;
         background-color: black;
         box-shadow: 0px 0px 0px black;
-    }
-    aside{
-        box-shadow: 1px 2px 5px black;
     }
 }
 
@@ -137,7 +136,40 @@ div .contents{
    }
 }
 
+/* 1000px 이하에서 aside가 아래로 + aside 내에서 column 2개로 변환 */
+@media screen and (max-width:1000px){
+    div .contents{
+        grid-template-columns: 1fr;
+    }
+    aside{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
 
+        margin:2em;
+    }
+    aside > div{
+        justify-content: center;
+        align-self:center;
+    }
+    aside div:nth-child(2){
+        width:80%;
+        margin:0 auto;
+        order:-1;
+        /* background-color: red; */
+    }
+    aside .contact-info{
+        text-align: center;
+    }
+    .insta-photo b{
+        display:none;
+    }
+}
+
+@media screen and (max-width: 480px){
+    aside{
+        margin:0;
+    }
+}
 
 
 
