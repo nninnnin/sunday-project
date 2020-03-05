@@ -62,7 +62,7 @@ div .contents{
             font-size:0.8rem;
         }
         aside div{ /* for all descendent divs */
-            /* background-color: blue; */
+            background-color: blue;
         }
         aside > div{ /* only for direct children (divs) */
             background-color: #fff;
@@ -91,10 +91,6 @@ div .contents{
 
     #img-wrapper img{
         border-color:white;
-    }
-    /* 홈버튼 필요없을듯 해서..임시방편 */
-    #home{
-        /* display:none !important; */
     }
 }
 
