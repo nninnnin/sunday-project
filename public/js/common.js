@@ -1,3 +1,4 @@
+
 // // like spa with ajax
 // async function goDiary(e){
 //     e.preventDefault();
@@ -5,7 +6,7 @@
     
 
 //     /* fetching data */
-//     const response = await fetch('diary');
+//     const response = await fetch('../../data/test');
 //     const data = await response.text();
 
 //     mainSection.classList.remove('contents');
@@ -30,8 +31,8 @@ bars.addEventListener('click',(e)=>{
 
 
 // get a picture from instagram
-async function getPicture(){
-    const res = await fetch('https://www.instagram.com/p/B8tCX49plkG/media');
+async function getPicture(imgId){
+    const res = await fetch(`https://www.instagram.com/p/${imgId}/media`);
     console.log(res);
     const data = await res.blob();
     console.log(data);
@@ -42,12 +43,15 @@ async function getPicture(){
 
     const objectURL = URL.createObjectURL(data);
     img1.src = objectURL;
-    
 };
 
-/* index 페이지인 경우에만 instagram picture fetching */
-if(window.location.pathname==='/'){
-   getPicture(); 
+/* 페이지에 따라 다른 instagram picture fetching */
+if(window.location.pathname==="/public/views/gallery.html"){
+    const imgId_1= 'B1dOF0YjAKS';
+    getPicture(imgId_1);
+}else{
+    const imgId = 'B8tCX49plkG';
+    getPicture(imgId);
 }
 
 
@@ -74,3 +78,11 @@ window.onscroll = ()=>{
     console.log('scrolllll');
     popUpHomeBtn();
 }
+
+
+// even number posts different order with img and desc
+// if(document.body.classList.contains('postings')){//pathname 대신 body에 class를 식별하는 방식으로
+//     //바꺼보자
+//     //근데 이거 css로도 어케 가능할듯
+//     //뭐가낫지?
+// }

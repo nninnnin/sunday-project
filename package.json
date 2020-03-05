@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/nninnnin/sunday-project#readme",
   "dependencies": {
-    "ejs": "^3.0.1"
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
   }
 }

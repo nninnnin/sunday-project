@@ -1,0 +1,36 @@
+div .contents{
+    color:white;
+    background-color: black;
+    box-shadow: 1px 1px 3px black;
+
+    padding:0.5em;
+}
+
+.pictures{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-gap:1.5em;
+
+    padding:4%;
+}
+
+img { /* 원리 알기 */
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* 0 ~ 600px */
+@media only screen and (max-width:600px){
+    div .contents{
+        background-color: red;
+    }
+
+    /* grid column 1개로 */
+    .pictures{
+        grid-template-columns:1fr 1fr;
+    }
+}
+

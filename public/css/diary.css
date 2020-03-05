@@ -1,18 +1,32 @@
-.container{
-    background-color: #fff;
-}
 div .contents{
     color:white;
     background-color: black;
     box-shadow: 1px 1px 3px black;
 
     padding:0.5em;
+    padding-top: 1.8em;
 }
+
+/* section:nth-child(odd){
+    background-color: crimson;
+    color:aqua
+} */
 
 .post{
     display:grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "img desc";
     grid-gap:1em;
+}
+
+/* grid item 1 */
+.img{
+    grid-area:img
+}
+/* grid item 2 */
+.description{
+    grid-area:desc
 }
 
 img { /* 원리 알기 */
@@ -36,6 +50,13 @@ hr{
 
 /* 0 ~ 600px */
 @media only screen and (max-width: 600px){
+    .post{
+        grid-template-columns: 1fr;
+        grid-template-rows:1fr 1fr;
+        grid-template-areas: 
+            "img"
+            "desc";
+    }
     .post p{
         max-height:100px;
         overflow: hidden;
@@ -44,3 +65,13 @@ hr{
         margin-top:0.1em;
     }
 }
+
+/* media query의 min-width와 max-width 개념잡기*/
+/*
+    1. min-width
+    2. max-width means less than or equal to the width specified in that media query.
+
+    이렇게 기억하자. 최솟값 - 이상, 최댓값 - 이하.
+    
+    reference - https://medium.com/@banuriwick/min-width-max-width-media-queries-994e2ec5fca3
+*/

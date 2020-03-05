@@ -37,7 +37,7 @@ header a{
 
 /* container */
 .container{
-    background-color: #bbecd3;
+    background-color: tomato;
 }
 
 
@@ -97,7 +97,7 @@ nav{
 
 nav a{
     padding: 0.6em 0.8em;
-    border-radius: 5px;
+    border-radius: 3px;
     
     
     /* font settings */
@@ -117,10 +117,7 @@ nav a:hover{
 }
 
 .active{
-    font-weight: 900;
-}
-.active:visited{
-    color: black;
+    background-color: black;
 }
 
 

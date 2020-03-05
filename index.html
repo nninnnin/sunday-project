@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인페이지</title>
-    <link rel="stylesheet" href="public/css/index.css">
     <link rel="stylesheet" href="public/css/common.css">
+    <link rel="stylesheet" href="public/css/index.css">
 
     <!-- to use fontawesome -->
     <script src="https://kit.fontawesome.com/58673910ce.js" crossorigin="anonymous"></script>
@@ -15,7 +15,9 @@
         <!-- header -->
         <header>
             <div class="logo">
-                <a href="/">Justin's blog</a>
+                <!-- logo -->
+                <a href="/" id="logo">Justin's blog</a>
+                <!-- hamburger icon -->
                 <a href="/">
                     <i class="fa fa-bars fa-lg" id="hamburger"></i>
                 </a>
@@ -24,7 +26,7 @@
             <nav>
                 <a href="/" class="active">home</a>
                 <a href="public/views/profile.html">profile</a>
-                <a href="public/views/project.html">project</a>
+                <a href="public/views/project.html" id="project">project</a>
                 <a href="public/views/gallery.html">gallery</a>
                 <a href="public/views/diary.html" id="diary">diary</a>
                 <a href="public/views/visitor.html">visitor</a>
@@ -54,14 +56,25 @@
                         <h2>second article</h2>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
                     </div>
+                    <div>
+                        <h2>second article</h2>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
+                    </div>
+                    <div>
+                        <h2>second article</h2>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
+                    </div>
+                    <div>
+                        <h2>second article</h2>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
+                    </div>
                 </div>
                 
                 <!-- drawings -->
                 <div class="drawing">
-                    <div><img src="https://picsum.photos/200" alt="" width=100%></div>
-                    <div><img src="https://picsum.photos/200" alt="" width=100%></div>
-                    <div><img src="https://picsum.photos/200" alt="" width=100%></div>
-                    <div><img src="https://picsum.photos/200" alt="" width=100%></div>
+                    <div><img src="public/imgs/backthen.jpg" alt="" width=100%></div>
+                    <div><img src="https://image.bugsm.co.kr/album/images/original/202141/20214126.jpg?version=undefined" alt="" width=100%></div>
+                    <div><img src="public/imgs/giriboy.jpg" alt="" width=100%></div>
                 </div>
 
             </section>
@@ -109,5 +122,12 @@
         <i class="fas fa-chevron-circle-up fa-2x" id="home"></i>
     </div>
     <script src="public/js/common.js"></script>
+    <script>
+        const articles = document.getElementsByClassName('article')[0].children;
+        const first_article = articles[0];
+        const data = fetch('data/diary/2020-03-05')
+            .then((res)=>{return res.text()})
+            .then((data)=>{first_article.innerHTML = data});
+    </script>
 </body>
 </html>

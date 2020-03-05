@@ -1,3 +1,8 @@
+.newlogo{
+    color:red;
+}
+
+
 /* contents */
 div .contents{
     /* grid! */
@@ -6,24 +11,30 @@ div .contents{
 
     /* main */
     .main{
-        background-color: dodgerblue;
+        background-color: black;
+        color:white;
         padding: 1em;
     }
-    
+
+        /* grid container */
         section .article{
             padding: 1em;
-            background-color: #fff;
+            display:grid;
+            grid-gap:1em;
+            grid-template-columns: 1fr 1fr 1fr;
         }
+            /* grid item */
+            .article > div{
+                max-height:20em;
+                overflow: hidden;
+            }
 
         /* grid container */
         section .drawing{
             margin-top:1em;
-            padding:1em;
             display:grid;
             grid-gap:1em;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            background-color: #fff;
+            grid-template-columns: 1fr 1fr 1fr;
         }
         
             /* grid item */
@@ -31,6 +42,14 @@ div .contents{
                 background-color: pink;
                 align-self: stretch;
             }
+
+            img { /* 원리 알기 */
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+            }
+            
         
     /* aside */
     aside{
@@ -58,7 +77,7 @@ div .contents{
 @media only screen and (max-width: 600px){
     div .contents{
         margin: 0 auto;
-        font-family: 'Poor Story';
+        /* font-family: 'Poor Story'; */
     }
     section{
         display:block;
@@ -75,15 +94,16 @@ div .contents{
     }
     /* 홈버튼 필요없을듯 해서..임시방편 */
     #home{
-        display:none !important;
+        /* display:none !important; */
     }
 }
 
 /* 601px 1100px */
 @media only screen and (min-width: 601px){
     div .contents{
-        max-width:500px;
+        /* max-width:500px; */
         /* box-shadow: 2px 3px 9px black; */
+        grid-template-columns: 70% 30%;
     }
 }
 
@@ -91,7 +111,6 @@ div .contents{
 @media only screen and (min-width: 1101px){
     div .contents{
         grid-gap:1em;
-        grid-template-columns: 70% 30%;
     }
 
     .main{
