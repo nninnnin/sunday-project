@@ -11,22 +11,29 @@ div .contents{
 
     /* main */
     .main{
-        background-color: black;
-        color:white;
-        padding: 1em;
+        background-color: #fff;
     }
 
         /* grid container */
         section .article{
-            padding: 1em;
             display:grid;
             grid-gap:1em;
-            grid-template-columns: 1fr 1fr 1fr;
         }
             /* grid item */
             .article > div{
                 max-height:20em;
+                padding:2em;
+                box-shadow: 1px 2px 5px black;
+            }
+            .article h1{
+                text-indent: 0.5em;
+            }
+            .article p{
+                max-height:12em;
                 overflow: hidden;
+            }
+            .article span{
+                float:right;
             }
 
         /* grid container */
@@ -73,14 +80,24 @@ div .contents{
             margin:1em auto;
         }
 
-/* ~ 600px */
-@media only screen and (max-width: 600px){
+
+
+
+
+/*  RESPONSIVE (mobile first) */
+
+/* mobile (0 ~ 480px) */
+@media only screen and (max-width: 480px){
     div .contents{
-        margin: 0 auto;
-        /* font-family: 'Poor Story'; */
-    }
-    section{
         display:block;
+
+        margin: 0 auto;
+        padding: 1em;
+
+        font-family: 'Poor Story';
+    }
+    section .article{
+        grid-template-columns: 1fr;
     }
     .profile-info{
         background-color: black;
@@ -94,25 +111,34 @@ div .contents{
     }
 }
 
-/* 601px 1100px */
-@media only screen and (min-width: 601px){
+/* tablet (481px ~ 768px) **스타일 적용은 481px 이상에 전부 적용(481px ~ )** */
+@media only screen and (min-width: 481px){
     div .contents{
-        /* max-width:500px; */
-        /* box-shadow: 2px 3px 9px black; */
         grid-template-columns: 70% 30%;
     }
-}
-
-/* 1101px~ */
-@media only screen and (min-width: 1101px){
-    div .contents{
-        grid-gap:1em;
+    section .article{
+        grid-template-columns: 1fr 1fr;
+        grid-gap:1px;
     }
-
-    .main{
-        box-shadow: 1px 2px 5px black;
+    .article > div{
+        color:white;
+        background-color: black;
+        box-shadow: 0px 0px 0px black;
     }
     aside{
-        box-shadow: 2px 3px 9px black;
+        box-shadow: 1px 2px 5px black;
     }
 }
+
+/* desktop (769px ~ ) 481px 이상에 적용 + 768px 이상에 추가적으로 적용 (cascading) */
+@media only screen and (min-width: 768px){
+   div .contents{
+       grid-gap:1em;
+   }
+}
+
+
+
+
+
+

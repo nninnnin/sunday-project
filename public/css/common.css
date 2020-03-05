@@ -37,7 +37,7 @@ header a{
 
 /* container */
 .container{
-    background-color: tomato;
+    background-color: #fff;
 }
 
 
@@ -162,8 +162,8 @@ footer{
 }
 
 
-/* 0 ~ 600px */
-@media only screen and (max-width: 600px){
+/* only smartphones ~ 480px */
+@media only screen and (max-width: 480px){
     #hamburger{
         display:block;
     }
@@ -197,18 +197,15 @@ footer{
     }
 }
 
-/* 601px 1100px */
-@media only screen and (min-width: 601px){
+/* tablet + desktop 481px ~ */
+@media only screen and (min-width: 481px){
     #pop-up{
         display:none !important;
     }
 }
 
-/* 1101px~ */
-@media only screen and (min-width: 1101px){
-    #pop-up{
-        display:none !important;
-    }
+/* only desktop 768px ~ */
+@media only screen and (min-width: 768px){
     div .contents{
         margin:1.5em auto;
         max-width:80%;

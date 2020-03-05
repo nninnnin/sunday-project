@@ -22,8 +22,8 @@ img { /* 원리 알기 */
 }
 
 
-/* 0 ~ 600px */
-@media only screen and (max-width:600px){
+/* 0 ~ 480px */
+@media only screen and (max-width:480px){
     div .contents{
         background-color: red;
     }

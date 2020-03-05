@@ -48,8 +48,8 @@ hr{
     margin: 2em 0;
 }
 
-/* 0 ~ 600px */
-@media only screen and (max-width: 600px){
+/* 0 ~ 480px */
+@media only screen and (max-width: 480px){
     .post{
         grid-template-columns: 1fr;
         grid-template-rows:1fr 1fr;
