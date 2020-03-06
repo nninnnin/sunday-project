@@ -1,21 +1,10 @@
-
-// // like spa with ajax
-// async function goDiary(e){
-//     e.preventDefault();
-//     const mainSection = document.querySelector('.contents');
-    
-
-//     /* fetching data */
-//     const response = await fetch('../../data/test');
-//     const data = await response.text();
-
-//     mainSection.classList.remove('contents');
-//     mainSection.innerHTML=data;
-//     console.log(data);
-// }
-// const diaryLink = document.getElementById('diary');
-// diaryLink.addEventListener('click',goDiary);
-
+// 홈버튼 누르면 fade out
+const nav_items = Array.from(document.querySelector('nav').children);
+nav_items.forEach((nav_item)=>{
+    nav_item.addEventListener('click',(e)=>{
+        document.body.classList.add('fade-out');
+    });
+});
 
 // hamburger menu pop-up
 const bars = document.getElementById('hamburger');
@@ -31,6 +20,7 @@ bars.addEventListener('click',(e)=>{
 
 
 // get a picture from instagram
+// Server side rendering으로 바꾸는 게 나을듯(사용자 경험상), ejs template에서 미리 만들어서 클라이언트로 보낼 수 있게 refactoring 할 것
 async function getPicture(imgId){
     const res = await fetch(`https://www.instagram.com/p/${imgId}/media`);
     console.log(res);
@@ -76,10 +66,19 @@ window.onscroll = ()=>{
     popUpHomeBtn();
 }
 
+// // like spa with ajax
+// async function goDiary(e){
+//     e.preventDefault();
+//     const mainSection = document.querySelector('.contents');
+    
 
-// even number posts different order with img and desc
-// if(document.body.classList.contains('postings')){//pathname 대신 body에 class를 식별하는 방식으로
-//     //바꺼보자
-//     //근데 이거 css로도 어케 가능할듯
-//     //뭐가낫지?
+//     /* fetching data */
+//     const response = await fetch('../../data/test');
+//     const data = await response.text();
+
+//     mainSection.classList.remove('contents');
+//     mainSection.innerHTML=data;
+//     console.log(data);
 // }
+// const diaryLink = document.getElementById('diary');
+// diaryLink.addEventListener('click',goDiary);

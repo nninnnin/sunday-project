@@ -32,7 +32,18 @@ img {
 
     /* grid column 1개로 */
     .pictures{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr;
     }
 }
+@media only screen and (min-width:481px){
+    .pictures{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media only screen and (min-width:768px){
+    .pictures{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
 

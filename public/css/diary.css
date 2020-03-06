@@ -11,15 +11,6 @@ div .contents{
     background-color: crimson;
     color:aqua
 } */
-
-.post{
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-        "img desc";
-    grid-gap:1em;
-}
-
 /* grid item 1 */
 .img{
     grid-area:img
@@ -27,6 +18,14 @@ div .contents{
 /* grid item 2 */
 .description{
     grid-area:desc
+}
+
+.post{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "img desc";
+    grid-gap:1em;
 }
 
 img { /* 원리 알기 */
