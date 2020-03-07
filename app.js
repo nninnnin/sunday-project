@@ -3,7 +3,6 @@ const bodyParser = require('body-parser')
 const path = require('path');
 const partials = require('express-partials');
 
-<<<<<<< HEAD
 // setting live-reload to refresh browser rendering when frontend code is changed
 const livereload = require('livereload');
 const connectLivereload = require('connect-livereload');
@@ -15,9 +14,9 @@ livereloadServer.server.once("connection",()=>{
         livereloadServer.refresh("/");
     },50);
 });
-=======
+
+// connect router
 const indexRouter = require('./routes/router');
->>>>>>> fa793d0313be87aaa1b7bdbd32f02c576bb1a2e5
 
 // create server
 const app = express();

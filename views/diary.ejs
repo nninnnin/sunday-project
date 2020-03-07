@@ -11,31 +11,33 @@
             <%- include ('partials/header') %>
         </header>
 
-        <!-- contents -->
-        <div class="contents">
-            <!-- main section -->
-            <section class="main">
-                <!-- post -->
+        <!-- main -->
+        <main>
+            <!-- section -->
+            <section>
+                <!-- posts -->
                 <% for( let i = 0; i < posts.length; i++ ) { %>
-                    <div class="post">
-                        <div class="img">
-                            <img src="imgs/post/<%= posts[i].id %>.jpg" alt="">
+                    <div>
+                        <div class="post">
+                            <div class="img">
+                                <img src="imgs/post/<%= posts[i].id %>.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h2><%= posts[i].title %></h2>
+                                <p><%= posts[i].content %></p>
+                                <span id="more">
+                                    <a href="/diary/post">see more</a>
+                                </span>
+                                <span id="date">
+                                    2020-02-25
+                                </span>
+                            </div>
                         </div>
-                        <div class="description">
-                            <h2><%= posts[i].title %></h2>
-                            <p><%= posts[i].content %></p>
-                            <span id="more">
-                                <a href="/diary/post">see more</a>
-                            </span>
-                            <span id="date">
-                                2020-02-25
-                            </span>
-                        </div>
+                        <hr>
                     </div>
-                    <hr>
                 <% } %>
             </section>
-        </div>
+        </main>
 
         <!-- footer -->
         <footer>

@@ -1,4 +1,4 @@
-div .contents{
+main{
     color:white;
     background-color: black;
     box-shadow: 1px 1px 3px black;
@@ -7,10 +7,11 @@ div .contents{
     padding-top: 1.8em;
 }
 
-/* section:nth-child(odd){
-    background-color: crimson;
-    color:aqua
-} */
+section > div:nth-child(even) > div{
+    grid-template-areas: 
+        "desc img";
+}
+
 /* grid item 1 */
 .img{
     grid-area:img
@@ -57,6 +58,11 @@ hr{
     .post{
         grid-template-columns: 1fr;
         grid-template-rows:1fr 1fr;
+        grid-template-areas: 
+            "img"
+            "desc";
+    }
+    section > div:nth-child(even) > div{
         grid-template-areas: 
             "img"
             "desc";

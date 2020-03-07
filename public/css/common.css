@@ -35,15 +35,7 @@ header a{
 }
 
 
-/* container */
-.container{
-    background-color: #fff;
-}
-
-
 /* header */
-
-
 .logo{
     background-color: white;
     color: rgb(43, 43, 43);
@@ -127,8 +119,8 @@ nav a:active{
 }
 
 
-/* contents */
-.contents{
+/* main */
+main{
     /* size and aligning */
     margin:0 auto;
 
@@ -186,7 +178,7 @@ footer{
         display:none;
     }
 
-    div .contents{
+    main{
         /* color:blue; */
         max-width:100%;
         font-size:11px;
@@ -212,7 +204,7 @@ footer{
 
 /* only desktop 768px ~ */
 @media only screen and (min-width: 768px){
-    div .contents{
+    main{
         margin:1.5em auto;
         max-width:80%;
     }

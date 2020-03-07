@@ -1,8 +1,11 @@
-<<<<<<< HEAD
 h1{
     color:blue;
-=======
-div .contents{
+}
+section{
+    background-color: green;
+    padding: 3em;
+}
+article{
+    margin: 3em;
     background-color: pink;
->>>>>>> fa793d0313be87aaa1b7bdbd32f02c576bb1a2e5
 }

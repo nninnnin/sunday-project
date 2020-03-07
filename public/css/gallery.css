@@ -1,4 +1,4 @@
-div .contents{
+main{
     color:white;
     background-color: black;
     box-shadow: 1px 1px 3px black;
@@ -26,7 +26,7 @@ img {
 
 /* 0 ~ 480px */
 @media only screen and (max-width:480px){
-    div .contents{
+    .contents{
         background-color: red;
     }
 
