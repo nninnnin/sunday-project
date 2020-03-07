@@ -107,14 +107,13 @@ nav a:hover{
     text-decoration: underline;
 }
 nav a:active{
-    color:black;
     font-size:1.2em;
     transition:0.18s;
 }
 
 .active{
     text-decoration: underline;
-    color: black !important;
+    background-color: black !important;
     transition:2s;
 }
 

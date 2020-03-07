@@ -1,11 +1,9 @@
-h1{
-    color:blue;
+main{
+    color:white;
+    background-color: black;
+    padding: 2em 2%;
 }
-section{
-    background-color: green;
-    padding: 3em;
-}
-article{
-    margin: 3em;
-    background-color: pink;
+
+header,section{
+    text-align:center;
 }

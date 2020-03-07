@@ -4,7 +4,7 @@
     <%- include ('partials/head') %>
     <link rel="stylesheet" href="/css/post.css">
 </head>
-<body>
+<body class="fade-in">
     <!-- header -->
     <header>
         <%- include ('partials/header') %>
@@ -14,8 +14,16 @@
     <!-- main -->
     <main>
         <article>
-            <h1>제목</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, quod eum quibusdam ut et placeat sequi, culpa error natus saepe dolor? Quibusdam ea incidunt est voluptas atque, quis tenetur cum animi possimus officiis optio libero magni sint, quae, expedita doloribus alias. Cumque, reprehenderit aliquid. Nisi eum culpa voluptatibus veritatis saepe dignissimos, libero maiores atque, ut exercitationem, voluptatum sequi autem ea tempora tenetur ducimus laudantium! Inventore esse iste quam delectus repellendus eos expedita repellat doloremque consectetur consequuntur. Recusandae quos, ea quo earum corrupti optio? Qui expedita, ipsam nobis fugiat iure excepturi enim velit natus quibusdam itaque, nam impedit voluptates commodi nisi?</p>
+            <header>
+                <h1><%= post.title %> </h1>
+            </header>
+            <section>
+                <img src="/imgs/post/<%= post.id %>.jpg" alt="" width="60%">
+                <br>
+                <p>
+                    <%= post.content %> 
+                </p>
+            </section>
         </article>
     </main>
 
@@ -23,5 +31,7 @@
     <footer>
         <%- include ('partials/footer') %> 
     </footer>
+
+    <script src="../js/common.js"></script>
 </body>
 </html>
