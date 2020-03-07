@@ -3,8 +3,22 @@ const bodyParser = require('body-parser')
 const path = require('path');
 const partials = require('express-partials');
 
+// setting live-reload to refresh browser rendering when frontend code is changed
+const livereload = require('livereload');
+const connectLivereload = require('connect-livereload');
+
+const livereloadServer = livereload.createServer();
+livereloadServer.watch(['public', path.join(__dirname,'views')]);
+livereloadServer.server.once("connection",()=>{
+    setTimeout(()=>{
+        livereloadServer.refresh("/");
+    },50);
+});
+
 // create server
 const app = express();
+
+app.use(connectLivereload());
 
 // express server setting with app.set() method
 app.set('views',path.join(__dirname, 'views'));
