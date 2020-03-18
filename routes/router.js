@@ -38,13 +38,10 @@ router.get('/diary',(req,res)=>{
     res.render('diary',{posts:posts});
 });
 // diary post
-router.get('/diary/post',function(req,res){
-    res.render('post', {
-        profile:{
-            name:'justindglee',
-            age:35
-        }
-    });
+router.get('/diary/:postId',(req,res)=>{
+    const postId = req.params.postId
+    res.locals.post = posts[postId-1];
+    res.render('post');
 });
 //visitor
 router.get('/visitor',(req,res)=>{

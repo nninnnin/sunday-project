@@ -4,26 +4,43 @@
     <%- include ('partials/head') %>
     <link rel="stylesheet" href="/css/post.css">
 </head>
-<body>
+<body class="fade-in">
     <!-- header -->
     <header>
         <%- include ('partials/header') %>
     </header>
 
 
+<<<<<<< HEAD
     <!-- contents -->
     <section class="contents">
+=======
+    <!-- main -->
+    <main>
+>>>>>>> 723d8fc7cb1562210ce2cfe2f3c2b3174a5915c4
         <article>
-            <h1>제목</h1>
-            <p>내용</p>
-
-            그니까 쟤가 아무리 빠르게 잡아채도 결국 서버 껐다 켜야하는 시간이 필요하군..
+            <header>
+                <h1><%= post.title %> </h1>
+            </header>
+            <section>
+                <img src="/imgs/post/<%= post.id %>.jpg" alt="" width="60%">
+                <br>
+                <p>
+                    <%= post.content %> 
+                </p>
+            </section>
         </article>
+<<<<<<< HEAD
     </section>
+=======
+    </main>
+>>>>>>> 723d8fc7cb1562210ce2cfe2f3c2b3174a5915c4
 
     <!-- footer -->
     <footer>
         <%- include ('partials/footer') %> 
     </footer>
+
+    <script src="../js/common.js"></script>
 </body>
 </html>

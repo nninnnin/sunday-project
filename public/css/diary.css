@@ -1,16 +1,15 @@
-div .contents{
+main{
     color:white;
     background-color: black;
     box-shadow: 1px 1px 3px black;
-
-    padding:0.5em;
-    padding-top: 1.8em;
+    padding-top:2em;
 }
 
-/* section:nth-child(odd){
-    background-color: crimson;
-    color:aqua
-} */
+section > div:nth-child(even) > div{
+    grid-template-areas: 
+        "desc img";
+}
+
 /* grid item 1 */
 .img{
     grid-area:img
@@ -26,6 +25,8 @@ div .contents{
     grid-template-areas: 
         "img desc";
     grid-gap:1em;
+
+    padding: 0 2%;
 }
 
 img { /* 원리 알기 */
@@ -35,12 +36,11 @@ img { /* 원리 알기 */
     object-fit: cover;
 }
 
-.description span{
+.description span, a{
     color:grey;
     font-size: smaller;
-    cursor: pointer;
 }
-.description span:hover{
+.description a:hover{
     color:aliceblue;
     text-decoration: underline;
 }   
@@ -57,6 +57,11 @@ hr{
     .post{
         grid-template-columns: 1fr;
         grid-template-rows:1fr 1fr;
+        grid-template-areas: 
+            "img"
+            "desc";
+    }
+    section > div:nth-child(even) > div{
         grid-template-areas: 
             "img"
             "desc";

@@ -1,16 +1,16 @@
-/* contents */
-div .contents{
+/* main */
+main{
     /* grid! */
     display:grid;
 }
 
     /* main */
-    .main{
+    main{
         background-color: #fff;
     }
 
         /* grid container */
-        section .article{
+        section > .article{
             display:grid;
             grid-gap:1em;
         }
@@ -22,12 +22,13 @@ div .contents{
             }
             .article > div:hover{
                 opacity: 0.5;
-                transition: 0.15s;
+                transition: 0.1s;
                 
                 cursor:pointer;
             }
             .article > div:active{
-                opacity: 0.9;
+                opacity: 1;
+                transition: 0.1s;
             }
             .article h1{
                 text-indent: 0.5em;
@@ -57,7 +58,7 @@ div .contents{
                 background-color: pink;
             }
             .drawing > div:hover{
-                opacity: 0.6;
+                opacity: 0.5;
                 transition:0.2s;
             }
 
@@ -100,7 +101,7 @@ div .contents{
 
 /* mobile (0 ~ 480px) */
 @media only screen and (max-width: 480px){
-    div .contents{
+    main{
         display:block;
 
         margin: 0 auto;
@@ -125,11 +126,8 @@ div .contents{
 
 /* tablet (481px ~ 768px) **스타일 적용은 481px 이상에 전부 적용(481px ~ )** */
 @media only screen and (min-width: 481px){
-    div .contents{
+    main{
         grid-template-columns: 70% 30%;
-    }
-    .main{
-        box-shadow: 1px 2px 5px black;
     }
     section .article{
         grid-template-columns: 1fr 1fr;
@@ -144,14 +142,14 @@ div .contents{
 
 /* desktop (769px ~ ) 481px 이상에 적용 + 768px 이상에 추가적으로 적용 (cascading) */
 @media only screen and (min-width: 768px){
-   div .contents{
+   main{
        grid-gap:1em;
    }
 }
 
 /* 1000px 이하에서 aside가 아래로 + aside 내에서 column 2개로 변환 */
 @media screen and (max-width:1000px){
-    div .contents{
+    main{
         grid-template-columns: 1fr;
     }
     aside{

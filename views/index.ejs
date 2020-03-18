@@ -5,97 +5,106 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body class="fade-in">
-    <div class="container">
-        <!-- header -->
-        <header>
-           <%- include ('partials/header') %>
-        </header>
+    <!-- header -->
+    <header>
+        <%- include ('partials/header') %>
+    </header>
 
-        <div class="contents">
-            <!-- main section -->
-            <section class="main">
-                <!-- articles -->
-                <div class="article">
-                    <div>
-                        <h1>first article</h1>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
-                        </p>
-                    </div>
-                    <div>
-                        <h1>first article</h1>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
-                        </p>
-                    </div>
-                    <div>
-                        <h1>first article</h1>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
-                        </p>
-                    </div>
-                    <div>
-                        <h1>first article</h1>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
-                        </p>
-                    </div>
-                    <div>
-                        <h1>first article</h1>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
-                        </p>
-                    </div>
-                    <div>
-                        <h1>first article</h1>
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- drawings -->
-                <div class="drawing">
-                    <% imgs.forEach(img => { %>
-                        <div>
-                            <img src="imgs/music/<%= img.id %>.jpg" alt="<%= img.id %> ">
-                        </div>
-                    <% }) %>
-                </div>
-
-            </section>
-    
-            <!-- side section -->
-            <aside>
-                <div class="contact-info">
-                    <b>CONTACT</b>
+    <main>
+        <!-- main section -->
+        <section>
+            <!-- articles -->
+            <div class="article">
+                <div>
+                    <h1>first article</h1>
                     <p>
-                        이동규 / Justin Lee
-                        <br>
-                        nninnnin7@gmail.com
-                        <br>
-                        justindglee.com
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
                     </p>
-                    <br>
                 </div>
-
-                <div class="insta-photo">
-                    <b>INSTAGRAM</b>
-                    
-                    
-                    <div id="instagram-embed">
-                    <img alt="instagram-image" id="img1">
+                <div>
+                    <h1>first article</h1>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
+                    </p>
+                </div>
+                <div>
+                    <h1>first article</h1>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
+                    </p>
+                </div>
+                <div>
+                    <h1>first article</h1>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
+                    </p>
+                </div>
+                <div>
+                    <h1>first article</h1>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
+                    </p>
+                </div>
+                <div>
+                    <h1>first article</h1>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita rem itaque inventore vero sed, deleniti corrupti dolore. Quae libero dolore ducimus est soluta officiis, voluptate neque quidem, nulla quod nemo autem culpa sequi! Dolores deserunt placeat quasi? Ipsam mollitia saepe voluptatibus veniam maiores excepturi, pariatur quia esse atque minus dolorem, assumenda repellendus aperiam ab labore quisquam cumque, debitis quos iusto! Assumenda beatae incidunt at nemo, debitis totam ad quaerat esse quos expedita dignissimos soluta repellat ex omnis velit nihil tempora laboriosam autem magni enim facere eligendi, ipsa, ducimus dolorum. Doloremque exercitationem itaque nam obcaecati quam quod quibusdam tempore asperiores vel.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- drawings -->
+            <div class="drawing">
+                <% imgs.forEach(img => { %>
+                    <div>
+                        <img src="imgs/music/<%= img.id %>.jpg" alt="<%= img.id %> ">
                     </div>
-                </div>
-            </aside>
-        </div>
+                <% }) %>
+            </div>
 
+        </section>
+
+        <!-- side section -->
+        <aside>
+            <div class="contact-info">
+                <b>CONTACT</b>
+                <p>
+                    이동규 / Justin Lee
+                    <br>
+                    nninnnin7@gmail.com
+                    <br>
+                    justindglee.com
+                </p>
+                <br>
+            </div>
+
+            <div class="insta-photo">
+                <b>INSTAGRAM</b>
+                
+                
+                <div id="instagram-embed">
+                <img alt="instagram-image" id="img1">
+                </div>
+            </div>
+        </aside>
+    </main>
+
+<<<<<<< HEAD
         <!-- footer -->
         <footer>
             <%- include ('partials/footer')  %>
         </footer>
         <i class="fas fa-chevron-circle-up fa-2x" id="home"></i>
     </div>
+=======
+    <!-- footer -->
+    <footer>
+        Justin's blog&copy;
+        <br>
+        <span id="since">2020 ~</span>
+    </footer>
+    <i class="fas fa-chevron-circle-up fa-2x" id="home"></i>
+>>>>>>> 723d8fc7cb1562210ce2cfe2f3c2b3174a5915c4
 
     <!-- common.js -->
     <script src="../js/common.js"></script>
