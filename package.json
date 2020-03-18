@@ -23,6 +23,7 @@
     "express": "^4.17.1",
     "express-partials": "^0.3.0",
     "install": "^0.13.0",
+    "mongoose": "^5.9.4",
     "npm": "^6.14.2"
   },
   "devDependencies": {

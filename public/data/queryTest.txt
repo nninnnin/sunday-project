@@ -1,0 +1,71 @@
+db.posts.insertMany([
+    {
+        id:1
+        title: 'Akira',
+        body: "아키라는 2020년의 네오도쿄를 배경으로 한다",
+        category:'News',
+        likes: 4,
+        tags: ['news','events'],
+        user:{
+            name:'John Doe',
+            status: 'author'
+            },
+        date: Date()
+    },
+    {
+        title: 'Post Three',
+        body: 'Body of post three',
+        category:'News',
+        likes: 4,
+        tags: ['news','events'],
+        user:{
+            name:'John Doe',
+            status: 'author'
+            },
+        date: Date()
+    }
+])
+
+
+
+db.articles.findAndModify({
+    query: {},
+    sort: {$natural: -1},
+    update: {$set:{newSet:'from me'}}
+})
+
+
+db.articles.update({title:"Post Four"},{
+        title:"Post Four",
+        body:"sory sory ggonedaedule hutsory",
+        date:Date()
+    },
+    {
+        upsert:true
+    }
+)
+
+
+db.articles.update({title:"Post Four"},
+    {
+        $set:{
+            comments:[
+                {
+                    user:"Justin",
+                    body:"We were young. but we are not young. this is life.",
+                    date:Date()
+                },
+                {
+                    user:"Diana",
+                    body:"My hair is my beauty precious",
+                    date:Date()
+                }
+            ]
+        }
+    }
+)
+
+db.articles.findAndModify({
+    query:{},
+    update:{},
+})

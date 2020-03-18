@@ -3,6 +3,7 @@ const router = express.Router();
 
 const posts = require('../public/data/diary.json');
 
+
 // home
 router.get('/',(req,res)=>{
     res.render('index',{
