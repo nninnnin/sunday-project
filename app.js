@@ -16,11 +16,7 @@ livereloadServer.server.once("connection",()=>{
     },50);
 });
 
-<<<<<<< HEAD
 // import router
-=======
-// connect router
->>>>>>> 723d8fc7cb1562210ce2cfe2f3c2b3174a5915c4
 const indexRouter = require('./routes/router');
 
 
