@@ -1,5 +1,9 @@
+// ENV
+require('dotenv').config();
+
+// DEPENDENCIES
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser') // bundled back with Express after version 4.16.0
 const path = require('path');
 const partials = require('express-partials');
 const mongoose = require('mongoose');
@@ -44,6 +48,7 @@ app.use(partials());
 app.engine('html', require('ejs').renderFile);
 // use router
 app.use('/', indexRouter);
+
 
 // Nodejs의 native Promise 사용 (mongoose의 mPromise가 deprecated)
 mongoose.Promise = global.Promise;

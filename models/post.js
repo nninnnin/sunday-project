@@ -23,4 +23,4 @@ const postSchema = new mongoose.Schema(
 );
 
 // Create Model & Export
-module.exports = mongoose.model('Post',postSchema);
+module.exports = mongoose.model('Post',postSchema); // Post 라는 colletion 에 위에 작성한 postSchema를 연결한다
