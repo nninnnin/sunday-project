@@ -1,8 +1,13 @@
+// DEPENDENCIES
 const express = require('express');
 const bodyParser = require('body-parser')
 const path = require('path');
 const partials = require('express-partials');
 const mongoose = require('mongoose');
+
+// import router
+const indexRouter = require('./routes/index');
+const guestRouter = require('./routes/guest');
 
 // setting live-reload to refresh browser rendering when frontend code is changed
 const livereload = require('livereload');
@@ -15,13 +20,6 @@ livereloadServer.server.once("connection",()=>{
         livereloadServer.refresh("/");
     },50);
 });
-
-<<<<<<< HEAD
-// import router
-=======
-// connect router
->>>>>>> 723d8fc7cb1562210ce2cfe2f3c2b3174a5915c4
-const indexRouter = require('./routes/router');
 
 
 // 비동기 + module 활용의 예시
@@ -48,6 +46,7 @@ app.use(partials());
 app.engine('html', require('ejs').renderFile);
 // use router
 app.use('/', indexRouter);
+app.use('/visitor', guestRouter);
 
 // Nodejs의 native Promise 사용 (mongoose의 mPromise가 deprecated)
 mongoose.Promise = global.Promise;
@@ -92,4 +91,3 @@ http.createServer((req,res)=>{
 // let buf = Buffer.from('abc');
 // buf = Buffer.alloc(10);
 // console.log(buf)
-
