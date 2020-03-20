@@ -3,10 +3,14 @@ require('dotenv').config();
 
 // DEPENDENCIES
 const express = require('express');
-const bodyParser = require('body-parser') // bundled back with Express after version 4.16.0
+// const bodyParser = require('body-parser') // bundled back with Express after version 4.16.0
 const path = require('path');
 const partials = require('express-partials');
 const mongoose = require('mongoose');
+
+// import router
+const indexRouter = require('./routes/index');
+const visitorRouter = require('./routes/visitor');
 
 // setting live-reload to refresh browser rendering when frontend code is changed
 const livereload = require('livereload');
@@ -19,9 +23,6 @@ livereloadServer.server.once("connection",()=>{
         livereloadServer.refresh("/");
     },50);
 });
-
-// import router
-const indexRouter = require('./routes/router');
 
 
 // 비동기 + module 활용의 예시
@@ -46,8 +47,16 @@ app.set('view engine','ejs');
 app.use(partials());
 // ejs can rendering HTML file
 app.engine('html', require('ejs').renderFile);
+
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: false }));
+// parse application/json
+app.use(express.json());
+
+
 // use router
 app.use('/', indexRouter);
+app.use('/visitor', visitorRouter);
 
 
 // Nodejs의 native Promise 사용 (mongoose의 mPromise가 deprecated)
@@ -93,4 +102,3 @@ http.createServer((req,res)=>{
 // let buf = Buffer.from('abc');
 // buf = Buffer.alloc(10);
 // console.log(buf)
-
