@@ -26,7 +26,7 @@
             <section>
                 <h2>한마디 부탁드려요 :)</h2>
                 <form action="/visitor" method="post" id="postForm">
-                    <textarea name="content" id="postTxt" required></textarea>
+                    <textarea name="content" id="postTxt" required autofocus="autofocus"></textarea>
                     <button type="submit">POST!</button>
                 </form>
             </section>
@@ -38,6 +38,7 @@
                         <h3><%= index + 1 %>등 </h3>
                         <p><%= guestPost.content %> </p>
                         <a href="visitor/<%= guestPost._id %>/delete"><button>삭제하기</button></a>
+                        <a href="visitor/<%= guestPost._id %>" id="updateBtn"><button>수정하기</button></a>
                     </div>
                 <% } %> 
             </section>
@@ -61,6 +62,29 @@
                 postForm.submit();
             }
         })
+
+        // HTTP request with PUT method using fetchAPI to update the post
+        const updateBtn = document.querySelectorAll('#updateBtn');
+        updateBtn.forEach((btn)=>{
+            btn.addEventListener('click',(e)=>{
+                e.preventDefault();
+                const reqdata = {
+                    content: '변경 테스트'
+                }
+                const url = e.target.parentElement.href;
+
+                const postId = url.split('/')[4]
+
+                fetch(`/visitor/${postId}`,{
+                    method:'PUT',
+                    body: reqdata
+                }).then((res)=>{
+                    res.json()
+                }).then((data)=>{
+                    alert(data)
+                })
+            })
+        });
     </script>
 </body>
 </html>
