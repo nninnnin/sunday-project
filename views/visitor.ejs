@@ -13,15 +13,19 @@
     <!-- header -->
     <header>
         <%- include ('partials/header') %>
+        <link rel="stylesheet" href="css/visitor.css">
     </header>
 
     <!-- main -->
     <main>
         <!-- main section -->
         <div class="main">
+            <!-- write new  -->
             <h1>방명록</h1>
             <form action="/visitor" method="post">
                 <h2>방명록을 작성해주세요</h2>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <br>
                 <button type="submit">POST!</button>
             </form>
         </div>
