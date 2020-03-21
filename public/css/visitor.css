@@ -17,3 +17,10 @@ form > button{
     font-family: 'Courier New', Courier, monospace;
     padding:1em;
 }
+.guestPost{
+    overflow:hidden; /* added to contain the buttons inside of the div */
+}
+
+.guestPost > a{
+    float:right;
+}

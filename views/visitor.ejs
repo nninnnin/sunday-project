@@ -34,9 +34,10 @@
             <!-- get guest posts -->
             <section>
                 <% for ([index, guestPost] of guestPosts.entries()){ %> 
-                    <div>
+                    <div class="guestPost">
                         <h3><%= index + 1 %>등 </h3>
                         <p><%= guestPost.content %> </p>
+                        <a href=""><button>삭제하기</button></a>
                     </div>
                 <% } %> 
             </section>

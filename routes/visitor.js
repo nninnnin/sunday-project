@@ -41,5 +41,9 @@ router.get('/',(req,res)=>{
 // Update guestpost
 
 // Delete guestpost
+router.delete('/:postId',(req,res,next)=>{
+    const id = req.params.postId;
+    Guestpost.remove({ _id: id })
+});
 
 module.exports = router;
