@@ -25,8 +25,8 @@
             <!-- guest post form -->
             <section>
                 <h2>한마디 부탁드려요 :)</h2>
-                <form action="/visitor" method="post">
-                    <textarea name="content" id="" required></textarea>
+                <form action="/visitor" method="post" id="postForm">
+                    <textarea name="content" id="postTxt" required></textarea>
                     <button type="submit">POST!</button>
                 </form>
             </section>
@@ -37,7 +37,7 @@
                     <div class="guestPost">
                         <h3><%= index + 1 %>등 </h3>
                         <p><%= guestPost.content %> </p>
-                        <a href=""><button>삭제하기</button></a>
+                        <a href="visitor/<%= guestPost._id %>/delete"><button>삭제하기</button></a>
                     </div>
                 <% } %> 
             </section>
@@ -52,5 +52,15 @@
     <i class="fas fa-chevron-circle-up fa-2x" id="home"></i>
 
     <script src="../js/common.js"></script>
+    <script>
+        // textarea에서 Enter 키를 누를 때 Form을 제출하도록
+        const postTextArea = document.querySelector('#postTxt');
+        postTextArea.addEventListener('keypress',(e)=>{
+            if(e.key === 'Enter'){
+                const postForm = document.querySelector('#postForm');
+                postForm.submit();
+            }
+        })
+    </script>
 </body>
 </html>
