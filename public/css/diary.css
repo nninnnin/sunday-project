@@ -2,7 +2,6 @@ main{
     color:white;
     background-color: black;
     box-shadow: 1px 1px 3px black;
-    padding-top:2em;
 }
 
 section > div:nth-child(even) > div{
@@ -26,7 +25,9 @@ section > div:nth-child(even) > div{
         "img desc";
     grid-gap:1em;
 
-    padding: 0 2%;
+    padding: 2%;
+    border-top:1px white solid;
+    border-bottom:1px white solid;
 }
 
 img { /* 원리 알기 */

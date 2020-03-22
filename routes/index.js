@@ -44,5 +44,4 @@ router.get('/diary/:postId',(req,res)=>{
     res.render('post');
 });
 
-
 module.exports = router;

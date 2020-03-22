@@ -1,13 +1,16 @@
+// ENV
+require('dotenv').config();
+
 // DEPENDENCIES
 const express = require('express');
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser') // bundled back with Express after version 4.16.0
 const path = require('path');
 const partials = require('express-partials');
 const mongoose = require('mongoose');
 
 // import router
 const indexRouter = require('./routes/index');
-const guestRouter = require('./routes/guest');
+const visitorRouter = require('./routes/visitor');
 
 // setting live-reload to refresh browser rendering when frontend code is changed
 const livereload = require('livereload');
@@ -44,9 +47,17 @@ app.set('view engine','ejs');
 app.use(partials());
 // ejs can rendering HTML file
 app.engine('html', require('ejs').renderFile);
+
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: false }));
+// parse application/json
+app.use(express.json());
+
+
 // use router
 app.use('/', indexRouter);
-app.use('/visitor', guestRouter);
+app.use('/visitor', visitorRouter);
+
 
 // Nodejs의 native Promise 사용 (mongoose의 mPromise가 deprecated)
 mongoose.Promise = global.Promise;

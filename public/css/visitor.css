@@ -1,3 +1,26 @@
 main{
-    background-color: green;
+    padding: 1em;
+}
+form{
+    display:flex;
+}
+form > textarea{
+    width:90%;
+    min-height:15vh;
+}
+form > textarea:invalid:required{
+    border:green 3px dashed;
+}
+form > button{
+    background-color: black;
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    padding:1em;
+}
+.guestPost{
+    overflow:hidden; /* added to contain the buttons inside of the div */
+}
+
+.guestPost > a{
+    float:right;
 }
