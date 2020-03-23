@@ -1,6 +1,6 @@
 const express = require('express');
-const router = express.Router();
 const posts = require('../public/data/diary.json');
+const router = express.Router();
 
 // home
 router.get('/',(req,res)=>{

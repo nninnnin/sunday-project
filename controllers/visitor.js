@@ -26,9 +26,10 @@ visitorController.createPost = (req,res,next)=>{
 
 visitorController.readPost = (req,res)=>{
     Guestpost.find()
+        .sort({$natural:-1})
         .exec() // mongoose 4버전부터는 생략 가능 (출처 zerocho)
         .then(docs=>{
-            console.log(docs);
+            // console.log(docs);
             const guestPosts = docs;
             res.render('visitor',{
                 guestPosts:guestPosts
@@ -40,19 +41,34 @@ visitorController.readPost = (req,res)=>{
 };
 
 visitorController.updatePost = (req,res,next)=>{
-    // const content = req.body.content;
+    console.log(req.body);
+    console.log(req.body.content);
     const id = req.params.postId;
-    Guestpost.findOneAndUpdate(
-        { _id : id }, // filter
-        { $set : { content: '업데트' } } //update
-    )   
-    .then(result=>{
-        console.log(result);
-        // update 결과를 다시 클라이언트로 보내주자 
-        res.send(result);
-    }) 
-    .catch(err=>console.log(err));
-};
+    const content = req.body.content;
+
+    if(mongoose.Types.ObjectId.isValid(id)){ // id 유효성 검사
+        const id = req.params.postId;
+
+        Guestpost.findByIdAndUpdate(
+            id,
+            { $set : { content: content } },
+            { new : true }
+        )
+        .then((result)=>{
+            if(result) {
+                console.log(result)
+                res.send(result);
+            } else {
+                console.log('그런 유저는 없어요!');
+            }
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    } else {
+        console.log('적절치 않은 id 형식입니다');
+    }
+}
 
 visitorController.deletePost = (req,res,next)=>{
     const id = req.params.postId;

@@ -19,8 +19,13 @@ form > button{
 }
 .guestPost{
     overflow:hidden; /* added to contain the buttons inside of the div */
+    transition:0.5s;
 }
 
 .guestPost > a{
     float:right;
+}
+
+.modifying{
+    background-color: black;
 }

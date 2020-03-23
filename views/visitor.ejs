@@ -36,7 +36,7 @@
             <section>
                 <% for ([index, guestPost] of guestPosts.entries()){ %> 
                     <div class="guestPost">
-                        <h3><%= index + 1 %>등 </h3>
+                        <h3><%= guestPosts.length - index %>번 글</h3>
                         <p><%= guestPost.content %> </p>
                         <a href="visitor/<%= guestPost._id %>/delete"><button>삭제하기</button></a>
                         <a href="visitor/<%= guestPost._id %>" id="updateBtn"><button>수정하기</button></a>
@@ -69,8 +69,9 @@
         updateBtn.forEach((btn)=>{
             btn.addEventListener('click',(e)=>{
                 e.preventDefault();
+
                 const reqdata = {
-                    content: '변경 테스트'
+                    content: postTextArea.value
                 }
                 const url = e.target.parentElement.href;
 
@@ -78,11 +79,15 @@
 
                 fetch(`/visitor/${postId}`,{
                     method:'PUT',
-                    body: reqdata
+                    headers: {
+                        'Content-Type': 'application/json',
+                      },
+                    body: JSON.stringify(reqdata)
                 }).then((res)=>{
-                    res.json()
-                }).then((data)=>{
-                    alert(data)
+                    console.log(`유저를 찾고 업데이트에 성공했습니다 status code = ${res.status}`);
+                    e.target.parentElement.parentElement.children[1].innerText = reqdata.content;
+                }).catch((err)=>{
+                    console.log(err);
                 })
             })
         });
