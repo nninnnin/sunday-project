@@ -125,7 +125,7 @@ main{
 
     /* font */
     font-family: 'Noto Sans KR', sans-serif;
-    font-size:13px; /* 기본사이즈! */
+    font-size:0.7em; /* 기본사이즈! */
 
     /* 기본 line height! */
     line-height:2em;
