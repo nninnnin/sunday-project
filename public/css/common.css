@@ -189,8 +189,8 @@ footer{
         font-size:0.8em;
     }
 
-    #since{
-        display:none;
+    footer > span{
+        font-weight: 800;
     }
 }
 

@@ -51,12 +51,12 @@ visitorController.updatePost = (req,res,next)=>{
 
         Guestpost.findByIdAndUpdate(
             id,
-            { $set : { content: content } },
+            { $set : { content: content , published:new Date(), updated:true} },
             { new : true }
         )
         .then((result)=>{
             if(result) {
-                console.log(result)
+                console.log(result);
                 res.send(result);
             } else {
                 console.log('그런 유저는 없어요!');

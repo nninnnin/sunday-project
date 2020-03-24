@@ -11,6 +11,9 @@ const guestpostSchema = new mongoose.Schema(
         published:{
             type:Date,
             default:Date.now
+        },
+        updated:{
+            type:Boolean
         }
     },
     {   

@@ -27,6 +27,14 @@ main{
     float:right;
 }
 
-.modifying{
-    background-color: black;
+.published{
+    font-size:0.75em;
+    color:rgb(105, 102, 102);
+}
+
+@media only screen and (min-width:768px){
+    main{
+        max-width:60%;
+        min-width:700px;
+    }
 }

@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 const postSchema = new mongoose.Schema(
     {
         postId:mongoose.Types.ObjectId,
+        title:{
+            type:String,
+            required:true
+        },
         content:{
             type:String,
             required:true
