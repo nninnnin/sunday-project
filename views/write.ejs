@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('partials/head') %>
+    <link rel="stylesheet" href="/css/write.css">
+</head>
+<body class="fade-in">
+    <!-- header -->
+    <header>
+        <%- include ('partials/header') %>
+    </header>
+
+
+    <!-- main -->
+    <main>
+        <h1>Writer's block</h1>
+        <div>
+            <form action="" method="post">
+                <label for="title">제목</label>
+                <br>
+                <input type="text">
+                <br>
+                <label for="content"">내용</label>
+                <br>
+                <textarea name="content" id=""></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <%- include ('partials/footer') %> 
+    </footer>
+
+    <script src="../libs/common.js"></script>
+</body>
+</html>

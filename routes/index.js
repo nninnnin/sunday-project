@@ -34,14 +34,21 @@ router.get('/gallery',(req,res)=>{
     res.render('gallery.ejs');
 });
 
-//diary
+// diary
 router.get('/diary',(req,res)=>{
     res.render('diary',{posts:posts});
 });
+
+router.get('/diary/write',(req,res)=>{
+    res.render('write');
+});
+
 router.get('/diary/:postId',(req,res)=>{
     const postId = req.params.postId
     res.locals.post = posts[postId-1];
     res.render('post');
 });
+
+
 
 module.exports = router;

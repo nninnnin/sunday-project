@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인페이지</title>
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/project.css">
 
     <!-- to use fontawesome -->
     <script src="https://kit.fontawesome.com/58673910ce.js" crossorigin="anonymous"></script>
@@ -17,10 +18,11 @@
 
     <!-- main -->
     <main>
-        <!-- main section -->
-        <section class="main">
-        <h1>프로젝트</h1>
-        </section>
+        <!-- <h1>프로젝트</h1> -->
+        <div>
+            <canvas width=500 height=300 id="myCanvas">
+            </canvas>
+        </div>
     </main>
 
     <!-- footer -->
@@ -28,8 +30,7 @@
         <%- include ('partials/footer')  -%> 
     </footer>
 
-    <i class="fas fa-chevron-circle-up fa-2x" id="home"></i>
-
-    <script src="../js/common.js"></script>
+    <script src="../libs/common.js"></script>
+    <script src="../libs/project.js"></script>
 </body>
 </html>

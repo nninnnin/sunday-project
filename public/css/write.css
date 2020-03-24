@@ -1,0 +1,27 @@
+main{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width:50%;
+    margin:0 auto;
+}
+
+
+form{
+    padding:1em;
+    overflow: hidden;
+}
+label{
+    font-weight: 800;
+}
+input, textarea{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:red;
+    width:100%;
+}
+textarea{
+    height:50vh;
+}
+button{
+    background-color: black;
+    color: white;
+    float: right;
+}

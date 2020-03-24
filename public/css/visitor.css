@@ -1,17 +1,18 @@
 main{
     padding: 1em;
 }
-form{
+
+#postForm{
     display:flex;
 }
-form > textarea{
+#postForm > textarea{
     width:90%;
     min-height:15vh;
 }
-form > textarea:invalid:required{
+#postForm > textarea:invalid:required{
     border:green 3px dashed;
 }
-form > button{
+#postform > button{
     background-color: black;
     color:white;
     font-family: 'Courier New', Courier, monospace;

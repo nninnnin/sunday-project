@@ -25,11 +25,6 @@ livereloadServer.server.once("connection",()=>{
 });
 
 
-// 비동기 + module 활용의 예시
-// const timeout = require('./timeout.js');
-// timeout.myTimeOut();
-
-
 // Create server
 const app = express();
 
