@@ -3,10 +3,10 @@ require('dotenv').config();
 
 // DEPENDENCIES
 const express = require('express');
-// const bodyParser = require('body-parser') // bundled back with Express after version 4.16.0
 const path = require('path');
 const partials = require('express-partials');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 
 // import routers
 const indexRouter = require('./routes/index');
@@ -28,6 +28,8 @@ livereloadServer.server.once("connection",()=>{
 
 // Create server
 const app = express();
+
+app.use(methodOverride('_method'));
 
 // Connect server with  live reload
 app.use(connectLivereload());

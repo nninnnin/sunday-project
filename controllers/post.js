@@ -61,6 +61,7 @@ PostController.getPost = (req,res)=>{
             console.log(err)
         });
 }
+
 PostController.updatePost = (req,res)=>{
     const id = req.params.postId;
     const {title, content} = req.body;
@@ -81,11 +82,13 @@ PostController.updatePost = (req,res)=>{
         })
         .catch(err=>console.log(err));
 }
+
 PostController.deletePost = (req,res)=>{
-    const id = req.body.postId
-    Post.findByIdAndDelete({ id })
+    const id = req.params.postId
+    Post.findOneAndDelete({ _id:id })
         .then(result=>{
-            console.log(result)
+            console.log(result);
+            res.redirect('/diary');
         })
         .catch(err=>{
             console.log(err)

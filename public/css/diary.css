@@ -29,6 +29,10 @@ section > div:nth-child(even) > div{
     border-top:1px white solid;
     border-bottom:1px white solid;
 }
+.post p{
+    max-height:170px;
+    overflow: hidden;
+}
 
 img { /* 원리 알기 */
     width: 100%;
@@ -69,10 +73,16 @@ hr{
     }
     .post p{
         max-height:100px;
-        overflow: hidden;
     }
     h2{
         margin-top:0.1em;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    main{
+        max-width:60%;
+        min-width:730px;
     }
 }
 

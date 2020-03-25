@@ -11,17 +11,20 @@ router.post('/',postController.createPost);
 router.get('/',postController.getPosts);
 
 router.get('/write',(req,res)=>{
+    res.locals.post = null;
     res.render('write');
 });
-router.get('/:postId',postController.getPost);
+
 router.get('/update/:postId',postController.getPost);
+
+router.get('/:postId',postController.getPost);
 
 
 // Update
-router.put('/write/:postId',postController.updatePost);
+router.put('/update/:postId',postController.updatePost);
 
 // Delete
-router.delete('/delete/:postId',postController.deletePost);
+router.get('/delete/:postId',postController.deletePost);
 
 
 module.exports = router;

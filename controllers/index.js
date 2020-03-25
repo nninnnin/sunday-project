@@ -6,7 +6,7 @@ const indexController = {};
 indexController.getPosts = (req,res,next) => {
     Post.find()
         .sort({ $natural : -1})
-        .limit(6)
+        .limit(4)
         .exec()
         .then(result=>{
             console.log(result);

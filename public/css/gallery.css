@@ -70,6 +70,10 @@ img:hover{
     }
 }
 @media only screen and (min-width:768px){
+    main{
+        max-width:60%;
+        min-width:730px;
+    }
     .pictures{
         grid-template-columns: repeat(3,1fr);
     }
