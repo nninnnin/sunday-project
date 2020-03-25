@@ -1,5 +1,4 @@
 // VISITOR CONTROLLER
-
 const mongoose = require('mongoose');
 const Guestpost = require('../models/guestpost');
 // Make Mongoose use `findOneAndUpdate()`. Note that this option is `true`
@@ -14,7 +13,6 @@ visitorController.createPost = (req,res,next)=>{
     let NewGuestPost = new Guestpost({
         _id: new mongoose.Types.ObjectId(),
         content: req.body.content,
-        published: new Date()
     });
 
     NewGuestPost.save()
@@ -51,7 +49,7 @@ visitorController.updatePost = (req,res,next)=>{
 
         Guestpost.findByIdAndUpdate(
             id,
-            { $set : { content: content , published:new Date(), updated:true} },
+            { $set : { content: content , updated_At:new Date(), updated:true} },
             { new : true }
         )
         .then((result)=>{

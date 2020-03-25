@@ -8,8 +8,9 @@ const path = require('path');
 const partials = require('express-partials');
 const mongoose = require('mongoose');
 
-// import router
+// import routers
 const indexRouter = require('./routes/index');
+const diaryRouter = require('./routes/diary');
 const visitorRouter = require('./routes/visitor');
 
 // setting live-reload to refresh browser rendering when frontend code is changed
@@ -51,6 +52,7 @@ app.use(express.json());
 
 // use router
 app.use('/', indexRouter);
+app.use('/diary', diaryRouter);
 app.use('/visitor', visitorRouter);
 
 

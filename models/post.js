@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // Define Schemes
 const postSchema = new mongoose.Schema(
     {
-        postId:mongoose.Types.ObjectId,
+        _id:mongoose.Types.ObjectId,
         title:{
             type:String,
             required:true
@@ -12,13 +12,12 @@ const postSchema = new mongoose.Schema(
             type:String,
             required:true
         },
-        completed:{
-            type:String,
-            default:false
+        updated_At:{
+            type:Date
+        },
+        updated:{
+            type:Boolean
         }
-    },
-    {
-        timestamps:true    
     }
 );
 

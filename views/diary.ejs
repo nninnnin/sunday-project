@@ -15,20 +15,20 @@
         <!-- section -->
         <section>
             <!-- posts -->
-            <% for(let post of posts ) { %>
+            <% for( [index, post] of posts.entries() ) { %>
                 <div>
                     <div class="post">
                         <div class="img">
-                            <img src="imgs/post/<%= post.id %>.jpg" alt="">
+                            <!-- <img src="imgs/post/<%= index %>.jpg" alt=""> -->
                         </div>
                         <div class="description">
                             <h2><%= post.title %></h2>
                             <p><%= post.content %></p>
                             <span id="more">
-                                <a href="/diary/<%= post.id %>">see more</a>
+                                <a href="/diary/<%= post._id %>">see more</a>
                             </span>
                             <span id="date">
-                                2020-02-25
+                                <%= (post.updated) ? `Updated at ${post.update_At}` : `Posted at ${post._id.getTimestamp().toLocaleString()}` %>
                             </span>
                         </div>
                     </div>

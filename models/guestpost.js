@@ -8,7 +8,7 @@ const guestpostSchema = new mongoose.Schema(
             type:String,
             required:true
         },
-        published:{
+        updated_At:{
             type:Date,
             default:Date.now
         },

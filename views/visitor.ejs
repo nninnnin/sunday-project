@@ -40,8 +40,7 @@
                         <p>
                             <%= guestPost.content %> 
                             <br>
-                            <% const pub = guestPost.published %> 
-                            <span class="published"><%= `${(guestPost.updated)? 'updated' : 'posted'} at ${pub.toLocaleString()}` %></span>
+                            <span class="published"><%= `${(guestPost.updated)? 'updated' : 'posted'} at ${guestPost.updated_At.toLocaleString()}` %></span>
                         </p>
                         <a href="visitor/<%= guestPost._id %>/delete"><button>삭제하기</button></a>
                         <a href="visitor/<%= guestPost._id %>" id="updateBtn"><button>수정하기</button></a>

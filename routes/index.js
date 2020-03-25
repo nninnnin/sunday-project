@@ -1,23 +1,9 @@
 const express = require('express');
-const posts = require('../public/data/diary.json');
 const router = express.Router();
+const indexController = require('../controllers/index')
 
 // home
-router.get('/',(req,res)=>{
-    res.render('index',{
-        imgs:[
-            {
-                id:1,
-            },
-            {
-                id:2,
-            },
-            {
-                id:3,
-            }
-        ]
-    });
-});
+router.get('/', indexController.getPosts);
 
 // profile
 router.get('/profile',(req,res)=>{
@@ -33,22 +19,5 @@ router.get('/project',(req,res)=>{
 router.get('/gallery',(req,res)=>{
     res.render('gallery.ejs');
 });
-
-// diary
-router.get('/diary',(req,res)=>{
-    res.render('diary',{posts:posts});
-});
-
-router.get('/diary/write',(req,res)=>{
-    res.render('write');
-});
-
-router.get('/diary/:postId',(req,res)=>{
-    const postId = req.params.postId
-    res.locals.post = posts[postId-1];
-    res.render('post');
-});
-
-
 
 module.exports = router;

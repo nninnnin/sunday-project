@@ -188,10 +188,6 @@ footer{
         padding: 1.2em;
         font-size:0.8em;
     }
-
-    footer > span{
-        font-weight: 800;
-    }
 }
 
 /* tablet + desktop 481px ~ */

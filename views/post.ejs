@@ -18,10 +18,10 @@
                 <h1><%= post.title %> </h1>
             </header>
             <section>
-                <img src="/imgs/post/<%= post.id %>.jpg" alt="" width="60%">
+                <!-- <img src="/imgs/post/<%= post._id %>.jpg" alt="" width="60%"> -->
                 <br>
-                <p>
-                    <%= post.content %> 
+                    <% const linebreak = post.content.replace(/\n/g,'<br>') %>
+                    <%- linebreak %> 
                 </p>
             </section>
         </article>
