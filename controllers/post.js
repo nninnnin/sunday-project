@@ -31,7 +31,6 @@ PostController.getPosts = (req,res)=>{
         .sort({ $natural:-1 })
         .exec()
         .then((docs)=>{
-            console.log(docs);
             const posts = docs;
             res.render('diary',{posts:posts});
         })

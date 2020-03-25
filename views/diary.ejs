@@ -28,7 +28,7 @@
                                 <a href="/diary/<%= post._id %>">see more</a>
                             </span>
                             <span id="date">
-                                <%= (post.updated) ? `Updated at ${post.update_At}` : `Posted at ${post._id.getTimestamp().toLocaleString()}` %>
+                                <%= (post.updated) ? `Updated at ${post.updated_At.toLocaleString()}` : `Posted at ${post._id.getTimestamp().toLocaleString()}` %>
                             </span>
                         </div>
                     </div>
