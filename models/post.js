@@ -12,6 +12,10 @@ const postSchema = new mongoose.Schema(
             type:String,
             required:true
         },
+        postImage:{
+            data:Buffer,
+            contentType:String
+        },
         updated_At:{
             type:Date
         },

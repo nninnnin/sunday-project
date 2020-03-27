@@ -19,6 +19,11 @@
             </header>
             <section>
                 <!-- <img src="/imgs/post/<%= post._id %>.jpg" alt="" width="60%"> -->
+                <% if(post.postImage.data !== undefined){ %> 
+                    <img src="data:image/png;base64,<%= postImage %>" alt="" width="60%">
+                <% }else{ %> 
+                    <img src="https://pbs.twimg.com/profile_images/757974066011770880/ae2Eop2g.jpg" alt="">
+                <% } %> 
                 <br>
                     <% const linebreak = post.content.replace(/\n/g,'<br>') %>
                     <%- linebreak %> 

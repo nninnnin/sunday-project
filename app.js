@@ -8,6 +8,7 @@ const partials = require('express-partials');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 
+
 // import routers
 const indexRouter = require('./routes/index');
 const diaryRouter = require('./routes/diary');

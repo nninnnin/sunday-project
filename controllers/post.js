@@ -1,9 +1,10 @@
+const fs = require('fs');
+// use mongodb with mongoose
 const mongoose = require('mongoose');
 const Post = require('../models/post.js');
 
+
 const PostController = {};
-
-
 
 
 // Create
@@ -11,8 +12,17 @@ PostController.createPost = (req,res,next)=>{ // Next를 안쓰면..
     const newPost = new Post({
         _id : new mongoose.Types.ObjectId(),
         title:req.body.title,
-        content:req.body.content
+        content:req.body.content,
     });
+
+    if(req.file !== undefined){
+        console.log(req.file)
+        console.log(req.file.path)
+        newPost.postImage.data = fs.readFileSync(req.file.path);
+        newPost.postImage.contentType = 'image/png';
+    }
+
+
     
     newPost.save()
         .then((result)=>{
@@ -32,12 +42,14 @@ PostController.getPosts = (req,res)=>{
         .exec()
         .then((docs)=>{
             const posts = docs;
+            // console.log(posts[0].postImage=='{}')
             res.render('diary',{posts:posts});
         })
         .catch((err)=>{
-            console.log(err)
+            console.log(`Error occured ${err}`)
         });
 }
+
 PostController.getPost = (req,res)=>{
     const postId = req.params.postId
     Post.findById({
@@ -52,7 +64,11 @@ PostController.getPost = (req,res)=>{
                 res.render('write');
             }
             else{
+                console.log(post.postImage)
                 res.locals.post = post;
+                if(post.postImage.data !== undefined){
+                    res.locals.postImage = post.postImage.data.toString('base64');
+                }
                 res.render('post');
             }
         })

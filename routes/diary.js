@@ -2,9 +2,13 @@ const express = require('express');
 const router = express.Router();
 const postController = require('../controllers/post.js')
 
-// Create
+// for image upload use Multer
+const multer = require('multer');
+const upload = multer({ dest: 'upload/'});
 
-router.post('/',postController.createPost);
+
+// Create
+router.post('/',upload.single('postImage'),postController.createPost);
 
 
 // Read

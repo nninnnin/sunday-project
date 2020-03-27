@@ -16,12 +16,14 @@
         <h1>Writer's block</h1>
         <% if (post==null){ %>
         <div>
-            <form action="/diary" method="post">
+            <form action="/diary" method="post" enctype="multipart/form-data">
                 <label for="title">제목</label><br>
                 <input name="title" type="text"><br>
 
                 <label for="content">내용</label><br>
                 <textarea name="content" id=""></textarea><br>
+
+                <input type="file" name="postImage" id=""><br>
 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -34,6 +36,8 @@
     
                     <label for="content">내용</label><br>
                     <textarea name="content" id=""><%= post.content %></textarea><br>
+
+                    <input type="file" name="image" id=""><br>
 
                     <button type="submit" class="btn btn-primary" id="updateBtn">Submit</button>
                 </form>

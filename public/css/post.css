@@ -12,6 +12,12 @@ article{
 header,section{
     text-align:center;
 }
+
+img{
+    max-width:60%;
+}
+
+
 @media only screen and (max-width:480px){
     article{
         max-width:90%;
