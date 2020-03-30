@@ -45,7 +45,6 @@ if(window.location.pathname==="/index.html" || window.location.pathname === '/')
 // show up the homeBtn
 function popUpHomeBtn(){
     if(window.innerWidth<=600 && (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250)){
-        console.log('popup!');
         homeBtn.classList.add('appear');
     }else{
         homeBtn.classList.remove('appear');
@@ -62,23 +61,5 @@ homeBtn.addEventListener('click', ()=>{
 });
 
 window.onscroll = ()=>{
-    console.log('scrolllll');
     popUpHomeBtn();
 }
-
-// // like spa with ajax
-// async function goDiary(e){
-//     e.preventDefault();
-//     const mainSection = document.querySelector('.contents');
-    
-
-//     /* fetching data */
-//     const response = await fetch('../../data/test');
-//     const data = await response.text();
-
-//     mainSection.classList.remove('contents');
-//     mainSection.innerHTML=data;
-//     console.log(data);
-// }
-// const diaryLink = document.getElementById('diary');
-// diaryLink.addEventListener('click',goDiary);

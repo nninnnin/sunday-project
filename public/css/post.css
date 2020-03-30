@@ -1,3 +1,23 @@
+.left{
+    text-align: left;
+}
+.center{
+    text-align: center;
+}
+
+
+button{
+    background-color: navy;
+    color:white;
+
+    position:fixed;
+    bottom:10px;
+    left:10px;
+}
+#updateButton{
+    bottom:40px;
+}
+
 main{
     color:white;
     background-color: black;
@@ -13,10 +33,20 @@ header,section{
     text-align:center;
 }
 
-img{
-    max-width:60%;
+h1{
+    text-transform: uppercase;
+    font-size:3em;
 }
 
+img{
+    max-width:60%;
+    margin-bottom:1em;
+}
+
+p{
+    line-height:1.65em;
+    text-align:left;
+}
 
 @media only screen and (max-width:480px){
     article{

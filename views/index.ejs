@@ -16,18 +16,16 @@
             <!-- articles -->
             <div class="article">
                 <% for (post of posts){ %> 
-                    <div class="article-grid-item">
-                        <a href="/diary/<%= post._id %>">
-                            <div class="post">
-                                <h1>
-                                    <%= post.title %>
-                                </h1>
-                                <p>
-                                    <%= post.content %>
-                                </p>
-                            </div>
-                        </a>
-                    </div>
+                    <a href="/diary/<%= post._id %>">
+                        <div class="post">
+                            <h1>
+                                <%= post.title %>
+                            </h1>
+                            <p>
+                                <%= post.content %>
+                            </p>
+                        </div>
+                    </a>
                 <% } %> 
             </div>
             

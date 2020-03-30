@@ -13,11 +13,12 @@ PostController.createPost = (req,res,next)=>{ // Next를 안쓰면..
         _id : new mongoose.Types.ObjectId(),
         title:req.body.title,
         content:req.body.content,
+        aligned:req.body.aligned
     });
 
     if(req.file !== undefined){
-        console.log(req.file)
-        console.log(req.file.path)
+        console.log(req.file);
+        console.log(req.file.path);
         newPost.postImage.data = fs.readFileSync(req.file.path);
         newPost.postImage.contentType = 'image/png';
     }
@@ -79,13 +80,14 @@ PostController.getPost = (req,res)=>{
 
 PostController.updatePost = (req,res)=>{
     const id = req.params.postId;
-    const {title, content} = req.body;
+    const {title, content, aligned} = req.body;
     Post.findByIdAndUpdate(
         id,
         { 
             $set : {
                 title : title, 
                 content : content, 
+                aligned : aligned,
                 updated_At : new Date(),
                 updated : true
             }

@@ -18,26 +18,40 @@
         <div>
             <form action="/diary" method="post" enctype="multipart/form-data">
                 <label for="title">제목</label><br>
-                <input name="title" type="text"><br>
+                <input name="title" type="text" required><br>
 
                 <label for="content">내용</label><br>
-                <textarea name="content" id=""></textarea><br>
+                <div class="content">
+                    <div class="aligners">
+                        <label for="leftAlignBtn">왼쪽 정렬</label>
+                        <input type="radio" name="aligned" id="leftAlignBtn" value="left">
+                        <label for="rightAlignBtn">가운데 정렬</label>
+                        <input type="radio" name="aligned" id="rightAlignBtn" value="center">
+                    </div>
+                    <textarea name="content" id="content" required></textarea><br>
+                </div>
 
                 <input type="file" name="postImage" id=""><br>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
             </form>
         </div>
         <% } else{ %>
             <div>
                 <form action="/diary/update/<%=post._id%>?_method=PUT" method="post">
                     <label for="title">제목</label><br>
-                    <input name="title" type="text" value="<%= post.title %>"><br>
+                    <input name="title" type="text" value="<%= post.title %>" required><br>
     
-                    <label for="content">내용</label><br>
-                    <textarea name="content" id=""><%= post.content %></textarea><br>
-
-                    <input type="file" name="image" id=""><br>
+                    <label for="content">내용</label>
+                    <div class="content">
+                        <div class="aligners">
+                            <label for="leftAlignBtn">왼쪽 정렬</label>
+                            <input type="radio" name="aligned" id="leftAlignBtn" value="left">
+                            <label for="rightAlignBtn">가운데 정렬</label>
+                            <input type="radio" name="aligned" id="rightAlignBtn" value="center">
+                        </div>
+                        <textarea name="content" id="content" required><%= post.content %></textarea>
+                    </div>
 
                     <button type="submit" class="btn btn-primary" id="updateBtn">Submit</button>
                 </form>
@@ -50,6 +64,7 @@
         <%- include ('partials/footer') %> 
     </footer>
 
-    <script src="../libs/common.js"></script>
+    <script src="/libs/common.js"></script>
+    <script src="/libs/write.js"></script>
 </body>
 </html>
