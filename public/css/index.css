@@ -1,7 +1,4 @@
-.article a{
-    font-style: normal;
-    text-decoration: none;
-}
+
 
 
 /* main */
@@ -9,29 +6,40 @@ main{
     /* grid! */
     display:grid;
     max-width:800px;
+    font-family:'Poor Story', serif;
 }
-section{
-    background-color: black;
+section a{
+    color:var(--main-bg-color);
+    text-decoration: none;
 }
     /* grid container */
     .article{
         display:grid;
-        grid-gap:1em;
         line-height:2em;
+        background-color: rgb(216, 216, 216);
     }
         /* grid item */
         .article > a{
+            font-style: normal;
+            text-decoration: none;
+            text-align:center;
             max-height:20em;
             padding: 2em;
+            background-color: #fff;
         }
         .article > a:hover{
-            opacity: 0.5;
-            transition: 0.1s;
+            background-color:var(--main-bg-color);
+            color:white;
+            transition: 0.25s;
             cursor:pointer;
         }
         .article > a:active{
             opacity: 1;
             transition: 0.1s;
+        }
+        .article h1{
+            display:inline-block;
+            font-family: 'Gugi', cursive;
         }
         .article p{
             max-height:12em;
@@ -39,6 +47,7 @@ section{
         }
         .article span{
             float:right;
+            font-size:0.8em;
         }
 
     /* grid container */
@@ -67,6 +76,20 @@ section{
             display: block;
             object-fit: cover;
         }
+
+    .visitors{
+        background-color: var(--main-bg-color);
+    }
+    .visitors a:hover{
+        font-weight: 700;
+    }
+    .visitor{
+        padding:10px;
+        color:white;
+    }
+    .visitor #name{
+        font-weight:800;
+    }
         
     
     /* aside */
@@ -74,10 +97,11 @@ section{
         padding:1rem;
         background-color: white;
         line-height: 30px;
-        box-shadow: 1px 2px 5px black;
+        box-shadow: 2px 1px 4px rgb(145, 145, 145);
     }
 
         aside b{
+            font-family: 'Gugi', cursive;
             font-size:0.8rem;
         }
         aside div{ /* for all descendent divs */
@@ -153,16 +177,12 @@ section{
         grid-template-columns: 70% 30%;
     }
     section{
-        box-shadow: 1px 1px 3px black;
+        box-shadow: 1px 1px 4px rgb(145, 145, 145);
     }
 
     section .article{
         grid-template-columns: 1fr 1fr;
         grid-gap:1px;
-    }
-    .article > div{
-        color:white;
-        background-color: black;
     }
 }
 

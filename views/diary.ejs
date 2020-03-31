@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
    <%- include('partials/head') %>
-   <link rel="stylesheet" href="/css/diary.css">
+   <link rel="stylesheet" href="../css/diary.css">
 </head>
 <body class="fade-in">
     <!-- header -->
@@ -30,9 +30,7 @@
                         <div class="description">
                             <h2><%= post.title %></h2>
                             <p><%= post.content %></p>
-                            <span id="more">
-                                <a href="/diary/<%= post._id %>">see more</a>
-                            </span>
+                            <a id="more" href="/diary/<%= post._id %>">see more</a>
                             <span id="date">
                                 <%= (post.updated) ? `Updated at ${post.updated_At.toLocaleString()}` : `Posted at ${post._id.getTimestamp().toLocaleString()}` %>
                             </span>

@@ -32,11 +32,12 @@ const app = express();
 
 app.use(methodOverride('_method'));
 
+// Static File Service 
+app.use(express.static('public'));
+
 // Connect server with  live reload
 app.use(connectLivereload());
 
-// Static File Service 
-app.use(express.static('public'));
 
 // express server setting with app.set() method
 app.set('views',path.join(__dirname, 'views'));
@@ -75,16 +76,6 @@ app.listen(8000, function(){
     console.log("express server heard on 8000");
     console.log("let's go to http://localhost:8000");
 });
-
-
-// original nodejs bulit-in module을 활용한 http 서버
-const http = require('http');
-http.createServer((req,res)=>{
-    res.write('Hello World');
-    res.end();
-}).listen(8080,()=>{
-    console.log('server is turned on with nodejs in port 8080')
-})
 
 
 // test built in modules

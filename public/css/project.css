@@ -1,6 +1,7 @@
 main{
     margin:auto;
     text-align: center;
+    padding:1em;
 }
 canvas{
     border:black 1px solid;

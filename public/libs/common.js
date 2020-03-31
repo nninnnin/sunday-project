@@ -6,7 +6,7 @@ nav_items.forEach((nav_item)=>{
     });
 });
 
-// hamburger menu pop-up
+// Show pop up menu when clicking hamburger button
 const bars = document.getElementById('hamburger');
 const popup = document.getElementById('pop-up');
 bars.addEventListener('click',(e)=>{
@@ -18,8 +18,49 @@ bars.addEventListener('click',(e)=>{
     }
 });
 
+// 480px 이하 + 다운스크롤에서 네브바(.logo) fixed position으로
+function fixedNav(){
+    const navbar = document.getElementById('logobar');
+    const main = document.querySelector('main');
+    if(window.innerWidth <= 480 && (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50)){
+        navbar.classList.add('sticky');
+        main.classList.add('sticky-padding');
+    }else{
+        navbar.classList.remove('sticky');
+        main.classList.remove('sticky-padding');
+    }
+}
 
-// get a picture from instagram
+
+// show up the homeBtn
+function popUpHomeBtn(){
+    if(window.innerWidth<=480 && (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250)){
+        homeBtn.classList.add('appear');
+    }else{
+        homeBtn.classList.remove('appear');
+    }
+}
+
+
+// get the top of the page
+const homeBtn = document.getElementById('home');
+homeBtn.addEventListener('click', ()=>{
+    console.log('clicked!');
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
+
+window.onscroll = ()=>{
+    fixedNav();
+    popUpHomeBtn();
+}
+
+
+
+
+
+
+// Get a picture from instagram
 // Server side rendering으로 바꾸는 게 나을듯(사용자 경험상), ejs template에서 미리 만들어서 클라이언트로 보낼 수 있게 refactoring 할 것
 async function getPicture(imgId){
     const res = await fetch(`https://www.instagram.com/p/${imgId}/media`);
@@ -39,27 +80,4 @@ async function getPicture(imgId){
 if(window.location.pathname==="/index.html" || window.location.pathname === '/'){
     const imgId = 'B8tCX49plkG';
     getPicture(imgId);
-}
-
-
-// show up the homeBtn
-function popUpHomeBtn(){
-    if(window.innerWidth<=600 && (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250)){
-        homeBtn.classList.add('appear');
-    }else{
-        homeBtn.classList.remove('appear');
-    }
-}
-
-
-// get the top of the page
-const homeBtn = document.getElementById('home');
-homeBtn.addEventListener('click', ()=>{
-    console.log('clicked!');
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-});
-
-window.onscroll = ()=>{
-    popUpHomeBtn();
 }

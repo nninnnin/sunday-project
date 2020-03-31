@@ -21,21 +21,31 @@
                             <h1>
                                 <%= post.title %>
                             </h1>
-                            <p>
-                                <%= post.content %>
-                            </p>
+                            <% const time = post._id.getTimestamp() %>
+                            <br>
                         </div>
                     </a>
                 <% } %> 
             </div>
             
             <!-- drawings -->
-            <div class="drawing">
+            <!-- <div class="drawing">
                 <% imgs.forEach(img => { %>
                     <div>
                         <img src="imgs/music/<%= img.id %>.jpg" alt="<%= img.id %> ">
                     </div>
                 <% }) %>
+            </div> -->
+
+            <!-- newest visitors (최신 방명록) -->
+            <div class="visitors">
+                <% for ([index,visitor] of visitors.entries()) { %> 
+                <a href="/visitor#<%= index %>"><!-- 추후 해시 이용해서 해당 글 위치로 스크롤까지 -->
+                    <div class="visitor">
+                        <span id="name">NEW!</span> : <%= visitor.content %> 
+                    </div>
+                </a>
+                <% } %> 
             </div>
 
         </section>
@@ -44,14 +54,8 @@
         <aside>
             <div class="contact-info">
                 <b>CONTACT</b>
-                <p>
-                    이동규 / Justin Lee
-                    <br>
-                    nninnnin7@gmail.com
-                    <br>
-                    justindglee.com
-                </p>
                 <br>
+                nninnnin7@gmail.com
             </div>
 
             <div class="insta-photo">
@@ -75,13 +79,24 @@
     <!-- common.js -->
     <script src="../libs/common.js"></script>
 
-    <!-- only for index.html (for test) -->
-    <!-- <script>
-        const articles = document.getElementsByClassName('article')[0].children;
-        const first_article = articles[0];
-        const data = fetch('/data/test')
-            .then((res)=>{return res.text()})
-            .then((data)=>{first_article.innerHTML = data});
-    </script> -->
+    <script>
+        console.log('index')
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = (e)=>{
+        // readyState 가 4단계로서 통신이 완료된 단계이며
+            if(xhr.readyState !== XMLHttpRequest.DONE){
+                return
+            }   
+        // status가 200으로 통신이 성공적으로 이루어졌을 때
+            if(xhr.status === 200){
+                console.log(xhr);
+            } else{
+                console.log(`통신이 성공적으로 이루어지지 못했네요 status code = ${xhr.status} : ${xhr.statusText}`)
+            }
+        }
+        xhr.open('GET','/diary');
+        xhr.send();
+    </script>
+
 </body>
 </html>

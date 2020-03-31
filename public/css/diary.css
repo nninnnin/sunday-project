@@ -8,8 +8,8 @@
 }
 
 main{
-    color:white;
-    background-color: black;
+    color:black;
+    background-color: white;
     box-shadow: 1px 1px 3px black;
 }
 
@@ -29,7 +29,7 @@ section > div:nth-child(even) > div{
     padding: 2%;
     border-top:1px white solid;
     border-bottom:1px white solid;
-    height:250px;
+    height:280px;
 }
 .post p{
     max-height:170px;
@@ -43,7 +43,8 @@ section > div:nth-child(even) > div{
 }
 /* grid item 2 */
 .description{
-    grid-area:desc
+    grid-area:desc;
+    position:relative;
 }
 
 img { /* 원리 알기 */
@@ -55,7 +56,17 @@ img { /* 원리 알기 */
     position:absolute;
 }
 
-.description span, a{
+section span{
+    position:absolute;
+    bottom:0;
+    right:0;
+    color:grey;
+    font-size: smaller;
+}
+section a{
+    position:absolute;
+    bottom:0;
+    left:0;
     color:grey;
     font-size: smaller;
 }
