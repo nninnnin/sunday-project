@@ -10,7 +10,7 @@
 main{
     color:black;
     background-color: white;
-    box-shadow: 1px 1px 3px black;
+    box-shadow: 0.5px 1px 3px black;
     font-family:'Noto Sans KR'
 }
 

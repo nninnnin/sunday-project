@@ -33,8 +33,7 @@ section a{
             box-shadow: 1px 1px 4px rgb(223, 223, 223);
         }
         .article > a:hover{
-            background-color:black;
-            color:white;
+            box-shadow: 1px 1px 4px var(--main-bg-color);
             transition: 0.25s;
             cursor:pointer;
         }
@@ -44,6 +43,7 @@ section a{
         }
         .article h1{
             font-family: 'Gugi';
+            color:var(--main-bg-color);
             margin:0;
         }
         .article p{

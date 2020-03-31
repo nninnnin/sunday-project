@@ -61,9 +61,6 @@ img:hover{
     }
 }
 @media only screen and (min-width:481px){
-    main{
-        margin:0 auto;
-    }
     .pictures{
         grid-template-columns: repeat(2,1fr);
     }
@@ -74,6 +71,7 @@ img:hover{
 }
 @media only screen and (min-width:768px){
     main{
+        margin:1.5em auto;
         max-width:60%;
         min-width:730px;
     }
@@ -82,4 +80,8 @@ img:hover{
     }
 }
 
-
+@media only screen and (max-width:768px){
+    main{
+        margin:0 auto;
+    }
+}

@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 const guestpostSchema = new mongoose.Schema(
     {
         _id: mongoose.Types.ObjectId,
+        author:{
+            type:String,
+            default:'작성자'
+        },
         content:{
             type:String,
             required:true
