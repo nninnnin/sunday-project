@@ -20,7 +20,7 @@
             <section>
                 <!-- <img src="/imgs/post/<%= post._id %>.jpg" alt="" width="60%"> -->
                 <% if(post.postImage.data !== undefined){ %> 
-                    <img src="data:image/png;base64,<%= postImage %>" alt="" width="60%">
+                    <img src="data:image/png;base64,<%= postImage %>" alt="" width="100%">
                 <% } %>
                 <br>
                     <% if(post.aligned !== undefined && post.aligned !== null){ %>

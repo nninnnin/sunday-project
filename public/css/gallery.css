@@ -61,6 +61,9 @@ img:hover{
     }
 }
 @media only screen and (min-width:481px){
+    main{
+        margin:0 auto;
+    }
     .pictures{
         grid-template-columns: repeat(2,1fr);
     }

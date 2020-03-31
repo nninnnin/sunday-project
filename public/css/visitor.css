@@ -2,33 +2,72 @@ main{
     padding: 1em;
     font-family:'Poor Story', serif;
     color:black;
+    background-color: rgb(216, 209, 209);
+}
+
+.postForm{
+    border-top:black 1px solid;
+    border-bottom:black 1px solid;
+    padding:2em;
+    padding-bottom:3.5em;
+    background-color: aliceblue;
+    position:relative;
 }
 
 #postForm{
     display:flex;
+    background-color: #fff;
 }
 #postForm > textarea{
     width:90%;
     min-height:15vh;
-    border:black 2px solid;
+    resize:none;
 }
 #postForm > textarea:focus{
     outline:none;
     border:green 2px dashed;
 }
-#postForm button{
+.postForm button{
     background-color: black;
     color:white;
     font-family: 'Courier New', Courier, monospace;
-    padding:1em;
+    float:right;
+    position:absolute;
+    bottom:10px;
+    right:10px;
 }
 .guestPost{
     overflow:hidden; /* added to contain the buttons inside of the div */
-    transition:0.5s;
+    transition: 0.5s;
+    background-color: aliceblue;
+    margin:1em auto;
+    padding: 1em;
+}
+.guestPost span{
+    margin: 0 5px;
+}
+.guestPost p{
+    background-color: #fff;
+    min-height:60px;
+    max-height:200px;
+    padding:1em;
 }
 
 .guestPost > a{
     float:right;
+}
+
+@keyframes borderOff{
+    0%{background-color:white}
+    15%{background-color:white }
+    65% {background-color:green }
+    85%{background-color:white}
+    100%{background-color:white }
+}
+.guestPost:target{
+    /* animation-name:borderOff;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(1,0.1,0.1,0.1); */
 }
 .guestPost button{
     font-family: 'Noto Sans KR', sans-serif;

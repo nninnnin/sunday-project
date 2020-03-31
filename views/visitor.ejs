@@ -18,31 +18,39 @@
 
     <!-- main -->
     <main>
+        <marquee behavior="" direction="">
+            바르고 고운말 바르고 고운말 바르고 고운말 바르고 고운말 바르고 고운말 바르고 고운말 바르고 고운말 바르고 고운말 바르고 고운말 바르고 고운말 바르고 고운말 바르고 고운말
+        </marquee>
         <!-- main section -->
         <div class="main">
             <!-- write new  -->
-            <h1>방명록</h1>
-
+            <!-- <h1>방명록</h1>
+            <h2>한마디 부탁드려요 :)</h2> -->
             <!-- guest post form -->
-            <section class="postFormSection">
-                <h2>한마디 부탁드려요 :)</h2>
+            <section class="postForm">
                 <form action="/visitor" method="post" id="postForm">
-                    <textarea name="content" id="postTxt" required autofocus="autofocus"></textarea>
-                    <button type="submit" id="submitBtn">POST!</button>
+                    <img src="imgs/minimi.jfif" alt="">
+                    <textarea name="content" id="postTxt" required></textarea>
                 </form>
+                <button type="submit" id="submitBtn">POST!</button>
             </section>
 
             <!-- get guest posts -->
             <section>
                 <% for ([index, guestPost] of guestPosts.entries()){ %> 
-                    <div class="guestPost">
+                    <div class="guestPost"  id="<%= index %>">
                         <% const postNumber = guestPosts.length - index %>
-                        <h3 id="<%= index %>"><%= postNumber %>번 글</h3>
+                        <header>
+                            NO.<%= postNumber %>
+                            <span>작성자</span>
+                            <span class="published"><%= `(${(guestPost.updated)? 'updated' : 'posted'} at ${guestPost.updated_At.toLocaleString()})` %></span>
+                        </header>
+
                         <p>
                             <%= guestPost.content %> 
                             <br>
-                            <span class="published"><%= `${(guestPost.updated)? 'updated' : 'posted'} at ${guestPost.updated_At.toLocaleString()}` %></span>
                         </p>
+                        
                         <a href="visitor/<%= guestPost._id %>/delete"><button>삭제하기</button></a>
                         <a href="visitor/<%= guestPost._id %>" id="updateBtn"><button>수정하기</button></a>
                     </div>

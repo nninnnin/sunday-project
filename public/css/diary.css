@@ -11,6 +11,7 @@ main{
     color:black;
     background-color: white;
     box-shadow: 1px 1px 3px black;
+    font-family:'Noto Sans KR'
 }
 
 section > div:nth-child(even) > div{
@@ -24,16 +25,18 @@ section > div:nth-child(even) > div{
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
         "img desc";
-    grid-gap:1em;
+    grid-gap:1.3em;
 
     padding: 2%;
-    border-top:1px white solid;
-    border-bottom:1px white solid;
+    border-top:0.5px rgb(216, 216, 216) solid;
+    border-bottom:0.5px rgb(216, 216, 216) solid;
     height:280px;
 }
 .post p{
     max-height:170px;
     overflow: hidden;
+    font-family:'Noto Sans KR';
+    font-size:0.9em;
 }
 
 /* grid item 1 */
@@ -46,6 +49,12 @@ section > div:nth-child(even) > div{
     grid-area:desc;
     position:relative;
 }
+.description h2{
+    font-family: 'Gugi';
+    font-size:2em;
+    margin-top:0.5em;
+    font-weight:900;
+}
 
 img { /* 원리 알기 */
     width: 100%;
@@ -54,18 +63,19 @@ img { /* 원리 알기 */
     object-fit: cover;
 
     position:absolute;
+    border-radius: 0.5em;
 }
 
 section span{
     position:absolute;
-    bottom:0;
+    bottom:3px;
     right:0;
     color:grey;
     font-size: smaller;
 }
 section a{
     position:absolute;
-    bottom:0;
+    bottom:3px;
     left:0;
     color:grey;
     font-size: smaller;
@@ -78,19 +88,15 @@ section a{
     float:right;
 }
 
-hr{
-    margin: 2em 0;
-}
-
 /* 0 ~ 480px */
 @media only screen and (max-width: 480px){
     .post{
         grid-template-columns: 1fr;
-        grid-template-rows:65% 35%;
+        grid-template-rows:60% 40%;
         grid-template-areas: 
             "img"
             "desc";
-
+        grid-gap:0.5em;
         min-height:400px;
     }
     section > div:nth-child(even) > div{
@@ -99,13 +105,18 @@ hr{
             "desc";
     }
     .post p{
-        max-height:55px;
+        max-height:113px;
     }
     h2{
-        margin-top:0.1em;
+        display:none;
     }
 }
 
+@media only screen and (max-width: 767px){
+    main{
+        margin: 0 auto;
+    }
+}
 @media only screen and (min-width: 768px){
     main{
         max-width:60%;

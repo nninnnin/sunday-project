@@ -1,6 +1,7 @@
 /* common.css */
 @import url('https://fonts.googleapis.com/css?family=Gugi|Oswald|Poor+Story|Nanum+Gothic|Noto+Sans+KR&display=swap');
 
+
 /* css initialize */
 
 html,body{
@@ -119,7 +120,7 @@ nav a{
     
     /* font settings */
     color: white;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Oswald', 'Gugi' ,sans-serif;
     font-size: 1em;
     font-weight: 550;
     text-decoration: none;
@@ -143,10 +144,9 @@ nav a:hover{
 /* main */
 main{
     /* size and aligning */
-    margin:1.5em auto;
+    margin:0 auto;
 
     /* font */
-    font-family: 'Nanum Gothic', sans-serif;
     font-size:0.8em; /* 기본사이즈! */
 
     /* 기본 line height! */
@@ -161,7 +161,7 @@ main{
 footer{
     color: var(--main-bg-color);
     text-align: center;
-    padding: 1.5em;
+    padding: 3.5em;
 
     font-family: 'Oswald';
     font-size:0.7em;
@@ -170,8 +170,7 @@ footer{
 }
 
 #home{
-    color:white;
-    text-shadow: 2px 4px 3px black;
+    color:black;
     display: none;
     position:fixed;
     right:15px;
@@ -198,13 +197,13 @@ footer{
     }
     .logo a{color:white;}
     #pop-up a{color:white;}
-    
+
     nav{
         display:none;
     }
 
     main{
-        /* color:blue; */
+        margin:0 auto !important;
         max-width:100%;
         font-size:11px;
     }
@@ -219,6 +218,10 @@ footer{
     #pop-up{
         display:none !important;
     }
+}
+
+main{
+    margin:1.5em auto;
 }
 
 

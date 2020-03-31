@@ -7,7 +7,7 @@ const indexController = {};
 indexController.getPosts = (req,res,next) => {
     Post.find()
         .sort({ $natural : -1})
-        .limit(6)
+        .limit(4)
         .exec()
         .then(posts=>{
             const result = {};
@@ -15,7 +15,7 @@ indexController.getPosts = (req,res,next) => {
 
             Guestpost.find()
             .sort({ $natural : -1 })
-            .limit(4)
+            .limit(5)
             .exec()
             .then(visitors =>{
                 result.visitors = visitors;

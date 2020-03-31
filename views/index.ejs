@@ -21,50 +21,54 @@
                             <h1>
                                 <%= post.title %>
                             </h1>
-                            <% const time = post._id.getTimestamp() %>
-                            <br>
+                            <p>
+                                <%= post.content %> 
+                            </p>
                         </div>
                     </a>
                 <% } %> 
             </div>
             
             <!-- drawings -->
-            <!-- <div class="drawing">
+            <div class="drawing">
                 <% imgs.forEach(img => { %>
                     <div>
                         <img src="imgs/music/<%= img.id %>.jpg" alt="<%= img.id %> ">
                     </div>
                 <% }) %>
-            </div> -->
+            </div>
 
             <!-- newest visitors (최신 방명록) -->
-            <div class="visitors">
+            <!-- <div class="visitors">
                 <% for ([index,visitor] of visitors.entries()) { %> 
-                <a href="/visitor#<%= index %>"><!-- 추후 해시 이용해서 해당 글 위치로 스크롤까지 -->
+                <a href="/visitor#<%= index %>">
                     <div class="visitor">
-                        <span id="name">NEW!</span> : <%= visitor.content %> 
+                        <span>누군가</span> <%= visitor.content %> <i>some</i>
                     </div>
                 </a>
                 <% } %> 
-            </div>
+            </div> -->
 
         </section>
 
         <!-- side section -->
         <aside>
+            <!-- 인스타그램 -->
+            <div class="insta-photo">
+                <b>INSTAGRAM</b>
+                <a href="http://instagram.com/justindglee">
+                    <div id="instagram-embed">
+                        <img alt="instagram-image" id="img1">
+                    </div>
+                </a>
+            </div>
+            <!-- 연락처 -->
             <div class="contact-info">
                 <b>CONTACT</b>
                 <br>
-                nninnnin7@gmail.com
-            </div>
-
-            <div class="insta-photo">
-                <b>INSTAGRAM</b>
-                
-                
-                <div id="instagram-embed">
-                <img alt="instagram-image" id="img1">
-                </div>
+                <span>
+                    nninnnin7@gmail.com
+                </span>
             </div>
         </aside>
     </main>
