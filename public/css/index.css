@@ -30,8 +30,6 @@ section a{
             color:black;
             border-radius: 1em;
             box-shadow: 1px 1px 4px rgb(223, 223, 223);
-
-            overflow-x: hidden;
         }
         .article > a:hover{
             color:#fff;
@@ -47,6 +45,8 @@ section a{
             z-index:2;
             opacity: 0;
             transition: 0.5s;
+
+            overflow-x: hidden;
         }
         .article h1{
             font-family: 'Gugi';
@@ -136,7 +136,7 @@ section a{
     
     /* aside */
     aside{
-        padding:1rem;
+        padding: 1rem;
         background-color: white;
         line-height: 30px;
         box-shadow: 0px 1px 4px rgb(145, 145, 145);
@@ -188,9 +188,24 @@ section a{
     }
     section .article{
         grid-template-columns: 1fr;
+        grid-gap:1em;
     }
     .article > a{
+        background-color: black;
+        color:white;
         box-shadow: 1px 1px 4px black;
+        /* min-height:80px; */
+    }
+    .article a .post{
+        opacity:1;
+    }
+    .article a img{
+        opacity:.3;
+    }
+    .article p{
+        display:none;
+        font-size:1.1em;
+        max-height:3.5em;
     }
 
     section .drawing{
@@ -200,6 +215,10 @@ section a{
     }
     .drawing > div{
         box-shadow: 0px 4px 5px black;
+    }
+
+    .visitor #content{
+        max-width:200px;
     }
 
     .profile-info{
@@ -239,6 +258,7 @@ section a{
         max-width:500px;
     }
     aside{
+        padding:0 1rem;
         display:grid;
         grid-template-columns: repeat(2,1fr);
 
