@@ -21,33 +21,40 @@
                             <h1>
                                 <%= post.title %>
                             </h1>
+
                             <p>
                                 <%= post.content %> 
                             </p>
                         </div>
+                        <% if(post.postImage !== '{}' && post.postImage.data !== undefined){ %> 
+                            <% const postImage = post.postImage.data.toString('base64'); %> 
+                            <img src="data:image/png;base64,<%= postImage %>" alt="">
+                        <% } else{ %> 
+                            <img src="https://pbs.twimg.com/profile_images/757974066011770880/ae2Eop2g.jpg" alt="Undefined postImage">
+                        <% } %> 
                     </a>
                 <% } %> 
             </div>
             
             <!-- drawings -->
-            <div class="drawing">
+            <!-- <div class="drawing">
                 <% imgs.forEach(img => { %>
                     <div>
                         <img src="imgs/music/<%= img.id %>.jpg" alt="<%= img.id %> ">
                     </div>
                 <% }) %>
-            </div>
+            </div> -->
 
             <!-- newest visitors (최신 방명록) -->
-            <!-- <div class="visitors">
+            <div class="visitors">
                 <% for ([index,visitor] of visitors.entries()) { %> 
                 <a href="/visitor#<%= index %>">
                     <div class="visitor">
-                        <span>누군가</span> <%= visitor.content %> <i>some</i>
+                        <span>누군가</span> <span id="content"><%= visitor.content %></span>  <i>some</i>
                     </div>
                 </a>
                 <% } %> 
-            </div> -->
+            </div>
 
         </section>
 

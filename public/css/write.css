@@ -30,7 +30,6 @@ label{
 }
 input, textarea{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color:red;
     width:100%;
 }
 textarea{

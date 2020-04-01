@@ -11,7 +11,6 @@ main{
     color:black;
     background-color: white;
     box-shadow: 0.5px 1px 3px black;
-    font-family:'Noto Sans KR'
 }
 
 section > div:nth-child(even) > div{
@@ -33,10 +32,10 @@ section > div:nth-child(even) > div{
     height:280px;
 }
 .post p{
-    max-height:170px;
+    max-height:180px;
     overflow: hidden;
-    font-family:'Noto Sans KR';
     font-size:0.9em;
+    font-family:'Noto Sans KR'; /* 갑자기 뭐지? */
 }
 
 /* grid item 1 */
@@ -48,12 +47,14 @@ section > div:nth-child(even) > div{
 .description{
     grid-area:desc;
     position:relative;
+    overflow-x: hidden;
 }
 .description h2{
     font-family: 'Gugi';
     font-size:2em;
     margin-top:0.5em;
     font-weight:900;
+    white-space: nowrap;
 }
 
 img { /* 원리 알기 */
