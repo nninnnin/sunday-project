@@ -24,17 +24,23 @@ section a{
             font-style: normal;
             text-decoration: none;
             text-align:center;
-            max-height:15em;
+            min-height:13em;
+            max-height:13em;
             overflow:hidden;
             padding: 2em;
             color:black;
             border-radius: 1em;
             box-shadow: 1px 1px 4px rgb(223, 223, 223);
+
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
         }
         .article > a:hover{
             color:#fff;
             cursor:pointer;
-            background-color: black;
+            background-color: var(--main-bg-color);
         }
         .article > a:active{
             opacity: 1;
@@ -43,34 +49,48 @@ section a{
         .post{
             position:relative;
             z-index:2;
-            opacity: 0;
-            transition: 0.5s;
-
-            overflow-x: hidden;
+            
+            /* transform:rotate3d(0,1,0,1.142rad); */
+            overflow: hidden;
+            max-height:15em;
         }
         .article h1{
             font-family: 'Gugi';
-            font-size:2em;
+            font-size:0em;
             margin:0;
-            white-space: nowrap;
+            /* white-space: nowrap; */
         }
         .article p{
+            max-height: 0;
+            opacity: 0;
             overflow: hidden;
             font-size:0.8em;
-            max-height:15em;
+            margin:0;
         }
         .article img{
             position:absolute;
             z-index:1;
             left:0;
             top:0;
+
+            /* opacity: 0.25; */
         }
         .article a:hover img{
-            opacity:.2;
+            opacity:0;
+            transition: 0.1s;
         }
-        .article a:hover .post{
+        .article a:hover h1{
+            font-size: 2em;
+            white-space: nowrap;
+            transition: font-size 0.5s;
+        }
+        /* .article a:hover p{
+            max-height:3em;
             opacity:1;
-        }
+            margin: 1em 0;
+            transform:rotate(0deg);
+            transition: max-height 0.75s, opacity 0.75s;
+        } */
 
     /* grid container */
     section .drawing{
@@ -194,10 +214,11 @@ section a{
         background-color: black;
         color:white;
         box-shadow: 1px 1px 4px black;
-        /* min-height:80px; */
+        min-height:80px;
     }
     .article a .post{
         opacity:1;
+        transform: rotate(0deg);
     }
     .article a img{
         opacity:.3;
@@ -240,7 +261,7 @@ section a{
     }
     section .article{
         grid-template-columns: 1fr 1fr;
-        grid-gap:1em;
+        grid-gap:0.5em;
     }
 }
 

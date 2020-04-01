@@ -40,6 +40,15 @@ h1{
     white-space: nowrap;
 }
 
+.image{
+    min-height:200px;
+    overflow: hidden;
+    background-image: url("https://pbs.twimg.com/profile_images/757974066011770880/ae2Eop2g.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 img{
     margin-bottom:1em;
 }
