@@ -223,6 +223,9 @@ section a{
     .article a img{
         opacity:.3;
     }
+    .article h1{
+        font-size: 2em;
+    }
     .article p{
         display:none;
         font-size:1.1em;

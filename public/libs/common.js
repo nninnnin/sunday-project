@@ -21,12 +21,15 @@ bars.addEventListener('click',(e)=>{
 // 480px 이하 + 다운스크롤에서 네브바(.logo) fixed position으로
 function fixedNav(){
     const navbar = document.getElementById('logobar');
+    const popup = document.getElementById('pop-up');
     const main = document.querySelector('main');
     if(window.innerWidth <= 480 && (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50)){
         navbar.classList.add('sticky');
+        popup.classList.add('sticky-popup');
         main.classList.add('sticky-padding');
     }else{
         navbar.classList.remove('sticky');
+        popup.classList.remove('sticky-popup');
         main.classList.remove('sticky-padding');
     }
 }

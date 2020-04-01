@@ -54,6 +54,8 @@ main{
     min-height:60px;
     max-height:200px;
     padding:1em;
+
+    overflow: auto;
 }
 
 .guestPost > a{
