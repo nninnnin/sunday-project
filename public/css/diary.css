@@ -8,6 +8,7 @@
 }
 
 main{
+    max-width:800px;
     color:black;
     background-color: white;
     box-shadow: 0.5px 1px 3px black;
@@ -120,7 +121,6 @@ section a{
 }
 @media only screen and (min-width: 768px){
     main{
-        max-width:60%;
         min-width:730px;
     }
 }
