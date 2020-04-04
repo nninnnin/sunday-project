@@ -15,16 +15,16 @@ const diaryRouter = require('./routes/diary');
 const visitorRouter = require('./routes/visitor');
 
 // setting live-reload to refresh browser rendering when frontend code is changed
-const livereload = require('livereload');
-const connectLivereload = require('connect-livereload');
+// const livereload = require('livereload');
+// const connectLivereload = require('connect-livereload');
 
-const livereloadServer = livereload.createServer();
-livereloadServer.watch(['public', path.join(__dirname,'views')]);
-livereloadServer.server.once("connection",()=>{
-    setTimeout(()=>{
-        livereloadServer.refresh("/");
-    },50);
-});
+// const livereloadServer = livereload.createServer();
+// livereloadServer.watch(['public', path.join(__dirname,'views')]);
+// livereloadServer.server.once("connection",()=>{
+//     setTimeout(()=>{
+//         livereloadServer.refresh("/");
+//     },50);
+// });
 
 
 // Create server
@@ -36,7 +36,7 @@ app.use(methodOverride('_method'));
 app.use(express.static('public'));
 
 // Connect server with  live reload
-app.use(connectLivereload());
+// app.use(connectLivereload());
 
 
 // express server setting with app.set() method
