@@ -71,8 +71,13 @@ mongoose.connect('mongodb://localhost:27017/test',{
 .then(()=> console.log('Successfully connected to mongodb'))
 .catch((e)=> console.log(e));
 
+const port = process.env.PORT;
 
-app.listen(8000, function(){
+if(port == null || port ==""){
+    port=8000;
+}
+
+app.listen(port, function(){
     console.log("express server heard on 8000");
     console.log("let's go to http://localhost:8000");
 });
