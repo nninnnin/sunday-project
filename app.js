@@ -80,7 +80,7 @@ mongoose.Promise = global.Promise;
 //     useNewUrlParser:true,
 //     useUnifiedTopology:true
 // })
-mongoose.connect(process.env.MONGO_URI,{
+mongoose.connect(process.env.MONGODB_URI,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 })
