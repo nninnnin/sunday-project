@@ -42,8 +42,6 @@ section a{
         .post{
             position:relative;
             z-index:2;
-            
-            /* transform:rotate3d(0,1,0,1.142rad); */
             max-height:15em;
         }
         .article h1{
