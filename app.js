@@ -12,8 +12,13 @@ const path = require('path');
 const partials = require('express-partials');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-const livereload = require('livereload');
-const connectLivereload = require('connect-livereload');
+let livereload = null;
+let connectLivereload = null;
+
+if(node_env==="development"){
+    livereload = require('livereload');
+    connectLivereload = require('connect-livereload');
+}
 
 
 // import routers
