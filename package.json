@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --ext js,ejs"
+    "start": "cross-env NODE_ENV=production nodemon --ext js,ejs",
+    "dev": "cross-env NODE_ENV=development nodemon --ext js,ejs"
   },
   "repository": {
     "type": "git",
@@ -19,22 +20,21 @@
   },
   "homepage": "https://github.com/nninnnin/sunday-project#readme",
   "dependencies": {
+    "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
     "express-partials": "^0.3.0",
-    "install": "^0.13.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.9.7",
-    "multer": "^1.4.2",
-    "npm": "^6.14.4"
+    "multer": "^1.4.2"
   },
   "devDependencies": {
     "connect-livereload": "^0.6.1",
     "livereload": "^0.9.1",
     "nodemon": "^2.0.2"
   },
-  "engines":{
+  "engines": {
     "node": "13.6.0"
   }
 }

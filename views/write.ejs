@@ -18,7 +18,7 @@
         <div>
             <form action="/diary" method="post" enctype="multipart/form-data">
                 <label for="title">제목</label><br>
-                <input name="title" type="text" required><br>
+                <input name="title" type="text" maxlength="20" required><br>
 
                 <label for="content">내용</label><br>
                 <div class="content">
@@ -40,7 +40,7 @@
             <div>
                 <form action="/diary/update/<%=post._id%>?_method=PUT" method="post">
                     <label for="title">제목</label><br>
-                    <input name="title" type="text" value="<%= post.title %>" required><br>
+                    <input name="title" type="text" value="<%= post.title %>" maxlength="20" required><br>
     
                     <label for="content">내용</label>
                     <div class="content">

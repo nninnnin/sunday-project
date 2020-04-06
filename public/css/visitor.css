@@ -5,6 +5,10 @@ main{
     background-color: rgb(216, 209, 209);
 }
 
+textarea, input{
+    font-family: 'Poor Story', sans-serif;
+}
+
 .postForm{
     border-top:black 1px solid;
     border-bottom:black 1px solid;

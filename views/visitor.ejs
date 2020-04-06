@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인페이지</title>
-    <link rel="stylesheet" href="../css/common.css">
-
-    <!-- to use fontawesome -->
-    <script src="https://kit.fontawesome.com/58673910ce.js" crossorigin="anonymous"></script>
+    <%- include ('partials/head') %> 
+    <link rel="stylesheet" href="css/visitor.css">
 </head>
 <body>
     <!-- header -->
     <header>
         <%- include ('partials/header') %>
-        <link rel="stylesheet" href="css/visitor.css">
     </header>
 
     <!-- main -->
@@ -31,8 +25,8 @@
                 <form action="/visitor" method="post" id="postForm">
                     <img src="imgs/minimi.jfif" alt="">
                     <textarea name="content" id="postTxt" required></textarea>
+                    <button type="submit" id="submitBtn">POST!</button>
                 </form>
-                <button type="submit" id="submitBtn">POST!</button>
             </section>
 
             <!-- get guest posts -->

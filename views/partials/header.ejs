@@ -1,6 +1,11 @@
 <div class="logo" id="logobar">
     <!-- logo -->
-    <a href="/" id="logo">Justin's blog</a>
+    <% if(process.env.NODE_ENV==="development"){ %> 
+        <a href="/" id="logo">Justin's blog (dev)</a>
+        <% }else{ %>
+        <a href="/" id="logo">Justin's blog</a>
+    <% } %> 
+
     <!-- hamburger icon -->
     <a href="/">
         <i class="fa fa-bars fa-lg" id="hamburger"></i>

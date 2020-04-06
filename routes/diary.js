@@ -24,7 +24,7 @@ router.get('/update/:postId',postController.getPost);
 router.get('/:postId',postController.getPost);
 
 
-// Update
+// // Update
 router.put('/update/:postId',postController.updatePost);
 
 // Delete

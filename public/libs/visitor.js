@@ -28,6 +28,7 @@ updateBtn.forEach((btn)=>{
                   },
                 body: JSON.stringify(reqdata)
             }).then((res)=>{
+                console.log('res는',res);
                 console.log(`유저를 찾고 업데이트에 성공했습니다 status code = ${res.status}`);
                 const date = new Date()
                 const updateHTML = 

@@ -37,10 +37,6 @@ header a{
     font-style: normal;
     text-decoration: none;
 }
-
-textarea, input{
-    font-family: 'Poor Story', sans-serif;
-}
 span{
     font-family: 'Nanum Gothic', sans-serif;
 }
@@ -212,7 +208,6 @@ footer{
     main{
         margin:0 auto !important;
         max-width:100%;
-        font-size:11px;
     }
 
     footer{

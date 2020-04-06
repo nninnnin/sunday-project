@@ -22,8 +22,6 @@ PostController.createPost = (req,res,next)=>{ // Next를 안쓰면..
         newPost.postImage.data = fs.readFileSync(req.file.path);
         newPost.postImage.contentType = 'image/png';
     }
-
-
     
     newPost.save()
         .then((result)=>{
@@ -39,7 +37,7 @@ PostController.createPost = (req,res,next)=>{ // Next를 안쓰면..
 // Read
 PostController.getPosts = (req,res)=>{
     Post.find()
-        .sort({ $natural:-1 })
+        .sort({ '_id' : -1 }) // post 된 날짜대로 정렬 (timestamp desc)
         .exec()
         .then((docs)=>{
             const posts = docs;

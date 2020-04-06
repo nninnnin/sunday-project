@@ -1,5 +1,10 @@
 // ENV
 require('dotenv').config();
+let node_env = process.env.NODE_ENV;
+console.log('node_env is :',node_env);
+node_env = (node_env && node_env.trim().toLowerCase() === 'development')? 'development' : 'production';
+// node_env를 (실행 시) 따로 development 으로 지정해주지 않으면 production 모드로 작동
+console.log('node_env is :',node_env);
 
 // DEPENDENCIES
 const express = require('express');
@@ -7,24 +12,14 @@ const path = require('path');
 const partials = require('express-partials');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const livereload = require('livereload');
+const connectLivereload = require('connect-livereload');
 
 
 // import routers
 const indexRouter = require('./routes/index');
 const diaryRouter = require('./routes/diary');
 const visitorRouter = require('./routes/visitor');
-
-// setting live-reload to refresh browser rendering when frontend code is changed
-// const livereload = require('livereload');
-// const connectLivereload = require('connect-livereload');
-
-// const livereloadServer = livereload.createServer();
-// livereloadServer.watch(['public', path.join(__dirname,'views')]);
-// livereloadServer.server.once("connection",()=>{
-//     setTimeout(()=>{
-//         livereloadServer.refresh("/");
-//     },50);
-// });
 
 
 // Create server
@@ -35,8 +30,20 @@ app.use(methodOverride('_method'));
 // Static File Service 
 app.use(express.static('public'));
 
-// Connect server with  live reload
-// app.use(connectLivereload());
+
+// dev mode setting
+if (node_env === 'development'){
+    // setting live-reload to refresh browser rendering when frontend code is changed
+    const livereloadServer = livereload.createServer();
+    livereloadServer.watch(['public', path.join(__dirname,'views')]);
+    livereloadServer.server.once("connection",()=>{
+        setTimeout(()=>{
+            livereloadServer.refresh("/");
+        },50);
+    });
+    // Connect server with  live reload
+    app.use(connectLivereload());
+}
 
 
 // express server setting with app.set() method

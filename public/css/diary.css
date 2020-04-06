@@ -51,6 +51,7 @@ section > div:nth-child(even) > div{
 }
 .description h2{
     font-family: 'Gugi';
+    /* font-family: Oswald; */
     font-size:2em;
     margin-top:0.5em;
     font-weight:900;

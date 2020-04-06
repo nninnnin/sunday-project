@@ -1,9 +1,11 @@
 main{
     margin: 1em auto;
     max-width:330px;
-    font-family: 'Poor Story';
-    box-shadow: 0px 2px 10px black;
+    font-family: 'Noto Sans KR';
+    box-shadow: 0px 2px 5px black;
     border: 10px solid black;
+
+    font-size: 0.6em;
 }
 
 #item1{
@@ -41,9 +43,8 @@ label{
     main{
         margin: 0 auto;
         max-width:100%;
-        
+        box-shadow: 0px 0px 0px black;
         line-height:2em;
-        font-family: 'Poor Story';
     }
     section{
         display:block;
@@ -51,7 +52,6 @@ label{
     .profile-info{
         background-color: black;
         color:white;
-        box-shadow: 0px 4px 10px black;
         padding:2em;
     }
 
