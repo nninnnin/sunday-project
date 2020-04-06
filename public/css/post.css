@@ -51,10 +51,23 @@ h1{
 }
 
 img{
-    margin-bottom:1em;
+    /* 아주 좋은 방법! height를 제한하니 레이아웃이 일관성을 가지게 되었다 */
+    max-height:20em;
+    width:auto;
 }
 
 p{
     line-height:1.65em;
     text-align:left;
+}
+
+
+@media only screen and (max-width:480px){
+    h1{
+        font-size: 1.5em;
+    }
+    p{
+        margin:0;
+        font-size: 0.8em;
+    }
 }
