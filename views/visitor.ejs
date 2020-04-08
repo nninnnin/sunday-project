@@ -24,7 +24,7 @@
             <section class="postForm">
                 <form action="/visitor" method="post" id="postForm">
                     <img src="imgs/minimi.jfif" alt="">
-                    <textarea name="content" id="postTxt" required></textarea>
+                    <textarea name="content" id="postTxt" placeholder="응원의 한마디 :)" required></textarea>
                     <button type="submit" id="submitBtn">POST!</button>
                 </form>
             </section>
@@ -45,8 +45,10 @@
                             <br>
                         </p>
                         
+                        <% if(node_env === 'development'){ %> 
                         <a href="visitor/<%= guestPost._id %>/delete"><button>삭제하기</button></a>
                         <a href="visitor/<%= guestPost._id %>" id="updateBtn"><button>수정하기</button></a>
+                        <% } %> 
                     </div>
                 <% } %> 
             </section>
@@ -58,7 +60,7 @@
         <%- include ('partials/footer')  -%> 
     </footer>
 
-    <i class="fas fa-chevron-circle-up fa-2x" id="home"></i>
+    <button id="home">UP</button>
 
     <script src="../libs/common.js"></script>
     <script src="../libs/visitor.js"></script>

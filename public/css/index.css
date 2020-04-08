@@ -106,7 +106,6 @@ section a{
         margin:10px 0;
         padding:5px 10px;
         color:black;
-        border-radius: 1em;
         box-shadow: 1px 1px 4px rgb(223, 223, 223);
 
         display:flex;
@@ -229,8 +228,8 @@ section a{
         padding:2em;
     }
 
-    #img-wrapper img{
-        border-color:white;
+    aside{
+        box-shadow: 1px 1px 4px rgb(223, 223, 223);
     }
 }
 

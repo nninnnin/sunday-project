@@ -49,11 +49,18 @@ label{
     section{
         display:block;
     }
+
+    #img-wrapper img{
+        width:12em;
+        height:auto;
+    }
+
     .profile-info{
         background-color: black;
         color:white;
         padding:2em;
     }
+
 
     /* 홈버튼 필요없을듯 해서..임시방편 */
     #home{

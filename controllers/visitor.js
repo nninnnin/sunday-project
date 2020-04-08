@@ -30,7 +30,8 @@ visitorController.readPost = (req,res)=>{
             // console.log(docs);
             const guestPosts = docs;
             res.render('visitor',{
-                guestPosts:guestPosts
+                guestPosts:guestPosts,
+                node_env:process.env.NODE_ENV
             })
         })
         .catch(err=>{

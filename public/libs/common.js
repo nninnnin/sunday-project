@@ -7,16 +7,16 @@ nav_items.forEach((nav_item)=>{
 });
 
 // Show pop up menu when clicking hamburger button
-const bars = document.getElementById('hamburger');
-const popup = document.getElementById('pop-up');
-bars.addEventListener('click',(e)=>{
-    e.preventDefault();
-    if(popup.classList[0]==='appear'){
-        popup.classList.remove('appear');
-    }else{
-        popup.classList.add('appear');
-    }
-});
+// const bars = document.getElementById('hamburger');
+// const popup = document.getElementById('pop-up');
+// bars.addEventListener('click',(e)=>{
+//     e.preventDefault();
+//     if(popup.classList[0]==='appear'){
+//         popup.classList.remove('appear');
+//     }else{
+//         popup.classList.add('appear');
+//     }
+// });
 
 // 480px 이하 + 다운스크롤에서 네브바(.logo) fixed position으로
 function fixedNav(){
@@ -35,28 +35,36 @@ function fixedNav(){
 }
 
 
-// show up the homeBtn
-function popUpHomeBtn(){
-    if(window.innerWidth<=480 && (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250)){
-        homeBtn.classList.add('appear');
-    }else{
-        homeBtn.classList.remove('appear');
+
+
+
+// 인덱스 빼고 home버튼 기능~
+if(location.pathname !== '/'){
+
+    // show up the homeBtn
+    function popUpHomeBtn(){
+        if(window.innerWidth<=480 && (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250)){
+            homeBtn.classList.add('appear');
+        }else{
+            homeBtn.classList.remove('appear');
+        }
+    }
+
+    const homeBtn = document.getElementById('home');
+    homeBtn.addEventListener('click', ()=>{
+        console.log('clicked!');
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    });
+
+    window.onscroll = ()=>{
+        // fixedNav();
+        popUpHomeBtn();
     }
 }
 
 
-// get the top of the page
-const homeBtn = document.getElementById('home');
-homeBtn.addEventListener('click', ()=>{
-    console.log('clicked!');
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-});
 
-window.onscroll = ()=>{
-    fixedNav();
-    popUpHomeBtn();
-}
 
 
 

@@ -2,6 +2,7 @@
 const postTextArea = document.querySelector('#postTxt');
 postTextArea.addEventListener('keypress',(e)=>{
     if(e.key === 'Enter'){
+        e.preventDefault(); // 하면 깔끔
         const postForm = document.querySelector('#postForm');
         postForm.submit();
     }

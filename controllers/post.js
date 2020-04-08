@@ -65,6 +65,7 @@ PostController.getPost = (req,res)=>{
             else{
                 console.log(post.postImage)
                 res.locals.post = post;
+                res.locals.node_env = process.env.NODE_ENV;
                 if(post.postImage.data !== undefined){
                     res.locals.postImage = post.postImage.data.toString('base64');
                 }
