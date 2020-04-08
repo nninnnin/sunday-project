@@ -186,9 +186,9 @@ footer{
 
 /* only smartphones ~ 480px */
 @media only screen and (max-width: 480px){
-    #hamburger{
+    /* #hamburger{
         display:block;
-    }
+    } */
 
     .logo{
         background-color: var(--main-bg-color);
@@ -202,7 +202,16 @@ footer{
     #pop-up a{color:white;}
 
     nav{
-        display:none;
+        /* 하단고정 */
+        position:fixed;
+        z-index:3;
+        bottom:0;
+        right:0;
+
+        /* 사이즈 */
+        width:100%;
+        font-size: 0.8em;
+        padding: 1em 0;
     }
 
     main{

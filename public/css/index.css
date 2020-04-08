@@ -177,33 +177,36 @@ section a{
 
         margin: 0 auto;
         padding: 1em;
-
-        font-family: 'Poor Story';
     }
     section{
-        background-color: #fff;
+        /* background-color: #fff; */
     }
     section .article{
         grid-template-columns: 1fr;
         grid-gap:1em;
+        padding: 0.1em;
     }
     .article > a{
-        background-color: black;
-        color:white;
-        box-shadow: 1px 1px 4px black;
-        min-height:80px;
-        border-radius: 1em;
+        color:black;
+        min-height:50px;
+        padding:0.5em;
     }
     .article a .post{
         opacity:1;
-        transform: rotate(0deg);
+        margin-left:auto;
+        width:48%;
     }
     .article a img{
-        opacity:.3;
+        width:50%;
     }
     .article h1{
+        opacity: 1;
+        font-size:0.7em;
+    }
+    .article p{
+        max-height:0em;
+        line-height:1.3em;
         opacity:1;
-        font-size:2em;
     }
 
     section .drawing{
