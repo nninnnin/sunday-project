@@ -61,9 +61,4 @@ label{
         padding:2em;
     }
 
-
-    /* 홈버튼 필요없을듯 해서..임시방편 */
-    #home{
-        display:none !important;
-    }
 }

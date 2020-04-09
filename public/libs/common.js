@@ -1,4 +1,4 @@
-// 홈버튼 누르면 fade out
+// navigation link 누르면 fade out
 const nav_items = Array.from(document.querySelector('nav').children);
 nav_items.forEach((nav_item)=>{
     nav_item.addEventListener('click',(e)=>{

@@ -242,9 +242,11 @@ main{
 
 .fade-in{
     animation: fadeIn 0.2s;
+    animation-fill-mode: forwards; 
 }
 .fade-out{
     animation: fadeOut 0.2s;
+    animation-fill-mode: forwards; 
 }
 
 @keyframes fadeIn{

@@ -15,7 +15,7 @@ main{
     line-height:1.8em;
 }
 
-section > div:nth-child(even) > div{
+section > div:nth-child(4n-1) > div{
     grid-template-areas: 
         "desc img";
 }
@@ -30,18 +30,12 @@ section{
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
         "img desc";
-    grid-gap:2em;
+    grid-gap:1em;
 
     padding: 2%;
     /* border-top:0.2px rgb(216, 216, 216) solid;
     border-bottom:0.2px rgb(216, 216, 216) solid; */
     height:280px;
-}
-.post p{
-    max-height:180px;
-    overflow: hidden;
-    font-size:0.8em;
-    font-family:'Nanum Gothic';
 }
 
 /* grid item 1 */
@@ -64,6 +58,12 @@ section{
     font-weight:900;
     white-space: nowrap;
 }
+.description p{
+    max-height:180px;
+    overflow: hidden;
+    font-size:0.8em;
+    font-family:'Nanum Gothic';
+}
 
 img { /* 원리 알기 */
     width: 100%;
@@ -85,7 +85,7 @@ section span{
 section a{
     position:absolute;
     bottom:3px;
-    left:0;
+    left:15px;
     color:grey;
     font-size: smaller;
 }
@@ -111,7 +111,7 @@ section a{
         grid-gap:0.5em;
         min-height:440px;
     }
-    section > div:nth-child(even) > div{
+    section > div:nth-child(4n-1) > div{
         grid-template-areas: 
             "img"
             "desc";
@@ -122,19 +122,21 @@ section a{
         height:10px;
     }
 
+    /* see more 버튼 재구성 */
     section a{
         /* 위치 재설정 */
         position:absolute;
         left:auto;
-        right:0;
         bottom:0;
 
         /* 디자인변경 */
         text-decoration: none;
         color:black;
         font-family: Gugi;
-        padding: 1px 4px;
-        line-height: 2.8em;
+        padding: 5px 8px;
+
+        /* flex item */
+        align-self: center;
     }
     section a::before{
         content:'<click to ';
@@ -148,15 +150,24 @@ section a{
         display:none;
     }
 
-    .post p{
-        max-height:9em;
-    }
     .description{
         padding:0 1em;
+        
+        display:flex;
+        flex-direction: column;
     }
     .description h2{
         font-size:1em;
         margin:1em 0;
+    }
+    .description p{
+        max-height:7em;
+        min-height:7em;
+    }
+
+    #writeButton{
+        bottom:50px;
+        left:5px;
     }
 }
 

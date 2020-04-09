@@ -98,6 +98,7 @@ section a{
 
     .visitors{
         padding:10px 0;
+        font-size:0.9em;
     }
     .visitors a:hover{
         font-weight: 700;
@@ -126,7 +127,7 @@ section a{
 
     .visitor #content{
         white-space: nowrap;
-        max-width:300px;
+        max-width:375px;
         overflow-x: hidden;
     }
     
@@ -137,21 +138,18 @@ section a{
         line-height: 30px;
         box-shadow: 0px 1px 4px rgb(145, 145, 145);
         font-family:'Nanum Gothic';
+
+        font-size: 0.8em;
     }
 
         aside b{
             font-family: 'Gugi';
-            font-size:0.8rem;
         }
         aside div{ /* for all descendent divs */
             background-color: #fff;
         }
         aside > div{ /* only for direct children (divs) */
             background-color: #fff;
-        }
-
-        aside span{
-            font-size: 0.8em;
         }
 
         #instagram-embed{
@@ -218,7 +216,7 @@ section a{
     }
 
     .visitor #content{
-        max-width:200px;
+        max-width:180px;
     }
 
     .profile-info{

@@ -37,8 +37,6 @@ header,section{
 h1{
     font-size:2em;
     font-family: 'Gugi';
-    /* font-family: Oswald; */
-    white-space: nowrap;
 }
 
 .image{
@@ -78,5 +76,12 @@ p{
         width:100%;
         max-height:30em;
         /* display:none; */
+    }
+    button{
+        bottom:50px;
+        left:5px;
+    }
+    #updateButton{
+        bottom:80px;
     }
 }
