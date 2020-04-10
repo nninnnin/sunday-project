@@ -13,8 +13,8 @@ indexController.getPosts = (req,res,next) => {
             const result = {};
             result.posts = posts;
 
-            Guestpost.find()
-            .sort({ $natural : -1 })
+            Guestpost.find({hidden:{$ne: true}})
+            .sort({ _id : -1 })
             .limit(5)
             .exec()
             .then(visitors =>{
