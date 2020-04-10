@@ -1,0 +1,141 @@
+@import "_base";
+
+main {
+  padding: 1em;
+  font-family: "Poor Story", serif;
+  color: black;
+  background-color: rgb(216, 209, 209);
+}
+
+marquee {
+  background-color: black;
+  color: white;
+}
+textarea,
+input {
+  font-family: "Poor Story", sans-serif;
+}
+
+/* 게스트 인풋폼 */
+.postForm {
+  border-top: black 1px solid;
+  border-bottom: black 1px solid;
+  padding: 2em;
+  padding-bottom: 3.5em;
+  background-color: #f0f8ff;
+  position: relative;
+  #postForm {
+    display: flex;
+
+    textarea {
+      margin-left: 1em;
+      width: 90%;
+      min-height: 15vh;
+      resize: none;
+    }
+    textarea:focus {
+      outline: none;
+      border: green 2px dashed;
+    }
+    button {
+      background-color: black;
+      color: white;
+      font-family: "Courier New", Courier, monospace;
+      float: right;
+      position: absolute;
+      bottom: 13px;
+      right: 10px;
+    }
+    .checkbox {
+      position: absolute;
+      bottom: 10px;
+      right: 70px;
+    }
+    input[type="checkbox"] {
+      vertical-align: middle;
+    }
+
+    input[type="color"] {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      width: 20px;
+      height: 23px;
+    }
+  }
+}
+
+/* 게스트들이 남긴 포스트 */
+.guestPost {
+  overflow: hidden; /* added to contain the buttons inside of the div */
+  transition: 0.5s;
+  background-color: aliceblue;
+  margin: 1em auto;
+  padding: 1em;
+  border-radius: 0.5em;
+  span {
+    margin: 0 5px;
+  }
+  p {
+    background-color: #fff;
+    max-height: 200px;
+    padding: 1em;
+    border-radius: 0.5em;
+
+    overflow: auto;
+  }
+
+  > a {
+    float: right;
+  }
+
+  .checkbox {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+  }
+  input[type="checkbox"] {
+    vertical-align: middle;
+  }
+}
+
+.guestPost button {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 0.9em;
+}
+
+.published {
+  font-size: 0.75em;
+  color: rgb(105, 102, 102);
+}
+
+.hiddenPost {
+  /* background-color: darkkhaki; */
+  background-color: black !important;
+  color: white;
+}
+
+@media only screen and (max-width: 480px) {
+  main {
+    font-size: 0.8em;
+  }
+  #postForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #postForm > textarea {
+    margin: 1em auto;
+    font-size: 1em;
+  }
+  button {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    max-width: 60%;
+    min-width: 700px;
+  }
+}

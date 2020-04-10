@@ -1,0 +1,10 @@
+main{
+    max-width:300px;
+}
+form{
+    margin: 0 auto;
+    display:flex;
+}
+form div{
+    flex-grow: 1;
+}

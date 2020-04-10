@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <%- include ('partials/head') %>
+    <link rel="stylesheet" href="/css/post.css" />
+  </head>
+  <body class="fade-in">
+    <!-- header -->
+    <header>
+      <%- include ('partials/header') %>
+    </header>
+
+    <!-- main -->
+    <main>
+      <article>
+        <header>
+          <h1><%= post.title %></h1>
+        </header>
+        <section class="<%= post.aligned === 'center' && post.aligned %>">
+          <% if(post.postImage.data !== undefined){ %>
+          <img src="data:image/png;base64,<%= postImage %>" alt="" />
+          <% }else{ %>
+          <!-- <div class="image">
+                </div> -->
+          <% } %>
+          <br />
+          <% if(post.aligned !== undefined && post.aligned !== null){ %>
+          <p class="<%= post.aligned %>">
+            <% }else{ %>
+          </p>
+
+          <p>
+            <% } %> <% const linebreak = post.content.replace(/\n/g,'<br />') %>
+            <%- linebreak %>
+          </p>
+          <br />
+        </section>
+      </article>
+    </main>
+
+    <% if(node_env === 'development'){ %>
+    <button id="updateButton">수정</button>
+    <button id="deleteButton">삭제</button>
+    <% } %>
+
+    <!-- footer -->
+    <footer>
+      <%- include ('partials/footer') %>
+    </footer>
+
+    <script src="/libs/common.js"></script>
+    <script>
+      const updateBtn = document.getElementById("updateButton");
+      const deleteBtn = document.getElementById("deleteButton");
+      const postId = location.pathname.split("/")[2];
+
+      updateBtn.addEventListener("click", () => {
+        console.log("clicked!");
+        console.log(postId);
+        window.location.href = `/diary/update/${postId}`;
+      });
+      deleteBtn.addEventListener("click", () => {
+        console.log("clicked!");
+        window.location.href = `/diary/delete/${postId}`;
+      });
+    </script>
+  </body>
+</html>

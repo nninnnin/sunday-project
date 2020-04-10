@@ -1,0 +1,167 @@
+.dock {
+  /* styling */
+  background-color: var(--main-bg-color);
+  border-radius: 1em;
+  min-width:30vw;
+  max-width: 80vw;
+  height: 30px;
+
+  /* position */
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%);
+
+  /* aligning child element */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  box-shadow: 0px 2px 5px black;
+
+  &:hover .imgBox {
+    width: 40px;
+    height: 40px;
+  }
+
+  .fas {
+    font-size: 2em;
+    position: absolute;
+    bottom: 2px;
+    color: white;
+    text-shadow: 0px 1px 3px black;
+    transition: 0.1s;
+    &:hover {
+      font-size: 2.5em;
+    }
+  }
+  .fa-caret-left {
+    left: 10px;
+  }
+  .fa-caret-right {
+    right: 10px;
+  }
+  .imgs {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    width: 70%;
+    overflow-x: scroll;
+
+    padding: 0 10px;
+    padding-bottom: 10px;
+
+    min-width: 100px;
+    min-height: 100px;
+
+    scroll-behavior: smooth;
+    .imgContainer {
+      position: relative;
+      flex-shrink: 0;
+      margin: 0 6px;
+
+      transition: 1s;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+
+      flex-basis: 30px;
+      margin-top: 10px;
+
+      &:hover .title {
+        display: block;
+        position: absolute;
+        bottom: 50px;
+        z-index: 10;
+      }
+      &:active .title {
+        bottom: 60px;
+      }
+
+      .title {
+        color: black;
+        border-radius: 3px;
+        padding: 3px;
+        font-size: 10px;
+        white-space: nowrap;
+        display: none;
+        max-width: 100%;
+
+        position: relative;
+        bottom: 10px;
+        text-align: center;
+
+        margin-bottom: 5px;
+
+        transition: 0.1s;
+      }
+
+      .imgBox {
+        position: relative;
+        width: 30px;
+        height: 30px;
+
+        transition: 0.3s;
+
+        &.clicked{
+          animation: scale-up 0.5s;
+          @keyframes scale-up{
+            0%{
+            }50%{
+              transform: scale(1.2);
+            }100%{
+
+            }
+        }
+        }
+        &:hover {
+          width: 50px;
+          height: 50px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+
+          position: absolute;
+          border-radius: 0.5em;
+          box-shadow: 0px 1px 3px black;
+        }
+      }
+    }
+  }
+}
+.loaderContainer {
+  top: 40%;
+}
+#loader {
+  font-size: 1em;
+  border: 4px solid #fff;
+  border-top: 4px solid springgreen;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+@media only screen and (max-width: 480px) {
+  .dock{
+    bottom:45px;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}

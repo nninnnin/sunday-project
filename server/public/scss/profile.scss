@@ -1,0 +1,94 @@
+main {
+  .profile-container {
+    margin: 3em auto;
+    max-width: 330px;
+    min-width: 330px;
+    font-family: "Noto Sans KR";
+    box-shadow: 0.3px 1px 3px rgb(32, 46, 5);
+
+    font-size: 0.8em;
+
+    position: relative;
+
+    .profile-info {
+      background-color: black;
+      color: white;
+      padding: 2em;
+
+      #img-wrapper {
+        text-align: center;
+        img {
+          border: 1.5px white dashed;
+          border-radius: 100%;
+          /* padding으로 사진과 border 간의 공간 만듦 */
+          padding: 3px;
+          height: 150px;
+        }
+      }
+    }
+    .input-form {
+      color: black;
+      background-color: white;
+      padding: 2em;
+
+      label {
+        line-height: 2.8em;
+      }
+      input,
+      textarea {
+        //feature
+        width: 90%;
+        border: 1px solid grey;
+        resize: none;
+
+        //contents
+        padding: 3px;
+        font-size: 1em;
+        font-family: "NanumGothic";
+
+        //location
+        margin-left: 1em;
+      }
+      textarea {
+        max-height: 150px;
+      }
+
+      button[type="submit"] {
+        //location
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+
+        // feature
+
+        //contents
+        font-size: 1em;
+        padding: 3px 5px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  main {
+    max-width: 100%;
+    line-height: 2em;
+    .profile-container {
+      margin: 0;
+      min-width: 100%;
+    }
+    section {
+      display: block;
+    }
+
+    #img-wrapper img {
+      height: auto;
+    }
+
+    .profile-info {
+      background-color: black;
+      color: white;
+      padding: 2em;
+    }
+  }
+}
