@@ -64,6 +64,9 @@ p{
     /* .logo{
         display:none;
     } */
+    main{
+        padding-bottom:45px;
+    }
     h1{
         font-size: 2em;
         /* color:var(--main-bg-color); */
