@@ -12,6 +12,10 @@ const guestpostSchema = new mongoose.Schema(
             type:String,
             required:true
         },
+        bg_color:{
+            type:String,
+            default:'#f0f8ff'
+        },
         updated_At:{
             type:Date,
             default:Date.now

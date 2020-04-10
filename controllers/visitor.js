@@ -13,6 +13,7 @@ visitorController.createPost = (req,res,next)=>{
     let NewGuestPost = new Guestpost({
         _id: new mongoose.Types.ObjectId(),
         content: req.body.content,
+        bg_color:req.body.bg_color,
         hidden: req.body.hidden
     });
 

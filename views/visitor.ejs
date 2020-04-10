@@ -25,6 +25,7 @@
                 <form action="/visitor" method="post" id="postForm">
                     <img src="imgs/minimi.jfif" alt="">
                     <textarea name="content" id="postTxt" placeholder="응원의 한마디 :)" required></textarea>
+                    <input type="color" name="bg_color" value="#f0f8ff">
                     <button type="submit" id="submitBtn">POST!</button>
                     <% if (process.env.NODE_ENV==='development') { %>
                     <div class="checkbox">
@@ -42,7 +43,7 @@
                 
                 <% for ([index, guestPost] of guestPosts.entries()){ %> 
                     <% if (!guestPost.hidden) { %>
-                    <div class="guestPost"  id="<%= index %>">
+                    <div class="guestPost"  id="<%= index %>" style="background-color:<%= guestPost.bg_color%>">
                         <% const postNumber = guestPosts.length - index %>
                         <header>
                             NO.<%= postNumber %>
@@ -62,7 +63,7 @@
                     </div>
                     <% }else{ %>
                     <% if (process.env.NODE_ENV === 'development') { %>
-                    <div class="guestPost hiddenPost"  id="<%= index %>">
+                    <div class="guestPost"  id="<%= index %>" style="background-color:<%= guestPost.bg_color%>">
                         <% const postNumber = guestPosts.length - index %>
                         <header>
                             NO.<%= postNumber %>
@@ -71,7 +72,7 @@
                             <span>비밀글</span>
                         </header>
 
-                        <p>
+                        <p class="hiddenPost">
                             <%= guestPost.content %> 
                             <br>
                         </p>
