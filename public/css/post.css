@@ -84,4 +84,7 @@ p{
     #updateButton{
         bottom:80px;
     }
+    footer{
+        display:none;
+    }
 }
