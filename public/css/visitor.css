@@ -47,6 +47,14 @@ textarea, input{
     bottom:15px;
     right:25px;
 }
+.checkbox{
+    position: absolute;
+    bottom:15px;
+    right:100px;
+}
+input[type=checkbox]{
+    vertical-align: middle;
+}
 .guestPost{
     overflow:hidden; /* added to contain the buttons inside of the div */
     transition: 0.5s;
@@ -89,6 +97,10 @@ textarea, input{
 .published{
     font-size:0.75em;
     color:rgb(105, 102, 102);
+}
+
+.hiddenPost{
+    background-color: darkkhaki;
 }
 
 @media only screen and (max-width:480px){

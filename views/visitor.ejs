@@ -26,12 +26,22 @@
                     <img src="imgs/minimi.jfif" alt="">
                     <textarea name="content" id="postTxt" placeholder="응원의 한마디 :)" required></textarea>
                     <button type="submit" id="submitBtn">POST!</button>
+                    <% if (process.env.NODE_ENV==='development') { %>
+                    <div class="checkbox">
+                        <label for="hidden">비밀글</label>
+                        <input type="checkbox" name="hidden" value="true">
+                    </div>
+                    <% } %>
                 </form>
             </section>
 
             <!-- get guest posts -->
             <section>
+                
+                
+                
                 <% for ([index, guestPost] of guestPosts.entries()){ %> 
+                    <% if (!guestPost.hidden) { %>
                     <div class="guestPost"  id="<%= index %>">
                         <% const postNumber = guestPosts.length - index %>
                         <header>
@@ -50,6 +60,28 @@
                         <a href="visitor/<%= guestPost._id %>" id="updateBtn"><button>수정하기</button></a>
                         <% } %> 
                     </div>
+                    <% }else{ %>
+                    <div class="guestPost hiddenPost"  id="<%= index %>">
+                        <% const postNumber = guestPosts.length - index %>
+                        <header>
+                            NO.<%= postNumber %>
+                            <span>작성자</span>
+                            <span class="published"><%= `(${(guestPost.updated)? 'updated' : 'posted'} at ${guestPost.updated_At.toLocaleString()})` %></span>
+                            <span>비밀글</span>
+                        </header>
+
+                        <p>
+                            <%= guestPost.content %> 
+                            <br>
+                        </p>
+                        
+                        <% if(node_env === 'development'){ %> 
+                        <a href="visitor/<%= guestPost._id %>/delete"><button>삭제하기</button></a>
+                        <a href="visitor/<%= guestPost._id %>" id="updateBtn"><button>수정하기</button></a>
+                        <% } %> 
+                    </div>
+
+                    <% } %> 
                 <% } %> 
             </section>
         </div>

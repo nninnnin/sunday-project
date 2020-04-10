@@ -8,11 +8,12 @@ mongoose.set('useFindAndModify', false);
 const visitorController = {};
 
 visitorController.createPost = (req,res,next)=>{
-    console.log(req.body.content);
+    console.log(req.body);
 
     let NewGuestPost = new Guestpost({
         _id: new mongoose.Types.ObjectId(),
         content: req.body.content,
+        hidden: req.body.hidden
     });
 
     NewGuestPost.save()
@@ -24,7 +25,7 @@ visitorController.createPost = (req,res,next)=>{
 
 visitorController.readPost = (req,res)=>{
     Guestpost.find()
-        .sort({$natural:-1})
+        .sort({_id:-1})
         .exec() // mongoose 4버전부터는 생략 가능 (출처 zerocho)
         .then(docs=>{
             // console.log(docs);

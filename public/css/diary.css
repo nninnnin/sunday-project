@@ -53,7 +53,7 @@ section{
     padding:1em;
     grid-area:desc;
     position:relative;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .description h2{
     font-family: 'Gugi';
@@ -68,6 +68,7 @@ section{
     overflow: hidden;
     font-size:0.8em;
     font-family:'Nanum Gothic';
+    text-align: justify;
 }
 
 img { /* 원리 알기 */
@@ -83,7 +84,7 @@ img { /* 원리 알기 */
 section span{
     position:absolute;
     bottom:3px;
-    right:0;
+    right:14px;
     color:black;
     font-size: smaller;
 }
