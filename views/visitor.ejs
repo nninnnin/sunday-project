@@ -61,6 +61,7 @@
                         <% } %> 
                     </div>
                     <% }else{ %>
+                    <% if (process.env.NODE_ENV === 'development') { %>
                     <div class="guestPost hiddenPost"  id="<%= index %>">
                         <% const postNumber = guestPosts.length - index %>
                         <header>
@@ -75,12 +76,10 @@
                             <br>
                         </p>
                         
-                        <% if(node_env === 'development'){ %> 
                         <a href="visitor/<%= guestPost._id %>/delete"><button>삭제하기</button></a>
                         <a href="visitor/<%= guestPost._id %>" id="updateBtn"><button>수정하기</button></a>
-                        <% } %> 
                     </div>
-
+                    <% } %>
                     <% } %> 
                 <% } %> 
             </section>
