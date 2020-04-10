@@ -48,11 +48,13 @@
             <!-- newest visitors (최신 방명록) -->
             <div class="visitors">
                 <% for ([index,visitor] of visitors.entries()) { %> 
-                <a href="/visitor#<%= index %>">
-                    <div class="visitor">
-                        <span>누군가</span> <span id="content"><%= visitor.content %></span>  <i>some</i>
-                    </div>
-                </a>
+                <% if (!visitor.hidden) { %>
+                    <a href="/visitor#<%= index %>">
+                        <div class="visitor">
+                            <span>누군가</span> <span id="content"><%= visitor.content %></span>  <i>some</i>
+                        </div>
+                    </a>
+                <% } %>
                 <% } %> 
             </div>
 
