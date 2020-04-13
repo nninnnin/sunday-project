@@ -12,6 +12,8 @@ const path = require('path');
 const partials = require('express-partials');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const favicon = require('serve-favicon');
+
 let livereload = null;
 let connectLivereload = null;
 
@@ -30,6 +32,7 @@ const visitorRouter = require('./routes/visitor');
 // Create server
 const app = express();
 
+app.use(favicon(path.join(__dirname,'favicon.ico')))
 app.use(methodOverride('_method'));
 
 // Static File Service 
