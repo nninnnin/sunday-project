@@ -32,7 +32,7 @@ const visitorRouter = require('./routes/visitor');
 // Create server
 const app = express();
 
-app.use(favicon(path.join(__dirname,'favicon.ico')))
+app.use(favicon(path.join(__dirname,'public','favicon.ico')))
 app.use(methodOverride('_method'));
 
 // Static File Service 
