@@ -7,17 +7,22 @@ router.get('/', indexController.getPosts);
 
 // profile
 router.get('/profile',(req,res)=>{
-    res.render('profile.ejs');
+    res.render('profile');
 });
 
 // project
 router.get('/project',(req,res)=>{
-    res.render('project.ejs');
+    res.render('project');
 });
 
 // gallery
 router.get('/gallery',(req,res)=>{
-    res.render('gallery.ejs');
+    res.render('gallery');
 });
+
+//admin
+router.get('/admin',(req,res)=>{
+    res.render('admin')
+})
 
 module.exports = router;
