@@ -32,11 +32,14 @@ const visitorRouter = require('./routes/visitor');
 // Create server
 const app = express();
 
-app.use(favicon(path.join(__dirname,'public','favicon.ico')))
+
 app.use(methodOverride('_method'));
 
 // Static File Service 
 app.use(express.static('public'));
+
+// serve favicon
+app.use(favicon(path.join(__dirname,'public','favicon.ico')))
 
 
 // dev mode setting
