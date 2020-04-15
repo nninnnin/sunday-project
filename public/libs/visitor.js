@@ -32,11 +32,11 @@ updateBtn.forEach((btn)=>{
                 console.log('res는',res);
                 console.log(`유저를 찾고 업데이트에 성공했습니다 status code = ${res.status}`);
                 const date = new Date()
-                const updateHTML = 
-                    `${reqdata.content}
-                    <br>
-                    <span class="published">updated at ${date.toLocaleString('ko-KR')}</span>`
-                e.target.parentElement.parentElement.children[1].innerHTML = updateHTML;
+                const updatedContent = reqdata.content;
+                const updated_at = `<span class="published">updated at ${date.toLocaleString('ko-KR')}</span>`;
+                    
+                e.target.parentElement.parentElement.children[1].innerHTML = updatedContent;
+                e.target.parentElement.parentElement.children[0].children[1].innerHTML = updated_at;
             }).catch((err)=>{
                 console.log(err);
             })

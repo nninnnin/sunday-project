@@ -8,12 +8,30 @@ mongoose.set('useFindAndModify', false);
 const visitorController = {};
 
 visitorController.createPost = (req,res,next)=>{
-    console.log(req.body);
+    let bg_color = null;
+    let font_white = null;
+    // color input parsing to change from hex to rgb format
+    if(req.body.bg_color){
+        const colorHex = req.body.bg_color.match(/[A-Za-z0-9]{2}/g);
+        const colorDec = colorHex.map((val)=>{return parseInt(val,16)})
+        bg_color = `rgb(${colorDec.join(',')})`;
+
+        const r= colorDec[0];
+        const g= colorDec[1];
+        const b= colorDec[2];
+
+        const lum = r*0.2126+g*0.7152 + b*0.0722;
+        // rgb로 계산한 lum이 129 미만이라면 font color를 white로
+        if(lum<129){
+            font_white = true;
+        }
+    }
 
     let NewGuestPost = new Guestpost({
         _id: new mongoose.Types.ObjectId(),
         content: req.body.content,
-        bg_color:req.body.bg_color,
+        bg_color:bg_color,
+        font_white:font_white,
         hidden: req.body.hidden
     });
 

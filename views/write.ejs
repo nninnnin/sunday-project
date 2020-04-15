@@ -36,7 +36,7 @@
                         <label for="rightAlignBtn">가운데 정렬</label>
                         <input type="radio" name="aligned" id="rightAlignBtn" value="center">
                     </div>
-                    <textarea name="content" id="content" required></textarea><br>
+                    <textarea name="content" id="content" required spellcheck='false'></textarea><br>
                 </div>
 
                 <input type="file" name="postImage" id=""><br>
@@ -58,7 +58,7 @@
                             <label for="rightAlignBtn">가운데 정렬</label>
                             <input type="radio" name="aligned" id="rightAlignBtn" value="center">
                         </div>
-                        <textarea name="content" id="content" required><%= post.content %></textarea>
+                        <textarea name="content" id="content" required spellcheck='false'><%= post.content %></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary" id="updateBtn">Submit</button>

@@ -39,11 +39,10 @@
             <!-- get guest posts -->
             <section>
                 
-                
-                
-                <% for ([index, guestPost] of guestPosts.entries()){ %> 
+                <% for ([index, guestPost] of guestPosts.entries()){ %>
+                    <!-- 공개글 -->
                     <% if (!guestPost.hidden) { %>
-                    <div class="guestPost"  id="<%= index %>" style="background-color:<%= guestPost.bg_color%>">
+                    <div class="guestPost <%= (guestPost.font_white)? 'white': null%>"  id="<%= index %>" style="background-color:<%= guestPost.bg_color%>">
                         <% const postNumber = guestPosts.length - index %>
                         <header>
                             NO.<%= postNumber %>
@@ -62,8 +61,9 @@
                         <% } %> 
                     </div>
                     <% }else{ %>
+                    <!-- dev모드 일 때만 비밀글 렌더링 -->
                     <% if (process.env.NODE_ENV === 'development') { %>
-                    <div class="guestPost"  id="<%= index %>" style="background-color:<%= guestPost.bg_color%>">
+                    <div class="guestPost <%= (guestPost.font_white)? 'white': null%>"  id="<%= index %>" style="background-color:<%= guestPost.bg_color%>">
                         <% const postNumber = guestPosts.length - index %>
                         <header>
                             NO.<%= postNumber %>
@@ -73,7 +73,7 @@
                         </header>
 
                         <p class="hiddenPost">
-                            <%= guestPost.content %> 
+                            <%= guestPost.content %>
                             <br>
                         </p>
                         
