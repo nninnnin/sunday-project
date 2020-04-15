@@ -17,6 +17,6 @@ router.get('/',guestController.readPost);
 router.put('/:postId',guestController.updatePost);
 
 // Delete guestpost (but use GET method cuz html form does not support DELETE method)
-router.get('/:postId/delete',guestController.deletePost);
+router.delete('/:postId/delete',guestController.deletePost);
 
 module.exports = router;

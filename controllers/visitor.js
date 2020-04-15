@@ -1,6 +1,8 @@
 // VISITOR CONTROLLER
 const mongoose = require('mongoose');
 const Guestpost = require('../models/guestpost');
+// to parse FormData
+const formidable = require('formidable');
 // Make Mongoose use `findOneAndUpdate()`. Note that this option is `true`
 // by default, you need to set it to false.
 mongoose.set('useFindAndModify', false);
@@ -8,6 +10,8 @@ mongoose.set('useFindAndModify', false);
 const visitorController = {};
 
 visitorController.createPost = (req,res,next)=>{
+    console.log(req.body)
+
     let bg_color = null;
     let font_white = null;
     // color input parsing to change from hex to rgb format
@@ -36,10 +40,11 @@ visitorController.createPost = (req,res,next)=>{
     });
 
     NewGuestPost.save()
-        .then(result=>console.log(result))
-        .catch(err=>console.log(err));
-
-    res.redirect('/visitor');
+    .then(result=>{
+        console.log('saved on db!',result);
+        res.status(200).json(result);
+    })
+    .catch(err=>console.log(err));
 };
 
 visitorController.readPost = (req,res)=>{
@@ -93,16 +98,15 @@ visitorController.deletePost = (req,res,next)=>{
     const id = req.params.postId;
     console.log(id)
     Guestpost.deleteOne({ _id: id })
-        .then((docs)=>{
-            if(docs){
-                console.log(docs)
-            }
-        })
-        .catch(err=>{
-            console.log(err);
-        });
-
-    res.redirect('/visitor')
+    .then((result)=>{
+        if(result){
+            console.log(result);
+            res.send(result);
+        }
+    })
+    .catch(err=>{
+        console.log(err);
+    });
 };
 
 module.exports = visitorController;
