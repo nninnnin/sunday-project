@@ -1,5 +1,5 @@
 # Blog 만들기
-
+배포완료! -> justindglee.com
 ## 사용된 기술스택
 
 - HTML, CSS, VanilaJS, ejs, express, MongoDB
