@@ -187,6 +187,13 @@ footer{
     display:block !important;
 }
 
+#loader{
+    position:absolute;
+    left:50%;
+    top:50%;
+    background-color: red;
+}
+
 
 /* only smartphones ~ 480px */
 @media only screen and (max-width: 480px){
