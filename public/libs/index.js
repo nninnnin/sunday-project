@@ -1,4 +1,4 @@
-// Present index page after loader
+// 메인페이지는 다 그려지고 보이는게 예쁠 것 같아서
 window.onload = function(){
     const main = document.querySelector('main');
     main.classList.add('fade-in');
