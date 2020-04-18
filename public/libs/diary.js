@@ -12,8 +12,11 @@ window.onload=()=>{
 
 
 const writeBtn = document.getElementById('writeButton');
-        writeBtn.addEventListener('click',()=>{
-            window.location.href = '/diary/write';
-        })
+
+if(writeBtn !== null){
+    writeBtn.addEventListener('click',()=>{
+        window.location.href = '/diary/write';
+    })
+}
 
 
