@@ -59,57 +59,6 @@ span{
 .logo a{color:black}
 
 
-#hamburger{
-    display:none;
-    float:right;
-    line-height: 27px;
-    position:relative;
-    right:5px;
-}
-
-#pop-up{
-    display:none;
-    background-color: white;
-    color:white;
-    position: absolute;
-    right:0;
-    z-index:10;
-    width:33vw;
-}
-#pop-up div{
-    display:flex;
-    flex-direction:column;
-    text-align:center;
-}
-#pop-up a{
-    background-color: var(--main-bg-color);
-    padding:1.2em;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-decoration: none;
-    letter-spacing: 1.5px;
-}
-#pop-up a:hover{
-    background-color: black;
-}
-
-.sticky{
-    position:fixed !important;
-    width:100%;
-    right:0;
-    z-index:10;
-}
-.sticky-popup{
-    position:fixed !important;
-    width:100%;
-    right:0;
-    top:50.23px;
-    z-index:10;
-}
-.sticky-padding{
-    padding-top:114px;
-}
-
-
 nav{
     text-align: center;
     padding: 1.5em;
@@ -216,10 +165,6 @@ footer{
 
 /* only smartphones ~ 480px */
 @media only screen and (max-width: 480px){
-    /* #hamburger{
-        display:block;
-    } */
-
     .logo{
         background-color: var(--main-bg-color);
         color: #fff;
