@@ -42,26 +42,10 @@ span{
 
 
 /* header */
-.logo{
-    background-color: white;
-    color: rgb(43, 43, 43);
-    text-align: center;
-    padding:1em;
-
-    /* font family + fallbacks */
-    font-family: Oswald;
-    font-size:2em;
-
-    position:relative;
-
-    transition: 1s ease;
-}
-.logo a{color:black}
-
-
 nav{
+    display:flex;
     text-align: center;
-    padding: 1.5em;
+    padding: 1em;
     background-color: var(--main-bg-color);
 }
 
@@ -76,6 +60,11 @@ nav a{
     font-weight: 550;
     text-decoration: none;
     letter-spacing: 1.5px;
+}
+/* logo */
+nav a:first-child{
+    margin-right:auto;
+    text-transform: uppercase;
 }
 nav a:visited{
     color:white;

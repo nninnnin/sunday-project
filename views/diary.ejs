@@ -3,6 +3,7 @@
 <head>
    <%- include('partials/head') %>
    <link rel="stylesheet" href="../css/diary.css">
+   <link rel="stylesheet" href="../css/dock.css">
 </head>
 <body class="fade-in">
     <!-- header -->
@@ -15,11 +16,10 @@
         <!-- section -->
         <section>
             <!-- posts -->
-            <% for( [index, post] of posts.entries() ) { %>
+            <!-- <% for( [index, post] of posts.entries() ) { %>
                 <div>
                     <div class="post">
                         <div class="img">
-                            <!-- <img src="imgs/post/<%= index %>.jpg" alt=""> -->
                             <% if(post.postImage !== '{}' && post.postImage.data !== undefined){ %> 
                                 <% const postImage = post.postImage.data.toString('base64'); %> 
                                 <img src="data:image/png;base64,<%= postImage %>" alt="">
@@ -40,7 +40,7 @@
                 <% if( index !== posts.length - 1 ){ %>
                 <hr>
                 <% } %>
-            <% } %>
+            <% } %> -->
         </section>
     </main>
 
@@ -52,6 +52,8 @@
     <footer>
         <%- include ('partials/footer') %> 
     </footer>
+
+    <%- include ('partials/dock') %> 
 
     <!-- <button id="home">UP</button> -->
 

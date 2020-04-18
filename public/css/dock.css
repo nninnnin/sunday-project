@@ -1,0 +1,35 @@
+.dock{
+    padding:2em;
+    background-color: var(--main-bg-color);
+
+    position:fixed;
+    width:70%;
+    bottom:30px;
+    left:50%;
+    transform:translate(-50%);
+
+    border-radius:1em;
+
+    display:flex;
+    justify-content: center;
+    align-items:flex-end;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.dock .imgContainer{
+    width:30px;height:30px;
+    position:relative;
+    
+    flex-shrink:0;
+    margin: 0 5px;
+    
+}
+
+.dock img{
+    position:absolute;
+}
+
+.dock .imgContainer:hover{
+    width:50px;height:50px;
+}

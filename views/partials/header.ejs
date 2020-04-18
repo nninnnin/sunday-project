@@ -1,13 +1,12 @@
-<div class="logo" id="logobar">
+
+<nav>
     <!-- logo -->
     <% if(process.env.NODE_ENV==="development"){ %> 
         <a href="/" id="logo">Justin's blog (dev)</a>
-        <% }else{ %>
+    <% }else{ %>
         <a href="/" id="logo">Justin's blog</a>
     <% } %> 
-</div>
-
-<nav>
+    <!-- links -->
     <a href="/">홈</a>
     <a href="/profile">프로필</a>
     <a href="/project" id="project">프로젝트</a>

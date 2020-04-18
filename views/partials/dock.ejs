@@ -1,0 +1,12 @@
+<div class="dock">
+    <% for (post of posts){ %>
+        <% const img = post.postImage %>
+        <div class="imgContainer">
+            <% if(img !== '{}' && img.data !== undefined){ %> 
+                <img src="data:image/png;base64,<%= img.data.toString('base64') %>" alt="">
+            <% }else{ %>
+                <img src="imgs/post/undefined.jpg" alt="undefined">
+            <% } %> 
+        </div>
+    <% } %> 
+</div>
