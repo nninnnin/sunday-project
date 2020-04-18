@@ -18,6 +18,7 @@ main{
     color:black;
     background-color: white;
     line-height:1.8em;
+    display:none;
 }
 
 section > div:nth-child(4n-1) > div{

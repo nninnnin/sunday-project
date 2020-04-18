@@ -169,6 +169,8 @@ footer{
     font-size:0.7em;
 
     border-top:1px dotted var(--main-bg-color);
+
+    display:none;
 }
 
 #home{
@@ -187,12 +189,30 @@ footer{
     display:block !important;
 }
 
-#loader{
+.loaderContainer{
+    /* fixed position, centered */
     position:fixed;
     left:50%;
     top:50%;
+    transform: translate(-50%,-50%);
     z-index:10;
-    background-color: red;
+}
+#loader{
+    font-size:3em;
+
+    border:10px solid var(--main-bg-color);
+    border-top:10px solid #fff;
+    border-radius:50%;
+    padding:0.5em;
+
+    animation: spin 2s linear infinite;
+
+    /* for test */
+    /* display:block !important; */
+}
+@keyframes spin{
+    0%{ transform: rotate(0deg);}
+    100%{ transform: rotate(360deg);}
 }
 
 

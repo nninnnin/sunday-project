@@ -3,15 +3,6 @@
 <head>
     <%- include ('partials/head') %>
     <link rel="stylesheet" href="css/index.css">
-    <style>
-        #loader{
-            position:fixed;
-            left:50%;
-            top:50%;
-            z-index:10;
-            background-color: red;
-        }
-    </style>
 </head>
 <body>
     <!-- header -->
@@ -95,9 +86,10 @@
     </footer>
 
     
+    <!-- scripts -->
+    <script src="../libs/common.js"></script>
+    <script src="../libs/index.js"></script>
 </body>
-
-<!-- scripts -->
-<script src="../libs/common.js"></script>
-<script src="../libs/index.js"></script>
+<!-- loader -->
+<%- include ('partials/loader') %>
 </html>

@@ -58,12 +58,8 @@
     <button id="home">UP</button>
 
     <script src="../libs/common.js"></script>
-    <script>
-        const writeBtn = document.getElementById('writeButton');
-        writeBtn.addEventListener('click',()=>{
-            console.log('clicked!')
-            window.location.href = '/diary/write';
-        })
-    </script>
+    <script src="../libs/diary.js"></script>
 </body>
+<!--loader-->
+<%- include ('partials/loader') %>
 </html>
