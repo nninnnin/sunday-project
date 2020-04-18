@@ -104,6 +104,10 @@ section a{
     float:right;
 }
 
+footer{
+    display:none;
+}
+
 /* 0 ~ 480px */
 @media only screen and (max-width: 480px){
     main{

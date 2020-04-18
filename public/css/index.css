@@ -289,6 +289,9 @@ section a{
         display:none;
     }
 }
+footer{
+    display:none;
+}
 
 @media screen and (max-width: 480px){
     main{
