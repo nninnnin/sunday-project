@@ -1,29 +1,35 @@
 .dock{
-    padding:2em;
+    /* styling */
     background-color: var(--main-bg-color);
+    border-radius:1em;
+    height:30px;
 
+    /* aligning */
     position:fixed;
-    width:70%;
     bottom:30px;
     left:50%;
     transform:translate(-50%);
 
-    border-radius:1em;
-
+    /* aligning child element */
     display:flex;
     justify-content: center;
     align-items:flex-end;
-    overflow-x: auto;
-    scroll-behavior: smooth;
 }
+.dock .imgs{
+    display:flex;
+    justify-content: flex-start;
+    align-items:flex-end;
+    scroll-behavior: smooth;
 
+    width:90%;
+    overflow-x:auto;
+}
 .dock .imgContainer{
     width:30px;height:30px;
     position:relative;
     
     flex-shrink:0;
     margin: 0 5px;
-    
 }
 
 .dock img{
