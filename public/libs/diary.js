@@ -19,4 +19,14 @@ if(writeBtn !== null){
     })
 }
 
+// 가로스크롤
+const dock = document.querySelector('.dock');
+const imgs = document.querySelector('.imgs')
+
+dock.addEventListener('wheel', function(e) {
+
+  if (e.deltaY > 0) imgs.scrollLeft += 50;
+  else imgs.scrollLeft -= 50;
+});
+
 
