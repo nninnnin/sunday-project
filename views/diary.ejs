@@ -4,6 +4,12 @@
    <%- include('partials/head') %>
    <link rel="stylesheet" href="../css/diary.css">
    <link rel="stylesheet" href="../css/dock.css">
+
+   <!-- to use react -->
+   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+   <!-- babel -->
+   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body class="fade-in">
     <!-- header -->
@@ -13,35 +19,6 @@
 
     <!-- main -->
     <main>
-        <!-- section -->
-        <section>
-            <!-- posts -->
-            <!-- <% for( [index, post] of posts.entries() ) { %>
-                <div>
-                    <div class="post">
-                        <div class="img">
-                            <% if(post.postImage !== '{}' && post.postImage.data !== undefined){ %> 
-                                <% const postImage = post.postImage.data.toString('base64'); %> 
-                                <img src="data:image/png;base64,<%= postImage %>" alt="">
-                            <% } else{ %> 
-                                <img src="imgs/post/undefined.jpg" alt="Undefined postImage">
-                            <% } %>
-                        </div>
-                        <div class="description">
-                            <h2><%= post.title %></h2>
-                            <p><%= post.content %></p>
-                            <a id="more" href="/diary/<%= post._id %>">see more</a>
-                            <span id="date">
-                                <%= (post.updated) ? `Updated at ${post.updated_At.toLocaleString()}` : `Posted at ${post._id.getTimestamp().toLocaleString()}` %>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <% if( index !== posts.length - 1 ){ %>
-                <hr>
-                <% } %>
-            <% } %> -->
-        </section>
     </main>
 
     <% if(process.env.NODE_ENV === 'development'){ %>
@@ -55,9 +32,36 @@
 
     <%- include ('partials/dock') %> 
 
-    <!-- <button id="home">UP</button> -->
+    <!-- react component -->
+    <script type="text/babel">
+        class MyComp extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    num:1
+                }
+                this.numUp = this.numUp.bind(this);
+            }
+            numUp(){
+                this.setState({
+                    num: this.state.num+1
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>My First Comp</h1>
+                        num = {this.state.num}
+                        <br/>
+                        <button onClick={this.numUp}>+</button>
+                    </div>
+                )
+            }
+        }
 
-    <button id="home">UP</button>
+        const main = document.querySelector('main');
+        ReactDOM.render(<MyComp/>,main)
+    </script>
 
     <script src="../libs/common.js"></script>
     <script src="../libs/diary.js"></script>

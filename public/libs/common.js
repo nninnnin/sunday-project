@@ -51,11 +51,13 @@ if(location.pathname !== '/'){
     }
 
     const homeBtn = document.getElementById('home');
-    homeBtn.addEventListener('click', ()=>{
-        console.log('clicked!');
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    });
+    if(homeBtn !== null){
+        homeBtn.addEventListener('click', ()=>{
+            console.log('clicked!');
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    }
 
     window.onscroll = ()=>{
         // fixedNav();

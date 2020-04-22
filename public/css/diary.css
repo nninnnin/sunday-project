@@ -14,13 +14,14 @@ hr{
 }
 
 main{
-    max-width:800px;
+    max-width:500px;
     min-height:50vh;
     color:black;
     background-color: white;
     line-height:1.8em;
     display:none;
 
+    border:1px dashed black;
 }
 
 section > div:nth-child(4n-1) > div{
@@ -197,7 +198,7 @@ footer{
 }
 @media only screen and (min-width: 768px){
     main{
-        min-width:730px;
+        /* min-width:730px; */
         box-shadow: 1px 1px 5px rgb(223, 223, 223);
     }
 }
