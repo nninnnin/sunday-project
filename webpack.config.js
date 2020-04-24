@@ -1,35 +1,26 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('h')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode:'development',
     entry:{
-        main:'./src/components/App.js'
+        main:'./src/index.js'
     },
     output:{
         filename:'bundle.js',
-        path:path.resolve(__dirname, 'dist')
+        path:path.resolve(__dirname, 'public/dist')
     },
     module:{
         rules:[
             {
                 test:/\.js$/,
-                include:[
-                    path.resolve(__dirname, 'src/components')
-                ],
-                exclude:'./node_modules',
                 use:{
                     loader:'babel-loader',
                     options:{
-                        presets:['@babel/preset-env']
+                        presets:['@babel/preset-env','@babel/preset-react']
                     }
                 }
             }
         ]
     },
-    plugins:[
-        new HtmlWebpackPlugin({
-            template:`./views/diary.ejs`
-        })
-    ]
 }

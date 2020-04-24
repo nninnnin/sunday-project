@@ -4,12 +4,6 @@
    <%- include('partials/head') %>
    <link rel="stylesheet" href="../css/diary.css">
    <link rel="stylesheet" href="../css/dock.css">
-
-   <!-- to use react -->
-   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-   <!-- babel -->
-   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 </head>
 <body class="fade-in">
     <!-- header -->
@@ -31,71 +25,8 @@
     </footer>
 
     <div class="dockContainer"></div>
-    <!-- <%- include ('partials/dock') %>  -->
 
-    <!-- react component -->
-    <script type="text/babel">
-        class Dock extends React.Component{
-            constructor(props){
-                super(props);
-            }
-
-            
-            render(){
-                const {posts}=this.props;
-                const imgs = posts.map((post)=>{
-                    //titles 
-                    const title = post.title;
-
-                    //imgs 
-                    const img = post.postImage;
-
-                    let imgSrc = null;
-                    if(img !== '{}' && img !== undefined && img.data !== undefined){
-                        imgSrc = `data:image/png;base64,${img.data.toString('base64')}`;
-                    }else{
-                        imgSrc = 'imgs/post/undefined.jpg';
-                    }
-
-                    return (
-                        <div className="imgContainer">
-                            <div className="title">
-                                {title}
-                            </div>
-                            <div className="imgBox">
-                                <img src={imgSrc} alt="thumbnail"/>
-                            </div>
-                        </div>
-                        )
-                });
-
-                return(
-                    <div className="dock">
-                        <div className="imgs">
-                            {imgs}
-                        </div>
-                    </div>
-                )
-            }
-        }
-
-        
-        const dockContainer = document.querySelector('.dockContainer');
-        
-        fetch('/diary/fetch')
-        .then((res)=>{
-            console.log(res);
-            return res.json();
-        })
-        .then((data)=>{
-            console.log(data);
-            const posts = data;
-
-            ReactDOM.render(<Dock posts={posts}/>,dockContainer);
-        })
-
-    </script>
-
+    <script src="/dist/bundle.js"></script>
     <script src="../libs/common.js"></script>
     <script src="../libs/diary.js"></script>
 </body>

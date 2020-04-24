@@ -58,7 +58,10 @@ if (node_env === 'development'){
 
 
 // express server setting with app.set() method
-app.set('views',path.join(__dirname, 'views'));
+app.set('views',[
+    path.join(__dirname, 'views'),
+    path.join(__dirname, 'dist'),
+]);
 app.set('view engine','ejs');
 
 // use partials with ejs

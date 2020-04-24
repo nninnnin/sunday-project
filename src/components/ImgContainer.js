@@ -43,3 +43,5 @@ class ImgContainer extends React.Component{
         return imgs;
     }
 }
+
+export default ImgContainer
