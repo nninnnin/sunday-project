@@ -19,14 +19,18 @@ if(writeBtn !== null){
     })
 }
 
-// 가로스크롤
+
+// dock
 const dock = document.querySelector('.dock');
 const imgs = document.querySelector('.imgs')
 
-dock.addEventListener('wheel', function(e) {
-    e.preventDefault();
-    if (e.deltaY > 0) imgs.scrollLeft += 50;
-    else imgs.scrollLeft -= 50;
-});
+// 가로스크롤
+if(dock !== null){
+    dock.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        if (e.deltaY > 0) imgs.scrollLeft += 50;
+        else imgs.scrollLeft -= 50;
+    });
+}
 
-
+// 이미지 누르면 fetching data -> update ReactDOM

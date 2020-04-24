@@ -14,6 +14,8 @@ router.post('/',upload.single('postImage'),postController.createPost);
 // Read
 router.get('/',postController.getPosts);
 
+router.get('/fetch',postController.getPostsF);
+
 router.get('/write',(req,res)=>{
     res.locals.post = null;
     res.render('write');

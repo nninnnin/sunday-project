@@ -48,7 +48,21 @@ PostController.getPosts = (req,res)=>{
             console.log(`Error occured ${err}`)
         });
 }
+// Read and send data for fetchAPI request
+PostController.getPostsF = (req,res)=>{
+    Post.find()
+        .sort({ '_id' : -1 }) // post 된 날짜대로 정렬 (timestamp desc)
+        .exec()
+        .then((docs)=>{
+            const posts = docs;
+            res.status(200).send(posts);
+        })
+        .catch((err)=>{
+            console.log(`Error occured ${err}`)
+        });
+}
 
+// Get one post
 PostController.getPost = (req,res)=>{
     const postId = req.params.postId
     Post.findById({

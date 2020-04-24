@@ -30,37 +30,70 @@
         <%- include ('partials/footer') %> 
     </footer>
 
-    <%- include ('partials/dock') %> 
+    <div class="dockContainer"></div>
+    <!-- <%- include ('partials/dock') %>  -->
 
     <!-- react component -->
     <script type="text/babel">
-        class MyComp extends React.Component{
+        class Dock extends React.Component{
             constructor(props){
                 super(props);
-                this.state = {
-                    num:1
-                }
-                this.numUp = this.numUp.bind(this);
             }
-            numUp(){
-                this.setState({
-                    num: this.state.num+1
-                })
-            }
+
+            
             render(){
+                const {posts}=this.props;
+                const imgs = posts.map((post)=>{
+                    //titles 
+                    const title = post.title;
+
+                    //imgs 
+                    const img = post.postImage;
+
+                    let imgSrc = null;
+                    if(img !== '{}' && img !== undefined && img.data !== undefined){
+                        imgSrc = `data:image/png;base64,${img.data.toString('base64')}`;
+                    }else{
+                        imgSrc = 'imgs/post/undefined.jpg';
+                    }
+
+                    return (
+                        <div className="imgContainer">
+                            <div className="title">
+                                {title}
+                            </div>
+                            <div className="imgBox">
+                                <img src={imgSrc} alt="thumbnail"/>
+                            </div>
+                        </div>
+                        )
+                });
+
                 return(
-                    <div>
-                        <h1>My First Comp</h1>
-                        num = {this.state.num}
-                        <br/>
-                        <button onClick={this.numUp}>+</button>
+                    <div className="dock">
+                        <div className="imgs">
+                            {imgs}
+                        </div>
                     </div>
                 )
             }
         }
 
-        const main = document.querySelector('main');
-        ReactDOM.render(<MyComp/>,main)
+        
+        const dockContainer = document.querySelector('.dockContainer');
+        
+        fetch('/diary/fetch')
+        .then((res)=>{
+            console.log(res);
+            return res.json();
+        })
+        .then((data)=>{
+            console.log(data);
+            const posts = data;
+
+            ReactDOM.render(<Dock posts={posts}/>,dockContainer);
+        })
+
     </script>
 
     <script src="../libs/common.js"></script>

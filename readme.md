@@ -12,6 +12,7 @@
   - crud를 fetchAPI로 구현, 비동기 데이터 통신 및 ui 업데이트
   - lum 129를 기준으로 font color 자동변경
 - diary 페이지
+  - React 적용
   - dock UI 적용 (맥의 그것)
   - loader UI 적용
 
