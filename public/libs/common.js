@@ -6,18 +6,6 @@ nav_items.forEach((nav_item)=>{
     });
 });
 
-// Show pop up menu when clicking hamburger button
-// const bars = document.getElementById('hamburger');
-// const popup = document.getElementById('pop-up');
-// bars.addEventListener('click',(e)=>{
-//     e.preventDefault();
-//     if(popup.classList[0]==='appear'){
-//         popup.classList.remove('appear');
-//     }else{
-//         popup.classList.add('appear');
-//     }
-// });
-
 // 480px 이하 + 다운스크롤에서 네브바(.logo) fixed position으로
 function fixedNav(){
     const navbar = document.getElementById('logobar');
