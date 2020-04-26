@@ -1,9 +1,17 @@
+<div class="logo" id="logobar">
+    <!-- logo -->
+    <% if(process.env.NODE_ENV==="development"){ %> 
+        <a href="/" id="logo">Justin's blog (dev)</a>
+        <% }else{ %>
+        <a href="/" id="logo">Justin's blog</a>
+    <% } %> 
+</div>
 
 <nav>
     <!-- logo -->
     <% if(process.env.NODE_ENV==="development"){ %> 
         <a href="/" id="logo">Justin's blog (dev)</a>
-    <% }else{ %>
+        <% }else{ %>
         <a href="/" id="logo">Justin's blog</a>
     <% } %> 
     <!-- links -->
@@ -15,12 +23,3 @@
     <a href="/visitor">방명록</a>
 </nav>
 
-<div id="pop-up">
-    <div class="flex-container">
-        <a href="/profile">profile</a>
-        <a href="/project">project</a>
-        <!-- <a href="/gallery">gallery</a> -->
-        <a href="/diary">diary</a>
-        <a href="/visitor">visitor</a>
-    </div>
-</div>

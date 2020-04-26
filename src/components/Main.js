@@ -1,10 +1,11 @@
 import React from 'react';
+import '../styles/Main.css'
 
 class Main extends React.Component{
     render(){
         return(
             <div>
-                메인입니다 불만있어요?
+                justin's blog
             </div>
         )
     }

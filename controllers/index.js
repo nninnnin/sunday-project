@@ -1,4 +1,3 @@
-mongoose = require('mongoose');
 const Post = require('../models/post');
 const Guestpost = require('../models/guestpost');
 

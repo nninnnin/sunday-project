@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <%- include ('partials/head') %> 
-    <link rel="stylesheet" href="/css/project.css">
+   <%- include('partials/head') %>
+   <link rel="stylesheet" href="../css/diary.css">
+   <link rel="stylesheet" href="../css/dock.css">
 </head>
 <body class="fade-in">
     <!-- header -->
@@ -12,19 +13,23 @@
 
     <!-- main -->
     <main>
-        <!-- <h1>프로젝트</h1> -->
-        <div class="canvasContainer">
-            <canvas id="myCanvas">
-            </canvas>
-        </div>
     </main>
+
+    <% if(process.env.NODE_ENV === 'development'){ %>
+    <button id="writeButton">쓰기</button>
+    <% } %>
 
     <!-- footer -->
     <footer>
-        <%- include ('partials/footer')  -%> 
+        <%- include ('partials/footer') %> 
     </footer>
 
+    <div class="dockContainer"></div>
+
+    <script src="/dist/bundle.js"></script>
     <script src="../libs/common.js"></script>
-    <script src="../libs/project.js"></script>
+    <script src="../libs/diary.js"></script>
 </body>
+<!--loader-->
+<%- include ('partials/loader') %>
 </html>

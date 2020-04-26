@@ -42,6 +42,23 @@ span{
 
 
 /* header */
+.logo{
+    background-color: white;
+    color: rgb(43, 43, 43);
+    text-align: center;
+    padding:1em;
+
+    /* font family + fallbacks */
+    font-family: Oswald;
+    font-size:2em;
+
+    position:relative;
+
+    transition: 1s ease;
+}
+.logo a{color:black}
+
+
 nav{
     display:flex;
     text-align: center;
@@ -61,17 +78,17 @@ nav a{
     text-decoration: none;
     letter-spacing: 1.5px;
 }
-/* logo */
-nav a:first-child{
-    margin-right:auto;
-    text-transform: uppercase;
-}
 nav a:visited{
     color:white;
     font-style: normal;
 }
 nav a:hover{
     text-decoration: underline;
+}
+/* logo inside of nav */
+nav a:first-child{
+    margin-right:auto;
+    text-transform: uppercase;
 }
 
 .active{
@@ -163,7 +180,6 @@ footer{
         transition: all 0.5 ease;
     }
     .logo a{color:white;}
-    #pop-up a{color:white;}
 
     nav{
         /* 하단고정 */
@@ -176,6 +192,12 @@ footer{
         width:100%;
         font-size: 0.8em;
         padding: 1em 0;
+
+        display:flex;
+        justify-content:space-evenly;
+    }
+    nav a:first-child{
+        display:none;
     }
 
     main{
@@ -190,8 +212,8 @@ footer{
 
 /* tablet + desktop 481px ~ */
 @media only screen and (min-width: 481px){
-    #pop-up{
-        display:none !important;
+    .logo{
+        display:none;
     }
 }
 
