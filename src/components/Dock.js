@@ -3,8 +3,7 @@ import React from 'react';
 class Dock extends React.Component{
     constructor(props){
         super(props);
-    }
-
+    };
     
     render(){
         const {posts}=this.props;
@@ -14,22 +13,24 @@ class Dock extends React.Component{
             const title = post.title;
 
             //imgs 
-            const img = post.postImage;
+            const postImage = post.postImage;
 
-            let imgSrc = null;
-            if(img !== '{}' && img !== undefined && img.data !== undefined){
-                imgSrc = `data:image/png;base64,${img.data.toString('base64')}`;
+            let img;
+
+            if(postImage !== '{}' && postImage !== undefined && postImage.data !== undefined){
+                const buf = Buffer(postImage.data);
+                img = <img src={`data:image/png;base64,`+buf.toString('base64')} alt="thumbnail"/>
             }else{
-                imgSrc = 'imgs/post/undefined.jpg';
+                img = <img src={'imgs/post/undefined.jpg'} alt="thumbnail"/>
             }
 
             return (
-                <div className="imgContainer">
+                <div className="imgContainer" key={post._id}>
                     <div className="title">
                         {title}
                     </div>
                     <div className="imgBox">
-                        <img src={imgSrc} alt="thumbnail"/>
+                        {img}
                     </div>
                 </div>
                 )

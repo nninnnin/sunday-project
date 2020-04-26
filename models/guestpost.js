@@ -28,7 +28,8 @@ const guestpostSchema = new mongoose.Schema(
             type:Boolean
         },
         hidden:{
-            type:Boolean
+            type:Boolean,
+            default:false
         }
     },
     {   

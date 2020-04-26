@@ -48,6 +48,11 @@
                             NO.<%= postNumber %>
                             <span>작성자</span>
                             <span class="published"><%= `(${(guestPost.updated)? 'updated' : 'posted'} at ${guestPost.updated_At.toLocaleString()})` %></span>
+
+                            <div class="checkbox">
+                                <label for="hidden">숨기기</label>
+                                <input type="checkbox" name="hidden" value="<%= guestPost.hidden?false:true %>"onclick="toggleHidden(this)" data-post-id="<%= guestPost._id %>">
+                            </div>
                         </header>
 
                         <p>
@@ -70,6 +75,11 @@
                             <span>작성자</span>
                             <span class="published"><%= `(${(guestPost.updated)? 'updated' : 'posted'} at ${guestPost.updated_At.toLocaleString()})` %></span>
                             <span>비밀글</span>
+
+                            <div class="checkbox">
+                                <label for="hidden">공개하기</label>
+                                <input type="checkbox" name="hidden" value="<%= guestPost.hidden?false:true %>" onclick="toggleHidden(this)" data-post-id="<%= guestPost._id %>">
+                            </div>
                         </header>
 
                         <p class="hiddenPost">

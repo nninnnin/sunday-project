@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.js'
+import Dock from './components/Dock'
+import Main from './components/Main'
 
+const mainContainer = document.querySelector('main');
 const dockContainer = document.querySelector('.dockContainer');
         
 fetch('/diary/fetch')
@@ -13,5 +15,6 @@ fetch('/diary/fetch')
     console.log(data);
     const posts = data;
 
-    ReactDOM.render(<App posts={posts}/>,dockContainer);
+    ReactDOM.render(<Main/>,mainContainer);
+    ReactDOM.render(<Dock posts={posts}/>,dockContainer);
 })
