@@ -99,9 +99,7 @@ section a{
     .visitors{
         padding:10px 0;
         font-size:0.9em;
-    }
-    .visitors a:hover{
-        font-weight: 700;
+        position:relative;
     }
     .visitor{
         margin:10px 0;
@@ -114,23 +112,51 @@ section a{
         justify-content: space-between;
 
         font-size:0.8em;
+
+        border-radius: 1em;
+        overflow: hidden;
     }
     .visitor:hover{
-        /* background-color: var(--main-bg-color);
-        color:white; */
+        font-weight: 800;
+    }
+    .visitor span{
+        background-color: #fff;
+        border-radius: 1em;
+        padding:0 1em;
     }
     .visitor #name{
         font-weight:900;
         font-size:0.8em;
-        font-style: italic;
-        color:goldenrod
     }
-
+    
     .visitor #content{
         white-space: nowrap;
         max-width:375px;
         overflow-x: hidden;
     }
+    .visitor i{
+        width:15px;
+        height:15px;
+        background-color: var(--bg-color);
+        border-radius: 50%;
+        position:relative;
+        top:5px;
+    }
+
+    .visitor:hover i::after{
+        content:'';
+        width:100px;height:100px;
+        background-color: var(--bg-color);
+
+        position: absolute;
+        animation: flowing 0.8s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes flowing{
+        0%{transform:translate(0,-50%)}
+        100%{transform:translate(-50%,-50%)}
+    }
+
     
     /* aside */
     aside{
