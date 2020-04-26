@@ -101,17 +101,6 @@ section a{
         font-size:0.9em;
         position:relative;
     }
-    .visitors a::before{ /* to add opaque layer */
-        content:'';
-        position:absolute;
-        width:100%;
-        height:100%;
-        left:0;
-        top:0;
-        opacity:0.08;
-        z-index:0;
-        background-color: #fff;
-    }
     .visitor{
         margin:10px 0;
         padding:5px 10px;
@@ -122,26 +111,51 @@ section a{
         justify-content: space-between;
 
         font-size:0.8em;
-    }
-    .visitor span, i{ /* 글자들은 앞으로! opaque 적용 안받게 */
-        position: relative;
-        z-index:1;
+
+        border-radius: 1em;
+        overflow: hidden;
     }
     .visitor:hover{
-        font-weight: 700;
+        font-weight: 800;
+    }
+    .visitor span{
+        background-color: #fff;
+        border-radius: 1em;
+        padding:0 1em;
     }
     .visitor #name{
         font-weight:900;
         font-size:0.8em;
-        font-style: italic;
-        color:goldenrod
     }
-
+    
     .visitor #content{
         white-space: nowrap;
         max-width:375px;
         overflow-x: hidden;
     }
+    .visitor i{
+        width:15px;
+        height:15px;
+        background-color: var(--bg-color);
+        border-radius: 50%;
+        position:relative;
+        top:5px;
+    }
+
+    .visitor:hover i::after{
+        content:'';
+        width:100px;height:100px;
+        background-color: var(--bg-color);
+
+        position: absolute;
+        animation: flowing 0.8s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes flowing{
+        0%{transform:translate(0,-50%)}
+        100%{transform:translate(-50%,-50%)}
+    }
+
     
     /* aside */
     aside{
