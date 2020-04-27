@@ -1,6 +1,5 @@
 nav{
-    display:flex;
-    justify-content: center;
+    display:block;
 }
 nav #logo{
     display:none;
@@ -325,9 +324,6 @@ footer{
 }
 
 @media screen and (max-width: 480px){
-    main{
-        padding-bottom:50px;
-    }
     aside{
         margin: 0 auto;
     }
