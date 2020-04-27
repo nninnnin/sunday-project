@@ -58,10 +58,6 @@ function sendForm(e,form){
             <span>작성자</span>
             <span class="published">${(data.updated)? 'updated' : 'posted'} at ${date}</span>
             ${(data.hidden)? `<span>비밀글</span>`:''}
-            <div class="checkbox">
-                <label for="hidden">${data.hidden?`공개하기`:`숨기기`}</label>
-                <input type="checkbox" name="hidden" value="${data.hidden?false:true}" onclick="toggleHidden(this)" data-post-id="${data._id}">
-            </div>
         </header>
 
         <p class="${(data.hidden)? 'hiddenPost':''}">
