@@ -1,4 +1,9 @@
-
+nav{
+    display:block;
+}
+nav #logo{
+    display:none;
+}
 
 /* main */
 main{
@@ -320,9 +325,6 @@ footer{
 }
 
 @media screen and (max-width: 480px){
-    main{
-        padding-bottom:50px;
-    }
     aside{
         margin: 0 auto;
     }
