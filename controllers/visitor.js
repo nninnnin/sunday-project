@@ -94,6 +94,25 @@ visitorController.updatePost = (req,res,next)=>{
     }
 }
 
+visitorController.toggleHide = (req,res)=>{
+    const id = req.params.postId
+    console.log(req.body)
+    const hidden = req.body.hidden;
+    console.log(hidden)
+    Guestpost.findByIdAndUpdate(
+        id,
+        { $set : {hidden:hidden}},
+        { new : true, upsert : true }
+    )
+    .then(result=>{
+        console.log(result)
+        res.send(result);
+    })
+    .catch(e=>{
+        console.log(error)
+    })
+}
+
 visitorController.deletePost = (req,res,next)=>{
     const id = req.params.postId;
     console.log(id)

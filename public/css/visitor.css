@@ -49,7 +49,7 @@ textarea, input{
     bottom:13px;
     right:10px;
 }
-.checkbox{
+.postForm .checkbox{
     position: absolute;
     bottom:10px;
     right:70px;
@@ -74,9 +74,6 @@ input[type=color]{
     padding: 1em;
     border-radius: 0.5em;
 }
-.guestPost span{
-    margin: 0 5px;
-}
 .guestPost p{
     background-color: #fff;
     color:black;
@@ -86,7 +83,18 @@ input[type=color]{
     
     overflow: auto;
 }
-
+/* 비밀 토글 */
+.guestPost span{
+    margin: 0 5px;
+}
+.guestPost header{
+    display:flex;
+    justify-content: space-between;
+}
+.guestPost .published{
+    margin-right:auto;
+}
+/* 수정삭제 버튼 */
 .guestPost > a{
     float:right;
 }
@@ -138,6 +146,10 @@ input[type=color]{
     }
     button{
         font-size: 1em;
+    }
+
+    .guestPost label{
+        display:none;
     }
 }
 

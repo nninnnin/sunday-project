@@ -1,3 +1,10 @@
+// 최상단 비공개글을 제외한 5개 글의 id에 순차적으로 index 부여 (1,2,3,4,5)
+const posts = document.querySelectorAll('.guestPost');
+for(let i=0;i<5;i++){
+    posts[i].id = i;
+}
+
+
 // textarea에서 Enter 키를 누를 때 Form을 제출하도록
 const postTextArea = document.querySelector('#postTxt');
 postTextArea.addEventListener('keypress',(e)=>{
@@ -42,7 +49,7 @@ function sendForm(e,form){
     })
     .then((data)=>{
         console.log(data)
-        const date = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
+        const date = new Date().toLocaleString('ko-KR', { timeZone: 'UTC' });
         // ui update
         const guestPosts = document.getElementById('guestPosts');
         guestPosts.insertAdjacentHTML('afterbegin',`<div class="guestPost ${(data.font_white)? 'white': ''}" style="background-color:${data.bg_color}">
@@ -51,6 +58,10 @@ function sendForm(e,form){
             <span>작성자</span>
             <span class="published">${(data.updated)? 'updated' : 'posted'} at ${date}</span>
             ${(data.hidden)? `<span>비밀글</span>`:''}
+            <div class="checkbox">
+                <label for="hidden">${data.hidden?`공개하기`:`숨기기`}</label>
+                <input type="checkbox" name="hidden" value="${data.hidden?false:true}" onclick="toggleHidden(this)" data-post-id="${data._id}">
+            </div>
         </header>
 
         <p class="${(data.hidden)? 'hiddenPost':''}">
@@ -154,3 +165,65 @@ function fadeOut(elm,ms){
         elm.style.opacity = opacity;
     },50);
 }
+
+
+
+// 비밀글 / 공개글 toggle
+
+function toggleHidden(elm){
+    let makeHidden = elm.value;
+    console.log(makeHidden);
+    const postId = elm.dataset.postId;
+    console.log(postId)
+
+    if(makeHidden == "false"){ // 공개하기
+        console.log('공개하기!')
+        console.log(makeHidden)
+
+        let data = {
+            hidden:makeHidden
+        }
+
+        fetch(`/visitor/${postId}/hide`,
+        {
+            method:'put',
+            body:JSON.stringify(data)
+        })
+        .then(res=>{
+            console.log(res)
+            console.log(res.status)
+            if(res.status=200){
+                console.log(this);
+            }
+        })
+        .catch(e=>{
+            console.log(e)
+        })
+    }else{ // 공개하기
+        console.log('숨기기!')
+        console.log(makeHidden)
+
+        let data = {
+            hidden:makeHidden
+        }
+
+        fetch(`/visitor/${postId}/hide`,
+        {
+            method:'put',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(data)
+        })
+        .then(res=>{
+            console.log(res)
+            console.log(res.status)
+        })
+        .catch(e=>{
+            console.log(e)
+        })
+    }
+}
+
+
+
