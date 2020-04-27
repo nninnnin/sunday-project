@@ -74,7 +74,7 @@
                             NO.<%= postNumber %>
                             <span>작성자</span>
                             <span class="published"><%= `(${(guestPost.updated)? 'updated' : 'posted'} at ${guestPost.updated_At.toLocaleString('ko-KR',{ timeZone: 'UTC' })})` %></span>
-                            <span>비밀글</span>
+                            <span id="secret">비밀글</span>
 
                             <div class="checkbox">
                                 <label for="hidden">공개하기</label>
