@@ -32,7 +32,7 @@
                             <p><%= post.content %></p>
                             <a id="more" href="/diary/<%= post._id %>">see more</a>
                             <span id="date">
-                                <%= (post.updated) ? `Updated at ${post.updated_At.toLocaleString('ko-KR',{ timeZone: 'UTC' })}` : `Posted at ${post._id.getTimestamp().toLocaleString('ko-KR',{ timeZone: 'UTC' })}` %>
+                                <%= (post.updated) ? `Updated at ${post.updated_At.toLocaleString('ko-KR',{ timeZone: 'Asia/Seoul' })}` : `Posted at ${post._id.getTimestamp().toLocaleString('ko-KR',{ timeZone: 'Asia/Seoul' })}` %>
                             </span>
                         </div>
                     </div>

@@ -42,7 +42,7 @@ function sendForm(e,form){
     })
     .then((data)=>{
         console.log(data)
-        const date = new Date().toLocaleString('ko-KR', { timeZone: 'UTC' });
+        const date = new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' });
         // ui update
         const guestPosts = document.getElementById('guestPosts');
         guestPosts.insertAdjacentHTML('afterbegin',`<div class="guestPost ${(data.font_white)? 'white': ''}" style="background-color:${data.bg_color}">
