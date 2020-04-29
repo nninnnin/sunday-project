@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Dock from './components/Dock.js';
+import Main from './components/Main'
 
 class App extends React.Component{
     constructor(props){
@@ -8,8 +9,11 @@ class App extends React.Component{
 
     render(){
         return(
-            <Dock posts={this.props.posts}>
-            </Dock>
+            <Fragment>
+                <Main/>
+                <Dock posts={this.props.posts}>
+                </Dock>
+            </Fragment>
         )
     }
 }

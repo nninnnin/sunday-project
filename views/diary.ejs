@@ -3,7 +3,6 @@
 <head>
    <%- include('partials/head') %>
    <link rel="stylesheet" href="../css/diary.css">
-   <link rel="stylesheet" href="../css/dock.css">
 </head>
 <body class="fade-in">
     <!-- header -->
@@ -13,6 +12,36 @@
 
     <!-- main -->
     <main>
+        <!-- section -->
+        <section>
+            <!-- posts -->
+            <% for( [index, post] of posts.entries() ) { %>
+                <div>
+                    <div class="post">
+                        <div class="img">
+                            <!-- <img src="imgs/post/<%= index %>.jpg" alt=""> -->
+                            <% if(post.postImage !== '{}' && post.postImage.data !== undefined){ %> 
+                                <% const postImage = post.postImage.data.toString('base64'); %> 
+                                <img src="data:image/png;base64,<%= postImage %>" alt="">
+                            <% } else{ %> 
+                                <img src="imgs/post/undefined.jpg" alt="Undefined postImage">
+                            <% } %>
+                        </div>
+                        <div class="description">
+                            <h2><%= post.title %></h2>
+                            <p><%= post.content %></p>
+                            <a id="more" href="/diary/<%= post._id %>">see more</a>
+                            <span id="date">
+                                <%= (post.updated) ? `Updated at ${post.updated_At.toLocaleString()}` : `Posted at ${post._id.getTimestamp().toLocaleString()}` %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <% if( index !== posts.length - 1 ){ %>
+                <hr>
+                <% } %>
+            <% } %>
+        </section>
     </main>
 
     <% if(process.env.NODE_ENV === 'development'){ %>
@@ -24,9 +53,10 @@
         <%- include ('partials/footer') %> 
     </footer>
 
-    <div class="dockContainer"></div>
+    <!-- <button id="home">UP</button> -->
 
-    <script src="/dist/bundle.js"></script>
+    <button id="home">UP</button>
+
     <script src="../libs/common.js"></script>
     <script src="../libs/diary.js"></script>
 </body>

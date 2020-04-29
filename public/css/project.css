@@ -1,7 +1,13 @@
 main{
-    margin:auto;
-    text-align: center;
-    padding:1em;
+    background: linear-gradient(90deg, rgba(117,115,158,1) 0%, rgba(186,219,158,1) 36%, rgba(215,79,98,1) 72%, rgba(0,212,255,1) 100%);
+    max-width:500px;
+    min-height:50vh;
+    color:black;
+    background-color: white;
+    line-height:1.8em;
+    display:none;
+
+    border:1px dashed black;
 }
 
 .canvasContainer{
