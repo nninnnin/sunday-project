@@ -5,8 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env NODE_ENV=production nodemon --ext js,ejs",
-    "dev": "cross-env NODE_ENV=development nodemon --ext js,ejs"
+    "start": "cross-env NODE_ENV=production node app.js",
+    "build": "webpack --config webpack.config.js",
+    "dev": "cross-env NODE_ENV=development babel-watch --watch views app.js",
+    "dev:client": "webpack-dev-server --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -42,14 +44,24 @@
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "babel-plugin-inline-import-data-uri": "^1.0.1",
+    "babel-watch": "^7.0.0",
     "connect-livereload": "^0.6.1",
+    "css-loader": "^3.5.3",
     "html-webpack-plugin": "^4.2.0",
     "livereload": "^0.9.1",
+    "node-sass": "^4.14.0",
     "nodemon": "^2.0.2",
+    "react-hot-loader": "^4.12.20",
+    "react-loadable": "^5.5.0",
     "react-router-dom": "^5.1.2",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-hot-middleware": "^2.25.0"
   },
   "engines": {
     "node": "13.6.0"

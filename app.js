@@ -14,6 +14,12 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const favicon = require('serve-favicon');
 
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
+const config = require('./webpack.config.js')
+
+
 let livereload = null;
 let connectLivereload = null;
 
@@ -33,6 +39,28 @@ const visitorRouter = require('./routes/visitor');
 const app = express();
 
 
+// webpack / babel HMR
+const devServerEnabled = true;
+if (devServerEnabled){
+    //reload=true : Enable auto reloading when changing JS fies or content
+    //timeout = 1000 : Time from disconnecting from server to reconnecting
+    config.entry.main.push('webpack-hot-middleware/client');
+
+    // Add HMR(Hot Module Reloading) plugin
+    config.plugins.push(new webpack.HotModuleReplacementPlugin());
+
+    const compiler = webpack(config)
+
+    // Enable 'webpack dev middleware'
+    app.use(webpackDevMiddleware(compiler, {
+        publicPath: config.output.publicPath
+    }));
+
+    // Enable 'webpack hot middleware'
+    app.use(webpackHotMiddleware(compiler));
+}
+
+
 app.use(methodOverride('_method'));
 
 // Static File Service 
@@ -40,6 +68,7 @@ app.use(express.static('public'));
 
 // serve favicon
 app.use(favicon(path.join(__dirname,'public','favicon.ico')))
+
 
 
 // dev mode setting

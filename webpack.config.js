@@ -4,11 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     mode:'development',
     entry:{
-        main:'./src/index.js'
+        main:['react-hot-loader/patch','./src/index.js']
     },
     output:{
         filename:'bundle.js',
-        path:path.resolve(__dirname, 'public/dist')
+        path:path.resolve(__dirname, 'public/dist'),
+        publicPath: '/dist/'
     },
     module:{
         rules:[
@@ -21,7 +22,23 @@ module.exports = {
                     }
                 }
             },
+            {
+                test:/\.css$/,
+                use:['style-loader','css-loader']
+            },
+            {
+                test: /\.js$/,
+                include: /node_modules\/react-dom/,
+                use: ['react-hot-loader/webpack']
+            },
         ]
     },
+    devServer:{
+        contentBase:path.resolve(__dirname, 'public/dist'),
+        hot:true
+    },
+    plugins:[
+
+    ],
     watch:true
 }

@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
+import {hot} from 'react-hot-loader/root';
+
 import Dock from './components/Dock.js';
-import Main from './components/Main'
+import Main from './components/Main.js'
 
 class App extends React.Component{
     constructor(props){
@@ -18,4 +20,4 @@ class App extends React.Component{
     }
 }
 
-export default App
+export default hot(App)

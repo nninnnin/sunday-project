@@ -10,7 +10,6 @@ window.onload=()=>{
     footer.style = "display:block;";
 }
 
-
 const writeBtn = document.getElementById('writeButton');
 
 if(writeBtn !== null){

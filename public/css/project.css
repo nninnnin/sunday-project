@@ -8,17 +8,15 @@ main{
     display:none;
 
     border:1px dashed black;
-}
 
-.canvasContainer{
+    text-align: center;
+    position:relative;
 }
-
-canvas{
-    width:99%;
-    height:auto;
-    border:black 1px solid;
+main .loading{
+    position:absolute;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
 }
-
 
 @media only screen and (min-width:481px){
     main{

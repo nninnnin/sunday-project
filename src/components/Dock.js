@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/Dock.css';
 
 class Dock extends React.Component{
     constructor(props){

@@ -100,7 +100,7 @@ nav a:first-child{
 /* main */
 main{
     /* size and aligning */
-    margin:0 auto;
+    margin:1.5em auto;
 
     /* font */
     font-size:0.8em; /* 기본사이즈! */
@@ -197,7 +197,7 @@ footer{
     }
 
     main{
-        margin:0 auto !important;
+        margin:0 auto;
         max-width:100%;
     }
 
@@ -206,15 +206,18 @@ footer{
     }
 }
 
-/* tablet + desktop 481px ~ */
-@media only screen and (min-width: 481px){
+/* tablet only 481px ~ 768px */
+@media only screen and (min-width: 481px) and (max-width:768px){
     .logo{
         display:none;
     }
 }
 
-main{
-    margin:1.5em auto;
+/* desktop only 769px ~ */
+@media only screen and (min-width:769px){
+    nav a:first-child{
+        display:none;
+    }
 }
 
 

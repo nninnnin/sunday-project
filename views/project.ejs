@@ -3,7 +3,6 @@
 <head>
    <%- include('partials/head') %>
    <link rel="stylesheet" href="../css/project.css">
-   <link rel="stylesheet" href="../css/dock.css">
 </head>
 <body class="fade-in">
     <!-- header -->
@@ -13,16 +12,14 @@
 
     <!-- main -->
     <main>
+        <div class="loading">
+            로딩중
+        </div>
     </main>
-
-    <!-- footer -->
-    <footer>
-        <%- include ('partials/footer') %> 
-    </footer>
 
     <div class="dockContainer"></div>
 
-    <script src="/dist/bundle.js"></script>
+    <script src="../dist/bundle.js"></script>
     <script src="../libs/common.js"></script>
     <script src="../libs/diary.js"></script>
 </body>

@@ -1,0 +1,12 @@
+.Main{
+    padding-bottom:13em;
+}
+
+.Main .img-container{
+    width:70%;
+    margin:0 auto;
+    border:1px solid yellow;
+}
+.Main img{
+    width:100%;
+}

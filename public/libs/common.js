@@ -20,44 +20,34 @@ function fixedNav(){
         popup.classList.remove('sticky-popup');
         main.classList.remove('sticky-padding');
     }
-}
-
-
+} // 4-29일 현재 사용 X
 
 
 
 // 인덱스 빼고 home버튼 기능~
 if(location.pathname !== '/'){
-
-    // show up the homeBtn
-    function popUpHomeBtn(){
-        if(window.innerWidth<=480 && (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250)){
-            homeBtn.classList.add('appear');
-        }else{
-            homeBtn.classList.remove('appear');
-        }
-    }
-
     const homeBtn = document.getElementById('home');
+
     if(homeBtn !== null){
+        // show up the homeBtn
+        function popUpHomeBtn(){
+            if(window.innerWidth<=480 && (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250)){
+                homeBtn.classList.add('appear');
+            }else{
+                homeBtn.classList.remove('appear');
+            }
+        }
         homeBtn.addEventListener('click', ()=>{
             console.log('clicked!');
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         });
-    }
 
-    window.onscroll = ()=>{
-        // fixedNav();
-        popUpHomeBtn();
+        window.onscroll = ()=>{
+            popUpHomeBtn();
+        }
     }
 }
-
-
-
-
-
-
 
 
 

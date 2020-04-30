@@ -5,7 +5,7 @@ module.exports = function(api){
     console.log(`-- 바벨(${babelVar}) 모드 : ${babelEnv} --`);
 
     const presets = ["@babel/preset-env","@babel/preset-react"];
-    const plugins = [];
+    const plugins = ["react-hot-loader/babel"];
 
     return {
         presets,
