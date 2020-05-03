@@ -12,7 +12,7 @@ router.get('/profile',(req,res)=>{
 
 // project
 router.get('/project',(req,res)=>{
-    res.render('project');
+    res.render('project_bundled');
 });
 
 // gallery

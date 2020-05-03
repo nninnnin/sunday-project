@@ -40,12 +40,11 @@ const app = express();
 
 
 // webpack / babel HMR
-const devServerEnabled = true;
+const devServerEnabled = node_env !== 'production';
 if (devServerEnabled){
     //reload=true : Enable auto reloading when changing JS fies or content
     //timeout = 1000 : Time from disconnecting from server to reconnecting
     config.entry.main.push('webpack-hot-middleware/client');
-
     // Add HMR(Hot Module Reloading) plugin
     config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
@@ -53,11 +52,15 @@ if (devServerEnabled){
 
     // Enable 'webpack dev middleware'
     app.use(webpackDevMiddleware(compiler, {
-        publicPath: config.output.publicPath
+        publicPath: config.output.publicPath,
+        writeToDisk:true,
+        stats: {colors: true}
     }));
 
     // Enable 'webpack hot middleware'
-    app.use(webpackHotMiddleware(compiler));
+    app.use(webpackHotMiddleware(compiler,{
+        log:console.log
+    }));
 }
 
 
@@ -71,26 +74,23 @@ app.use(favicon(path.join(__dirname,'public','favicon.ico')))
 
 
 
-// dev mode setting
-if (node_env === 'development'){
-    // setting live-reload to refresh browser rendering when frontend code is changed
-    const livereloadServer = livereload.createServer();
-    livereloadServer.watch(['public', path.join(__dirname,'views')]);
-    livereloadServer.server.once("connection",()=>{
-        setTimeout(()=>{
-            livereloadServer.refresh("/");
-        },50);
-    });
-    // Connect server with  live reload
-    app.use(connectLivereload());
-}
+// // live reload
+// if (node_env === 'development'){
+//     // setting live-reload to refresh browser rendering when frontend code is changed
+//     const livereloadServer = livereload.createServer();
+//     livereloadServer.watch(['public', path.join(__dirname,'views')]);
+//     livereloadServer.server.once("connection",()=>{
+//         setTimeout(()=>{
+//             livereloadServer.refresh("/");
+//         },50);
+//     });
+//     // Connect server with  live reload
+//     app.use(connectLivereload());
+// }
 
 
 // express server setting with app.set() method
-app.set('views',[
-    path.join(__dirname, 'views'),
-    path.join(__dirname, 'dist'),
-]);
+app.set('views',path.join(__dirname, 'views'));
 app.set('view engine','ejs');
 
 // use partials with ejs

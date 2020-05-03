@@ -1,11 +1,29 @@
 import React from 'react';
 import '../styles/Dock.css';
 
+
 class Dock extends React.Component{
     constructor(props){
         super(props);
     };
-    
+
+    componentDidMount(){ // 왜안대지??
+        console.log('dock comp did mount!')
+        const dock = document.querySelector('.dock');
+        const imgs = document.querySelector('.imgs');
+
+        console.log(dock, imgs);
+
+        // 가로스크롤
+        if(dock !== null){
+            dock.addEventListener('wheel', function(e) {
+                e.preventDefault();
+                if (e.deltaY > 0) imgs.scrollLeft += 50;
+                else imgs.scrollLeft -= 50;
+            });
+        }
+    };
+
     render(){
         const {posts}=this.props;
         

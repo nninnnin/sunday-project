@@ -19,3 +19,5 @@ window.onload=()=>{
 // ctx.beginPath();
 // ctx.arc(200,58,20,0,2*Math.PI); // x,y, 반지름, ?, ?
 // ctx.stroke();
+
+console.log('project lib 로딩완료')

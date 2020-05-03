@@ -60,12 +60,12 @@ section{
     font-family: 'Gugi';
     /* font-family: Oswald; */
     font-size:2em;
-    margin-top:0.5em;
+    margin:0.5em 0;
     font-weight:900;
     white-space: nowrap;
 }
 .description p{
-    max-height:180px;
+    max-height:155px;
     overflow: hidden;
     font-size:0.8em;
     font-family:'Nanum Gothic';
@@ -172,8 +172,8 @@ footer{
         margin:1em 0;
     }
     .description p{
-        max-height:7em;
-        min-height:7em;
+        max-height:7.1em;
+        min-height:7.1em;
     }
 
     #writeButton{

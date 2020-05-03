@@ -5,10 +5,11 @@
     max-width:80%;
     height:30px;
 
-    /* aligning */
+    /* position */
     position:fixed;
     bottom:50px;
     left:50%;
+    z-index:10;
     transform:translate(-50%);
 
     /* aligning child element */
@@ -32,11 +33,11 @@
     min-height:100px;
 }
 .dock .imgContainer{
-    position:relative;
+    position: relative;
     flex-shrink:0;
     margin: 0 6px;
     
-    transition: 0.1s;
+    transition: 1s;
     
     display:flex;
     flex-direction: column;
@@ -48,6 +49,9 @@
 }
 
 .dock .title{
+    color:black;
+    border-radius: 3px;
+    padding:3px;
     font-size:10px;
     white-space: nowrap;
     display:none;
@@ -66,7 +70,7 @@
     position:relative;
     width:30px;height:30px;
 
-    transition:0.1s;
+    transition:0.3s;
 }
 .dock img{
     width: 100%;

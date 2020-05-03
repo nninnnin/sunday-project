@@ -2,15 +2,16 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+
 module.exports = {
-    mode:'development',
+    mode:production,
     entry:{
-        main:['react-hot-loader/patch','./src/index.js']
+        main:['./src/index.js']
     },
     output:{
-        filename: 'bundle.js',
+        filename: 'bundle.[hash].js',
         path:path.resolve(__dirname, 'public/dist'),
-        publicPath:'/',
+        publicPath:path.resolve(__dirname, 'public/dist'),
     },
     module:{
         rules:[
@@ -30,10 +31,6 @@ module.exports = {
             {
                 test:/\.ejs$/,
                 use:'ejs-loader'
-            },
-            {
-                test:/\.js$/,
-                use:'react-hot-loader/webpack'
             }
         ]
     },
@@ -41,8 +38,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template:'!!ejs-compiled-loader!views/project.ejs',
-            filename:'../../views/project_bundled.ejs',
+            filename:'../../views/project_bundled.ejs'
         }),
-    ],
-    watch:true
+    ]
 }

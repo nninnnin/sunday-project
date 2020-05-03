@@ -1,8 +1,11 @@
-import React, { Fragment } from 'react';
 import {hot} from 'react-hot-loader/root';
+import React, { Fragment } from 'react';
 
+import Nav from './components/Nav.js';
+import Main from './components/Main.js';
 import Dock from './components/Dock.js';
-import Main from './components/Main.js'
+
+
 
 class App extends React.Component{
     constructor(props){
@@ -12,6 +15,7 @@ class App extends React.Component{
     render(){
         return(
             <Fragment>
+                <Nav/>
                 <Main/>
                 <Dock posts={this.props.posts}>
                 </Dock>
@@ -20,4 +24,4 @@ class App extends React.Component{
     }
 }
 
-export default hot(App)
+export default hot(App);

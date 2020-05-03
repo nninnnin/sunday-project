@@ -7,8 +7,8 @@ class Loader extends React.Component{
     }
     render(){
         return(
-            <div className="loading">
-                로딩중...dlqslekddsadsad
+            <div className="loaderContainer">
+                <div id="loader"></div>
             </div>
         )
     }

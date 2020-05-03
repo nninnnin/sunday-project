@@ -1,0 +1,23 @@
+.Nav{
+    text-align: center;
+    padding: 1.5em;
+    background-color: var(--main-bg-color);
+    /* position */
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:20;
+
+    /* feature */
+    width:100%;
+}
+
+.Nav a{
+    /* font settings */
+    color: white;
+    font-family: 'Oswald', 'Gugi' ,sans-serif;
+    font-size: 1em;
+    font-weight: 550;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+}

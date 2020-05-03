@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-   <%- include('partials/head') %>
+   <%- include /views/partials/head %>
    <link rel="stylesheet" href="../css/project.css">
 </head>
 <body class="fade-in">
     <!-- header -->
     <header>
-        <%- include ('partials/header') %>
+        <%- include /views/partials/header %>
     </header>
 
     <!-- main -->
     <main>
         <div class="loading">
-            로딩중
+            <div id="pf-container">
+                <img src="/imgs/justinsPortfolio.png" alt="">
+            </div>
+            <div id="slime-container">
+                <img src="/imgs/jumpingSlime_6x.gif" alt="">
+            </div>
+            <button id="trigger">
+                폿폴 입장 룰루랄라
+            </button>
         </div>
     </main>
 
-    <div class="dockContainer"></div>
+    <!-- footer -->
+    <footer>
+        <%- include views/partials/footer %> 
+    </footer>
 
-    <script src="../dist/bundle.js"></script>
     <script src="../libs/common.js"></script>
-    <script src="../libs/diary.js"></script>
+    <script src="../libs/project.js"></script>
 </body>
 <!--loader-->
-<%- include ('partials/loader') %>
+<%- include views/partials/loader %>
 </html>
