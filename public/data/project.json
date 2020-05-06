@@ -1,0 +1,40 @@
+{
+  "title": "Justin's blog",
+  "thumbnail": "Buffer",
+  "content": [
+    {
+      "name": "설명",
+      "desc": "개인 홈페이지로 사용하기 위해 만든 프로젝트인 만큼 개인적으로 좋아하는 도트 디자인이나 재미있는 UI 요소들을 접목시켜 보았습니다. ejs를 사용한 서버사이드 렌더링으로 구현된 멀티페이지 웹사이트이지만 포켓몬 도감과 유사한 형태의 어플리케이션을 내부에 구현하기 위해 리액트를 추가적으로 적용하였습니다.",
+      "tab": {
+        "active": true,
+        "disabled": false
+      },
+      "img": "Buffer"
+    },
+    {
+      "name": "스택",
+      "desc": "HTML CSS JS React Express MongoDB Heroku Cloudflare",
+      "tab": {
+        "active": true,
+        "disabled": false
+      }
+    },
+    {
+      "name": "깃헙",
+      "desc": "github.com/nninnnin/sunday-project",
+      "tab": {
+        "active": true,
+        "disabled": false
+      }
+    },
+    {
+      "name": "리뷰",
+      "desc": "오옷!",
+      "tab": {
+        "active": true,
+        "disabled": false
+      }
+    }
+  ],
+  "href": "http://justindglee.com"
+}

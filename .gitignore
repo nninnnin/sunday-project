@@ -3,3 +3,5 @@ data/diary/
 /node_modules
 
 .env
+
+dist/

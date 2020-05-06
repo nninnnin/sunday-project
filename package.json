@@ -4,11 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=production nodemon --config nodemon.prod.json app.js",
     "start": "cross-env NODE_ENV=production node app.js",
+    "dev": "nodemon",
     "build": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "dev": "nodemon"
+    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
@@ -44,6 +44,7 @@
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-watch": "^7.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "connect-livereload": "^0.6.1",

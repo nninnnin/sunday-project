@@ -100,11 +100,11 @@ nav a:first-child{
     text-transform: uppercase;
 }
 
-.active{
+/* .active{
     text-decoration: underline;
     background-color: black !important;
     transition:2s;
-}
+} */
 
 
 /* main */

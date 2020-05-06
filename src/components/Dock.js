@@ -7,7 +7,7 @@ class Dock extends React.Component{
         super(props);
     };
 
-    componentDidMount(){ // 왜안대지??
+    componentDidMount(){
         console.log('dock comp did mount!')
         const dock = document.querySelector('.dock');
         const imgs = document.querySelector('.imgs');

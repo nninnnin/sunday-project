@@ -1,23 +1,27 @@
-.Nav{
-    text-align: center;
-    padding: 1.5em;
-    background-color: var(--main-bg-color);
-    /* position */
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:20;
+.Nav {
+  /* contents */
+  text-align: center;
 
-    /* feature */
-    width:100%;
+  /* position */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+
+  /* feature */
+  width: 100%;
+  padding: 1.5em;
+  background-color: var(--main-bg-color);
+  box-shadow: 0px 2px 5px black;
 }
 
-.Nav a{
-    /* font settings */
-    color: white;
-    font-family: 'Oswald', 'Gugi' ,sans-serif;
-    font-size: 1em;
-    font-weight: 550;
-    text-decoration: none;
-    letter-spacing: 1.5px;
+.Nav a {
+  /* font settings */
+  color: white;
+  font-family: "Oswald", "Gugi", sans-serif;
+  font-size: 1em;
+  font-weight: 550;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  margin: 0 10px;
 }
