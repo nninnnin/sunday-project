@@ -1,0 +1,22 @@
+.Status {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 1em;
+  background-color: #fff;
+  color: black;
+  box-shadow: 0px 0px 4px black;
+  min-height: 50px;
+  font-family: "DungGeunMo";
+}
+.normal {
+  color: black;
+}
+.alert {
+  color: red;
+}
+.success {
+  color: green;
+}

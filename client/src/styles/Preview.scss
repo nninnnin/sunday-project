@@ -1,0 +1,55 @@
+/* ---------- 프리뷰 ----------- */
+.Preview {
+  /* feature */
+  border: 2px solid white;
+  border-radius: 1em;
+  background-color: var(--main-bg-color);
+  padding: 2em 1em;
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 60vh;
+
+  box-shadow: 1px 5px 5px black;
+
+  /* location */
+  position: relative;
+  margin-right: 1em;
+  .frame-container {
+    /* feature */
+    width: 90%;
+    height: 90%;
+    border: 3px solid black;
+    border-radius: 0.2em;
+    background-color: black;
+
+    /* location */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    /* content */
+    display: flex;
+    flex-direction: column;
+  }
+  .frame-container::after {
+    /* 필름씌우기 */
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 30;
+  }
+  iframe {
+    flex-grow: 1;
+    width: 100%;
+    background-color: #fff;
+  }
+  div {
+    color: white;
+    font-family: "DungGeunMo";
+  }
+}
