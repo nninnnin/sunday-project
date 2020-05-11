@@ -24,6 +24,11 @@ class Dock extends React.Component {
     }
   }
 
+  handleClick = (e) => {
+    const href = e.target.dataset.href;
+    this.props.getHref(href);
+  };
+
   render() {
     const { projects } = this.props;
 
@@ -34,24 +39,26 @@ class Dock extends React.Component {
       const imgData = contents[0].img;
       console.log(imgData);
 
-      let img;
+      let src;
 
       if (imgData !== "{}" && imgData !== undefined) {
-        const buf = Buffer(imgData);
-        img = (
-          <img
-            src={`data:image/png;base64,` + buf.toString("base64")}
-            alt="thumbnail"
-          />
-        );
+        const buf = Buffer(imgData.data);
+        src = `${imgData.contentType},` + buf.toString("base64");
       } else {
-        img = <img src={"imgs/post/undefined.jpg"} alt="thumbnail" />;
+        src = "imgs/post/undefined.jpg";
       }
 
       return (
         <div className="imgContainer" key={project._id}>
           <div className="title">{title}</div>
-          <div className="imgBox">{img}</div>
+          <div className="imgBox">
+            <img
+              src={src}
+              alt="thumbnail"
+              onClick={this.handleClick}
+              data-href={href}
+            />
+          </div>
         </div>
       );
     });

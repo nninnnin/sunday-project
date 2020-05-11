@@ -57,7 +57,7 @@ class ProjectAdd extends React.Component {
   };
   handleAdd = () => {
     this.validator();
-    const { tabName, img, defaultImg, desc, contents } = this.state;
+    const { tabName, defaultImg, img, desc, contents } = this.state;
 
     const content = {
       tabName,
@@ -72,7 +72,8 @@ class ProjectAdd extends React.Component {
       tabName: "",
       img: defaultImg,
       desc: "",
-      contents: contents,
+      contents,
+      validated: false,
     });
     this.fileInput.value = "";
   };
@@ -129,21 +130,12 @@ class ProjectAdd extends React.Component {
     const file = target.files[0];
 
     const reader = new FileReader();
-    console.log(reader);
 
     reader.onload = (e) => {
-      // 여기서의 event는 file이 모두 읽혀진, onload 이벤트
-      console.log(e);
-      console.log(e.target); // file을 읽어온 상태의 reader
-      const reader_loaded = e.target;
+      const imgDataUri = e.target.result;
 
-      // 자 이제 읽어온 데이터를 img에 넣어보자
-      const img = document.getElementById("contentImg");
-      img.src = reader_loaded.result;
-
-      // 마지막으로 state에 저장
       this.setState({
-        img: reader_loaded.result,
+        img: imgDataUri,
       });
     };
 
@@ -179,6 +171,7 @@ class ProjectAdd extends React.Component {
     console.log(`contents: ${contents}`);
     console.log(contents.length);
     console.log(`href: ${href}`);
+    console.log(this.state);
 
     // valiadte states -> title, contents
     // 둘중 하나라도 없다면
@@ -205,7 +198,7 @@ class ProjectAdd extends React.Component {
       href,
     };
 
-    // 요청 보내면서 disable
+    // 요청 보내면서 제출버튼 disable
     const result = await fetch("/project/api", {
       method: "POST",
       headers: {

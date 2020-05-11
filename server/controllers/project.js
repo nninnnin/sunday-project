@@ -7,10 +7,24 @@ ProjectController.createProject = async (req, res) => {
   try {
     const { title, contents, href } = req.body;
 
+    const mappedContents = contents.map((content) => {
+      const dataType = content.img.split(",")[0];
+      const dataString = content.img.split(",")[1]; // base64 string
+      const buf = new Buffer(dataString, "base64");
+
+      const img = {
+        data: buf,
+        contentType: dataType,
+      };
+
+      content.img = img;
+      return content;
+    });
+
     const project = new Project({
       _id: new mongoose.Types.ObjectId(),
       title: title,
-      contents: contents,
+      contents: mappedContents,
       href: href,
     });
 
