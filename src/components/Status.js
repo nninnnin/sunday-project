@@ -11,8 +11,8 @@ class Status extends Component {
   }
 }
 
-Status.defaultProps = {
-  msg: "상태바입니다",
-};
+// Status.defaultProps = {
+//   msg: "상태바입니다",
+// };
 
 export default Status;

@@ -44,6 +44,16 @@ class Dock extends React.Component {
     });
   };
 
+  pageHandler = (e) => {
+    const direction = e.target.classList[1];
+    const imgs = document.querySelector(".imgs");
+    if (direction === "fa-caret-right") {
+      imgs.scrollLeft += 25;
+    } else {
+      imgs.scrollLeft -= 25;
+    }
+  };
+
   render() {
     const { loading } = this.state;
     const { projects, handleHover } = this.props;
@@ -86,10 +96,14 @@ class Dock extends React.Component {
     return (
       <div className="dock" onLoad={this.handleOnload}>
         <div className="imgs">
-          {!loading && <i className="fas fa-caret-left"></i>}
+          {!loading && (
+            <i className="fas fa-caret-left" onClick={this.pageHandler}></i>
+          )}
           {loading && <Loader />}
           {imgs}
-          {!loading && <i className="fas fa-caret-right"></i>}
+          {!loading && (
+            <i className="fas fa-caret-right" onClick={this.pageHandler}></i>
+          )}
         </div>
       </div>
     );

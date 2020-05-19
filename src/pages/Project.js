@@ -49,7 +49,7 @@ class Project extends Component {
       <Fragment>
         <Nav />
         <div className="Container">
-          <Preview href={href} />
+          <Preview href={href} handleHover={this.handleHover} />
           <Main
             project={project}
             handleHover={this.handleHover}

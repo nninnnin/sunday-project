@@ -41,9 +41,9 @@ class Main extends React.Component {
     let { edit_mode, desc } = this.state;
 
     if (edit_mode === false && process.env.NODE_ENV === "development") {
-      desc = "let's edit!";
+      desc = "에디트 기능 추가요망";
     } else {
-      desc = "You are not authorized -_-+";
+      desc = "관리자 전용 기능입니다 -_-+";
     }
 
     this.setState({

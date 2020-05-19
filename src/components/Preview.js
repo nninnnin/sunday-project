@@ -10,7 +10,12 @@ class Preview extends Component {
   render() {
     return (
       <div className="Preview">
-        <div className="frame-container">
+        <div
+          className="frame-container"
+          onMouseEnter={this.props.handleHover}
+          onMouseOut={this.props.handleHover}
+          data-hover="프로젝트 첫 화면 미리보기가 가능합니다. 클릭 및 휠 사용 불가!"
+        >
           <iframe
             className={this.state.loading ? "slime" : "question"}
             src={this.props.href}
