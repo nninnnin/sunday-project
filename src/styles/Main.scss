@@ -74,6 +74,7 @@ main::after {
     border-radius: 0.2em;
     padding: 0.5em 0;
     width: 95%;
+    box-shadow: 0px 1px 3px black;
   }
 
   .content {
@@ -91,6 +92,7 @@ main::after {
       overflow: auto;
       align-self: center;
       background-color: black;
+      box-shadow: 0px 1px 3px black;
     }
     img {
       display: block;
@@ -158,11 +160,15 @@ main::after {
 
     position: relative;
     z-index: 1; /* button보다 앞에 */
+    box-shadow: 0px 1px 3px black;
   }
 
   .href {
     background-color: #fff;
     margin: 3px 0;
     border-radius: 0.2em;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 0px 3px black;
   }
 }

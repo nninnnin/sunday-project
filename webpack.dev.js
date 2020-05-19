@@ -21,7 +21,7 @@ module.exports = merge(common, {
     port: 9000,
     writeToDisk: true,
     hot: true,
-    publicPath: "/dist/",
+    publicPath: "/",
   },
   module: {
     rules: [
