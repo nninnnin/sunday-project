@@ -12,11 +12,7 @@ router.get("/profile", (req, res) => {
 
 // project
 router.get("/project", (req, res) => {
-  if (process.env.NODE_ENV === "development") {
-    res.render("project_bundled");
-  } else {
-    res.render("project_prod_bundled");
-  }
+  res.render("project_bundled");
 });
 
 // gallery

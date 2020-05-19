@@ -23,7 +23,7 @@ window.onload = () => {
 console.log("project lib 로딩완료");
 
 const trigger = document.getElementById("trigger");
-if (window.innerWidth < 486) {
-  trigger.innerText = "모바일 뷰에서는 볼 수 없습니다 ㅠㅠ";
-  trigger.disabled = true;
-}
+// if (window.innerWidth < 486) {
+//   trigger.innerText = "모바일 뷰에서는 볼 수 없습니다 ㅠㅠ";
+//   trigger.disabled = true;
+// }

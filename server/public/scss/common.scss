@@ -1,0 +1,197 @@
+/* common.scss */
+
+/* fonts */
+/* webfonts CDN */
+@import url("https://fonts.googleapis.com/css?family=Gugi|Oswald|Poor+Story|Nanum+Gothic|Noto+Sans+KR&display=swap");
+
+@font-face {
+  font-family: "ChosunSm";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.1/ChosunSm.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* local fonts */
+@font-face {
+  font-family: "DungGeunMo";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/DungGeunMo.eot"), url("../fonts/DungGeunMo.woff"),
+    url("../fonts/DungGeunMo.woff2");
+}
+
+/* css initialize */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+html,
+body {
+  min-height: 100vh;
+}
+
+/* variables*/
+:root {
+  --main-bg-color: rgb(187, 28, 7);
+}
+
+/* global style */
+a {
+  color: white;
+}
+
+span {
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+/* header */
+
+@import "_header";
+
+/* main */
+main {
+  /* size and aligning */
+  margin: 1.5em auto;
+
+  /* font */
+  font-size: 0.8em; /* 기본사이즈! */
+
+  /* 기본 line height! */
+  line-height: 2em;
+
+  /* transition(animate) */
+  transition: width 0.5s ease;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+
+  font-family: "Oswald";
+  font-size: 0.7em;
+  color: white;
+  background-color: black;
+
+  /* position */
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+#home {
+  font-family: "Gugi";
+  z-index: 3;
+  background-color: #fff;
+  padding: 1em;
+  color: black;
+  display: none;
+  position: fixed;
+  font-size: 0.7em;
+  right: 10px;
+  bottom: 55px;
+}
+.appear {
+  display: block;
+}
+.disappear {
+  display: none;
+}
+
+/* only smartphones ~ 480px */
+@media only screen and (max-width: 480px) {
+  .logo {
+    background-color: var(--main-bg-color);
+    color: #fff;
+    padding: 0.7em;
+    font-size: 1.1em;
+
+    transition: all 0.5 ease;
+  }
+  .logo a {
+    color: white;
+  }
+
+  nav {
+    /* feature*/
+    display: block;
+    background-color: var(--main-bg-color);
+
+    /* 하단고정 */
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    right: 0;
+
+    /* 사이즈 */
+    width: 100%;
+    font-size: 0.8em;
+    padding: 1em 0;
+
+    /* contents */
+    a {
+      font-family: "gugi";
+      &:visited {
+        color: white;
+      }
+      color: white;
+    }
+  }
+  // nav a:first-child {
+  //   display: none;
+  // }
+
+  main {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  footer {
+    padding: 1.2em;
+  }
+}
+
+/* tablet only 481px ~ 768px */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .logo {
+    // display: none;
+  }
+}
+
+/* desktop only 769px ~ */
+@media only screen and (min-width: 769px) {
+  // nav a:first-child {
+  //   display: none;
+  // }
+}
+
+.fade-in {
+  animation: fadeIn 0.2s;
+  animation-fill-mode: forwards;
+}
+.fade-out {
+  animation: fadeOut 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

@@ -1,6 +1,7 @@
 // ENV
 require("dotenv").config();
 let node_env = process.env.NODE_ENV;
+console.log("-----------------------------");
 console.log("node_env is :", node_env);
 node_env =
   node_env && node_env.trim().toLowerCase() === "development"
@@ -12,15 +13,11 @@ console.log("node_env is :", node_env);
 // DEPENDENCIES
 const express = require("express");
 const path = require("path");
+const appRoot = require("app-root-path");
 const partials = require("express-partials");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const favicon = require("serve-favicon");
-
-const webpack = require("webpack");
-const webpackDevMiddleware = require("webpack-dev-middleware");
-const webpackHotMiddleware = require("webpack-hot-middleware");
-const config = require("../client/webpack.dev.js");
 
 let livereload = null;
 let connectLivereload = null;
@@ -39,58 +36,37 @@ const projectAPI = require("./routes/api/project");
 // Create server
 const app = express();
 
-// webpack / babel HMR
-const devServerEnabled = node_env !== "production";
-if (devServerEnabled) {
-  //reload=true : Enable auto reloading when changing JS fies or content
-  //timeout = 1000 : Time from disconnecting from server to reconnecting
-  config.entry.main.push("webpack-hot-middleware/client");
-  // Add HMR(Hot Module Reloading) plugin
-  config.plugins.push(new webpack.HotModuleReplacementPlugin());
-
-  const compiler = webpack(config);
-
-  // Enable 'webpack dev middleware'
-  app.use(
-    webpackDevMiddleware(compiler, {
-      publicPath: config.output.publicPath,
-      writeToDisk: true,
-      stats: { colors: true },
-    })
-  );
-
-  // Enable 'webpack hot middleware'
-  app.use(
-    webpackHotMiddleware(compiler, {
-      log: console.log,
-    })
-  );
-}
-
 app.use(methodOverride("_method"));
 
 // Static File Service
 app.use(express.static("public"));
+app.use(express.static(appRoot + "/dist"));
 
 // serve favicon
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 // // live reload
-// if (node_env === 'development'){
-//     // setting live-reload to refresh browser rendering when frontend code is changed
-//     const livereloadServer = livereload.createServer();
-//     livereloadServer.watch(['public', path.join(__dirname,'views')]);
-//     livereloadServer.server.once("connection",()=>{
-//         setTimeout(()=>{
-//             livereloadServer.refresh("/");
-//         },50);
-//     });
-//     // Connect server with  live reload
-//     app.use(connectLivereload());
+// const isLiveServerOn = node_env === "development";
+// console.log(`Live Reload Server    is ${isLiveServerOn ? "ON" : "OFF"}`);
+// console.log("-----------------------------");
+
+// if (isLiveServerOn) {
+//   // setting live-reload to refresh browser rendering when frontend code is changed
+//   const livereloadServer = livereload.createServer({
+//     exts: ["css", "js", "ejs"],
+//   });
+//   livereloadServer.watch(["public", path.join(__dirname, "views")]);
+//   livereloadServer.server.once("connection", () => {
+//     setTimeout(() => {
+//       livereloadServer.refresh("/");
+//     }, 50);
+//   });
+//   // Connect server with  live reload
+//   app.use(connectLivereload());
 // }
 
 // express server setting with app.set() method
-app.set("views", path.join(__dirname, "views"));
+app.set("views", [path.join(__dirname, "views"), appRoot + "/dist"]);
 app.set("view engine", "ejs");
 
 // use partials with ejs
@@ -122,7 +98,10 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("Successfully connected to mongodb"))
+  .then(() => {
+    console.log("Successfully connected to mongodb");
+    console.log("-----------------------------");
+  })
   .catch((e) => console.log(e));
 
 let port = process.env.PORT || 8000;
@@ -134,6 +113,7 @@ if (node_env === "production") {
 app.listen(port, function () {
   console.log(`express server heard on ${port}`);
   console.log(`let's go to http://localhost:${port}`);
+  console.log("-----------------------------");
 });
 
 // test built in modules

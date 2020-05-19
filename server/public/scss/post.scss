@@ -1,0 +1,100 @@
+@import "_base";
+
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
+  // max-width: 100%;
+}
+.justify{
+  text-align: justify;
+}
+
+button {
+  background-color: navy;
+  color: white;
+
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 10;
+}
+#updateButton {
+  bottom: 40px;
+}
+
+main {
+  margin: 0;
+  color: black;
+  padding: 1em 2%;
+  min-height: 88vh;
+  article {
+    text-align: center;
+    header {
+      h1 {
+        font-family: "ChosunSm";
+      }
+    }
+    section {
+      margin: 0 auto;
+      max-width: 450px;
+      .image {
+        min-height: 200px;
+        overflow: hidden;
+        background-image: url("https://pbs.twimg.com/profile_images/757974066011770880/ae2Eop2g.jpg");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      img {
+        /* 아주 좋은 방법! height를 제한하니 레이아웃이 일관성을 가지게 되었다 */
+        // max-height: 20em;
+        width: 100%;
+      }
+
+      p {
+        line-height: 1.65em;
+        text-align: left;
+        font-family: "ChosunSm";
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* .logo{
+          display:none;
+      } */
+  main {
+    padding-bottom: 45px;
+    .article {
+      section {
+        h1 {
+          font-size: 2em;
+          /* color:var(--main-bg-color); */
+        }
+        p {
+          margin: 0;
+          font-size: 0.8em;
+        }
+        img {
+          width: 100%;
+          max-height: 30em;
+          /* display:none; */
+        }
+      }
+    }
+  }
+  button {
+    bottom: 50px;
+    left: 5px;
+  }
+  #updateButton {
+    bottom: 80px;
+  }
+  footer {
+    display: none;
+  }
+}

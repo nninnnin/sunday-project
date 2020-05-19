@@ -8,6 +8,11 @@ ProjectController.createProject = async (req, res) => {
     const { title, contents, href } = req.body;
 
     const mappedContents = contents.map((content) => {
+      const reg = /data:image\/[a-z]{3,5};base64,/;
+      if (!reg.test(content.img)) {
+        // dataUri 형태가 아니라면 저장 하지 않고 빠꾸
+        return content;
+      }
       const dataType = content.img.split(",")[0];
       const dataString = content.img.split(",")[1]; // base64 string
       const buf = new Buffer(dataString, "base64");

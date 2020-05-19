@@ -2,23 +2,8 @@
   "env": {
     "NODE_ENV": "development"
   },
-  "watch": [
-    "app.js",
-    "views",
-    "webpack.config.js",
-    "controllers",
-    "routes",
-    "models",
-    "public/libs"
-  ],
-  "ignore": [
-    "dist",
-    "public/dist",
-    "src",
-    ".git",
-    "node_modules",
-    "views/project_bundled.ejs"
-  ],
+  "watch": ["app.js", "views", "controllers", "routes", "models", "public"],
+  "ignore": ["dist", "src", "node_modules", "../dist"],
   "ext": "js,ejs",
   "restartable": "rs",
   "verbose": true,

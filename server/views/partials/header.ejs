@@ -1,19 +1,14 @@
-<div class="logo" id="logobar">
-    <!-- logo -->
-    <% if(process.env.NODE_ENV==="development"){ %> 
-        <a href="/" id="logo">Justin's blog (dev)</a>
-        <% }else{ %>
-        <a href="/" id="logo">Justin's blog</a>
-    <% } %> 
-</div>
+<div class="logo" id="logobar" onmousedown="return false">
+  <!-- logo -->
+  <% if(process.env.NODE_ENV==="development"){ %>
+  <a href="/" id="logo">Justin's blog (dev)</a>
+  <% }else{ %>
+  <a href="/" id="logo">Justin's blog</a>
+  <% } %>
 
-<nav>
-    <!-- logo -->
-    <% if(process.env.NODE_ENV==="development"){ %> 
-        <a href="/" id="logo">Justin's blog (dev)</a>
-        <% }else{ %>
-        <a href="/" id="logo">Justin's blog</a>
-    <% } %> 
+  <i class="fas fa-bars" id="menu"></i>
+
+  <nav>
     <!-- links -->
     <a href="/">홈</a>
     <a href="/profile">프로필</a>
@@ -21,4 +16,5 @@
     <!-- <a href="/gallery">사진</a> -->
     <a href="/diary">일기</a>
     <a href="/visitor">방명록</a>
-</nav>
+  </nav>
+</div>
