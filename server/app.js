@@ -1,5 +1,7 @@
 // ENV
-require("dotenv").config();
+if (node_env !== "production") {
+  require("dotenv").config();
+}
 let node_env = process.env.NODE_ENV;
 console.log("-----------------------------");
 console.log("node_env is :", node_env);
