@@ -110,7 +110,7 @@ mongoose
 let port = process.env.PORT || 8000;
 
 if (node_env === "production") {
-  port = 8001;
+  port = process.env.PORT || 8001;
 }
 
 app.listen(port, function () {
