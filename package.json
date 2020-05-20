@@ -4,11 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "cd server/ && npm start",
+    "start": "cd server/ && npm install && npm start",
     "test": "concurrently \"cd server/ && npm start\" \"npm run build\"",
     "kill": "TASKKILL /F /IM node.exe",
     "dev": "concurrently \"cd server/ && npm run dev\" \"webpack-dev-server --config webpack.dev.js\"",
-    "heroku-postbuild": "cd server/ && npm install && cross-env NODE_ENV=production webpack --config webpack.prod.js",
+    "heroku-postbuild": "cd server/ && cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "build:dev": "webpack --config webpack.dev.js"
   },
