@@ -46,24 +46,25 @@ app.use(express.static(appRoot + "/dist"));
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 // // live reload
-// const isLiveServerOn = node_env === "development";
-// console.log(`Live Reload Server    is ${isLiveServerOn ? "ON" : "OFF"}`);
-// console.log("-----------------------------");
+const isLiveServerOn = node_env === "development";
+console.log(`Live Reload Server    is ${isLiveServerOn ? "ON" : "OFF"}`);
+console.log("-----------------------------");
 
-// if (isLiveServerOn) {
-//   // setting live-reload to refresh browser rendering when frontend code is changed
-//   const livereloadServer = livereload.createServer({
-//     exts: ["css", "js", "ejs"],
-//   });
-//   livereloadServer.watch(["public", path.join(__dirname, "views")]);
-//   livereloadServer.server.once("connection", () => {
-//     setTimeout(() => {
-//       livereloadServer.refresh("/");
-//     }, 50);
-//   });
-//   // Connect server with  live reload
-//   app.use(connectLivereload());
-// }
+if (isLiveServerOn) {
+  // setting live-reload to refresh browser rendering when frontend code is changed
+  const livereloadServer = livereload.createServer({
+    exts: ["css", "js", "ejs"],
+  });
+  livereloadServer.watch(["public", path.join(__dirname, "views")]);
+  livereloadServer.server.once("connection", () => {
+    console.log("live server connected :)");
+    setTimeout(() => {
+      livereloadServer.refresh("/");
+    }, 50);
+  });
+  // Connect server with  live reload
+  app.use(connectLivereload());
+}
 
 // express server setting with app.set() method
 app.set("views", [path.join(__dirname, "views"), appRoot + "/dist"]);

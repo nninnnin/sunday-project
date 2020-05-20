@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <%- include ('partials/head') %>
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="../css/index.css" />
   </head>
   <body>
     <!-- header -->
@@ -13,6 +13,14 @@
     <main>
       <!-- main section -->
       <section>
+        <!-- 오늘의 한마디 -->
+        <div class="word-of-the-day">
+          <span>
+            오늘의 한마디 - 확실한 것만 추구하자
+          </span>
+          <i class="far fa-heart"></i>
+        </div>
+
         <!-- articles -->
         <div class="article">
           <% for (post of posts){ %>
@@ -52,8 +60,8 @@
         <div class="visitors">
           <% for ([index,visitor] of visitors.entries()) { %>
           <a href="/visitor#<%= index %>">
-            <div class="visitor">
-              <span id="name">누군가</span>
+            <div class="visitor" style="--bg-color: <%= visitor.bg_color %>;">
+              <span id="name">작성자</span>
               <span id="content"><%= visitor.content %></span>
               <i style="--bg-color: <%= visitor.bg_color %>;"></i>
             </div>
@@ -62,8 +70,7 @@
         </div>
       </section>
 
-      <!-- side section -->
-      <aside>
+      <!-- <aside>
         <div class="insta-photo">
           <b>INSTAGRAM</b>
           <a href="https://instagram.com/justindglee" target="_blank">
@@ -72,14 +79,7 @@
             </div>
           </a>
         </div>
-        <div class="contact-info">
-          <b>CONTACT</b>
-          <br />
-          <span>
-            nninnnin7@gmail.com
-          </span>
-        </div>
-      </aside>
+      </aside> -->
     </main>
 
     <!-- footer -->
