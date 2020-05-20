@@ -4,11 +4,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "concurrently \"cd server/ && npm start\" \"npm run build:prod\"",
+    "start": "cd server/ && npm start",
+    "test": "concurrently \"cd server/ && npm start\" \"npm run build\"",
     "kill": "TASKKILL /F /IM node.exe",
     "dev": "concurrently \"cd server/ && npm run dev\" \"webpack-dev-server --config webpack.dev.js\"",
-    "build": "webpack --config webpack.dev.js",
-    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.prod.js"
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
+    "build:dev": "webpack --config webpack.dev.js"
   },
   "repository": {
     "type": "git",

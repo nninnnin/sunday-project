@@ -66,25 +66,25 @@ if (location.pathname !== "/") {
 
 // Get a picture from instagram
 // Server side rendering으로 바꾸는 게 나을듯(사용자 경험상), ejs template에서 미리 만들어서 클라이언트로 보낼 수 있게 refactoring 할 것
-async function getPicture(imgId) {
-  const res = await fetch(`https://www.instagram.com/p/${imgId}/media`);
-  console.log(res);
-  const data = await res.blob();
-  console.log(data);
+// async function getPicture(imgId) {
+//   const res = await fetch(`https://www.instagram.com/p/${imgId}/media`);
+//   console.log(res);
+//   const data = await res.blob();
+//   console.log(data);
 
-  //const insta = document.getElementById('instagram-embed');
-  //insta.innerHTML = data.html;
-  const img1 = document.getElementById("img1");
+//   //const insta = document.getElementById('instagram-embed');
+//   //insta.innerHTML = data.html;
+//   const img1 = document.getElementById("img1");
 
-  const objectURL = URL.createObjectURL(data);
-  img1.src = objectURL;
-}
+//   const objectURL = URL.createObjectURL(data);
+//   img1.src = objectURL;
+// }
 
 /* 페이지에 따라 다른 instagram picture fetching */
-if (
-  window.location.pathname === "/index.html" ||
-  window.location.pathname === "/"
-) {
-  const imgId = "B8tCX49plkG";
-  getPicture(imgId);
-}
+// if (
+//   window.location.pathname === "/index.html" ||
+//   window.location.pathname === "/"
+// ) {
+//   const imgId = "B8tCX49plkG";
+//   getPicture(imgId);
+// }
