@@ -1,4 +1,4 @@
-// ENV
+// ENV /
 let node_env = process.env.NODE_ENV;
 if (node_env !== "production") {
   require("dotenv").config();
