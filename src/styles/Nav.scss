@@ -1,0 +1,24 @@
+.Nav {
+  /* contents */
+  text-align: center;
+
+  /* position */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+
+  /* feature */
+  width: 100%;
+  padding: 1.5em;
+  background-color: #fff;
+  box-shadow: 0px 1px 3px black;
+
+  a {
+    /* font settings */
+    color: black;
+    font-family: "DungGeunMo";
+    text-decoration: none;
+    margin: 0 10px;
+  }
+}

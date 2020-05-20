@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <%- include ('partials/head') %>
+    <link rel="stylesheet" href="/css/profile.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <%- include ('partials/header') %>
+    </header>
+
+    <!-- main -->
+    <main>
+      <!-- main section -->
+      <section class="profile-container">
+        <!-- profile -->
+        <div class="profile-info" id="item1">
+          <!-- profile image -->
+          <div id="img-wrapper">
+            <img src="../imgs/profile.jpg" alt="profile" />
+          </div>
+          <!-- profile letter -->
+          <h2>안녕하세요!</h2>
+          <p>
+            개발자를 직업으로 삼으려 노력중인 이동규입니다.
+          </p>
+        </div>
+
+        <!-- form -->
+        <form class="input-form" action="" id="item2">
+          <b>간단하게 하실 말씀이 있다면 :)</b>
+          <br />
+          <label for="name">보내는 이:</label><br />
+          <input type="text" />
+          <br />
+          <label for="message">내용:</label><br />
+          <textarea name="message" id="" cols="30" rows="10"></textarea>
+          <br />
+          <label for="contact">회신 연락처(이메일 또는 전화, SNS):</label><br />
+          <input type="text" />
+          <br /><br />
+          <button type="submit">메세지 보내기</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <%- include ('partials/footer') -%>
+    </footer>
+
+    <button id="home">UP</button>
+    <script>
+      window.onload = function () {
+        const main = document.querySelector("main");
+        main.classList.add("fade-in");
+        document.body.style = "display:block;";
+      };
+    </script>
+    <script src="../libs/common.js"></script>
+  </body>
+</html>

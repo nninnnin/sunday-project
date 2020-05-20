@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <%= include server/views/partials/head %>
+    <link rel="stylesheet" href="../css/project.css" />
+  </head>
+  <body class="fade-in">
+    <!-- header -->
+    <header>
+      <%- include server/views/partials/header %>
+    </header>
+
+    <!-- main -->
+    <main>
+      <div class="loading">
+        <div id="pf-container">
+          <img src="/imgs/justinsPortfolio.png" alt="" />
+        </div>
+        <div id="slime-container">
+          <img src="/imgs/jumpingSlime_6x.gif" alt="" />
+        </div>
+        <button id="trigger">
+          CLICK!
+        </button>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <%- include server/views/partials/footer %>
+    </footer>
+
+    <script src="../libs/common.js"></script>
+    <script src="../libs/project.js"></script>
+  </body>
+  <!--loader-->
+  <%- include server/views/partials/loader %>
+</html>

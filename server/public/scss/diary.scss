@@ -1,0 +1,208 @@
+@import "_base";
+
+main {
+  max-width: 800px;
+  color: black;
+  background-color: white;
+  line-height: 1.8em;
+  display: none;
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0)
+    );
+  }
+}
+
+section {
+  padding: 2%;
+  > div:nth-child(4n-1) > div {
+    grid-template-areas: "desc img";
+  }
+  span {
+    position: absolute;
+    bottom: 3px;
+    right: 14px;
+    color: black;
+    font-size: smaller;
+  }
+  a {
+    position: absolute;
+    bottom: 3px;
+    left: 15px;
+    color: grey;
+    font-size: smaller;
+  }
+}
+
+.post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "img desc";
+  grid-gap: 1em;
+
+  padding: 2%;
+  /* border-top:0.2px rgb(216, 216, 216) solid;
+      border-bottom:0.2px rgb(216, 216, 216) solid; */
+  height: 280px;
+}
+
+/* grid item 1 */
+.img {
+  grid-area: img;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5em;
+}
+/* grid item 2 */
+.description {
+  // font-family: "ChosunSm";
+  padding: 1em;
+  grid-area: desc;
+  position: relative;
+  overflow: hidden;
+  h2 {
+    // font-family: "ChosunSm";
+    font-family: "KyoboHand";
+    /* font-family: Oswald; */
+    font-weight: 900;
+    white-space: nowrap;
+  }
+  p {
+    max-height: 155px;
+    overflow: hidden;
+    font-size: 0.8em;
+    font-family: "Nanum Gothic";
+    text-align: justify;
+  }
+  a:hover {
+    color: black;
+    text-decoration: underline;
+  }
+  #date {
+    float: right;
+    font-size: 0.7em;
+  }
+}
+
+img {
+  /* 원리 알기 */
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  /* object-position: 50% 50%; */
+
+  position: absolute;
+}
+
+footer {
+  display: none;
+}
+
+/* 0 ~ 480px */
+@media only screen and (max-width: 480px) {
+  main {
+    line-height: 1.5em;
+  }
+  .post {
+    grid-template-columns: 1fr;
+    grid-template-rows: 60% 40%;
+    grid-template-areas:
+      "img"
+      "desc";
+    grid-gap: 0.5em;
+    min-height: 440px;
+  }
+  section > div:nth-child(4n-1) > div {
+    grid-template-areas:
+      "img"
+      "desc";
+  }
+  section > div::after {
+    content: " ";
+    display: block;
+    height: 10px;
+  }
+
+  /* see more 버튼 재구성 */
+  section a {
+    /* 위치 재설정 */
+    position: absolute;
+    left: auto;
+    bottom: 0;
+
+    /* 디자인변경 */
+    text-decoration: none;
+    color: black;
+    font-family: Gugi;
+    padding: 5px 8px;
+
+    /* flex item */
+    align-self: center;
+  }
+  section a::before {
+    content: "<click to ";
+    font-family: Gugi;
+  }
+  section a::after {
+    content: ">";
+    font-family: Gugi;
+  }
+  section span {
+    display: none;
+  }
+
+  .description {
+    padding: 0 1em;
+
+    display: flex;
+    flex-direction: column;
+  }
+  .description h2 {
+    font-size: 1em;
+    margin: 1em 0;
+  }
+  .description p {
+    max-height: 7.1em;
+    min-height: 7.1em;
+  }
+}
+
+#writeButton {
+  background-color: navy;
+  color: white;
+
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 10;
+}
+
+@media only screen and (max-width: 767px) {
+  main {
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  main {
+    margin: 3em auto;
+    min-width: 730px;
+    box-shadow: 0px 0px 3px rgb(187, 187, 187);
+  }
+}
+
+/* media query의 min-width와 max-width 개념잡기*/
+/*
+      1. min-width
+      2. max-width means less than or equal to the width specified in that media query.
+  
+      이렇게 기억하자. 최솟값 - 이상, 최댓값 - 이하.
+      
+      reference - https://medium.com/@banuriwick/min-width-max-width-media-queries-994e2ec5fca3
+  */

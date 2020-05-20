@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <%- include ('partials/head') %>
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <%- include ('partials/header') %>
+    </header>
+
+    <main>
+      <!-- main section -->
+      <section>
+        <!-- 오늘의 한마디 -->
+        <div class="word-of-the-day">
+          <span>
+            오늘의 한마디 - 확실한 것만 추구하자
+          </span>
+          <i class="far fa-heart"></i>
+        </div>
+
+        <!-- articles -->
+        <div class="article">
+          <% for (post of posts){ %>
+          <a href="/diary/<%= post._id %>">
+            <div class="post">
+              <h1>
+                <%= post.title %>
+              </h1>
+
+              <p>
+                <%= post.content %>
+              </p>
+            </div>
+            <% if(post.postImage !== '{}' && post.postImage.data !== undefined){
+            %> <% const postImage = post.postImage.data.toString('base64'); %>
+            <img src="data:image/png;base64,<%= postImage %>" alt="" />
+            <% } else{ %>
+            <img
+              src="https://pbs.twimg.com/profile_images/757974066011770880/ae2Eop2g.jpg"
+              alt="Undefined postImage"
+            />
+            <% } %>
+          </a>
+          <% } %>
+        </div>
+
+        <!-- drawings -->
+        <!-- <div class="drawing">
+                <% imgs.forEach(img => { %>
+                    <div>
+                        <img src="imgs/music/<%= img.id %>.jpg" alt="<%= img.id %> ">
+                    </div>
+                <% }) %>
+            </div> -->
+
+        <!-- newest visitors (최신 방명록) -->
+        <div class="visitors">
+          <% for ([index,visitor] of visitors.entries()) { %>
+          <a href="/visitor#<%= index %>">
+            <div class="visitor" style="--bg-color: <%= visitor.bg_color %>;">
+              <span id="name">작성자</span>
+              <span id="content"><%= visitor.content %></span>
+              <i style="--bg-color: <%= visitor.bg_color %>;"></i>
+            </div>
+          </a>
+          <% } %>
+        </div>
+      </section>
+
+      <!-- <aside>
+        <div class="insta-photo">
+          <b>INSTAGRAM</b>
+          <a href="https://instagram.com/justindglee" target="_blank">
+            <div id="instagram-embed">
+              <img alt="instagram-image" id="img1" />
+            </div>
+          </a>
+        </div>
+      </aside> -->
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <%- include ('partials/footer') %>
+    </footer>
+
+    <!-- scripts -->
+    <script src="../libs/common.js"></script>
+    <script src="../libs/index.js"></script>
+  </body>
+  <!-- loader -->
+  <%- include ('partials/loader') %>
+</html>
