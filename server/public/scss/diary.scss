@@ -50,43 +50,44 @@ section {
   /* border-top:0.2px rgb(216, 216, 216) solid;
       border-bottom:0.2px rgb(216, 216, 216) solid; */
   height: 280px;
-}
-
-/* grid item 1 */
-.img {
-  grid-area: img;
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.5em;
-}
-/* grid item 2 */
-.description {
-  // font-family: "ChosunSm";
-  padding: 1em;
-  grid-area: desc;
-  position: relative;
-  overflow: hidden;
-  h2 {
-    // font-family: "ChosunSm";
-    font-family: "KyoboHand";
-    /* font-family: Oswald; */
-    font-weight: 900;
-    white-space: nowrap;
-  }
-  p {
-    max-height: 155px;
+  /* grid item 1 */
+  .img {
+    grid-area: img;
+    position: relative;
     overflow: hidden;
-    font-size: 0.8em;
-    font-family: "Nanum Gothic";
-    text-align: justify;
+    border-radius: 0.5em;
+
+    box-shadow: 0px 0px 2px black;
   }
-  a:hover {
-    color: black;
-    text-decoration: underline;
-  }
-  #date {
-    float: right;
-    font-size: 0.7em;
+  /* grid item 2 */
+  .description {
+    // font-family: "ChosunSm";
+    padding: 1em;
+    grid-area: desc;
+    position: relative;
+    overflow: hidden;
+    h2 {
+      // font-family: "ChosunSm";
+      font-family: "KyoboHand";
+      /* font-family: Oswald; */
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    p {
+      max-height: 155px;
+      overflow: hidden;
+      font-size: 0.8em;
+      font-family: "Nanum Gothic";
+      text-align: justify;
+    }
+    a:hover {
+      color: black;
+      text-decoration: underline;
+    }
+    #date {
+      float: right;
+      font-size: 0.7em;
+    }
   }
 }
 
@@ -104,6 +105,8 @@ img {
 footer {
   display: none;
 }
+
+// responsive!
 
 /* 0 ~ 480px */
 @media only screen and (max-width: 480px) {
@@ -163,14 +166,14 @@ footer {
 
     display: flex;
     flex-direction: column;
-  }
-  .description h2 {
-    font-size: 1em;
-    margin: 1em 0;
-  }
-  .description p {
-    max-height: 7.1em;
-    min-height: 7.1em;
+    h2 {
+      font-size: 1em;
+    }
+    p {
+      // max-height: 10em;
+      // min-height: 10em;
+      height: 9em;
+    }
   }
 }
 

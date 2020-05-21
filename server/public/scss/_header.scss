@@ -27,15 +27,18 @@ header {
 
   /* effect */
   transition: 1s ease;
-  a {
-    color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #logo {
+    font-size: 0.8em;
   }
   i {
-    // 요것이 버튼
-    position: relative;
-    right: 0px;
-    // top: 25px;
-    cursor: pointer;
+    // margin-left: auto;
+    // cursor: pointer;
+
+    display: none;
   }
 }
 // 얘가 link wrapper
