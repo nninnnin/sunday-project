@@ -1,6 +1,8 @@
-// ENV
-require("dotenv").config();
+// ENV /
 let node_env = process.env.NODE_ENV;
+if (node_env !== "production") {
+  require("dotenv").config();
+}
 console.log("-----------------------------");
 console.log("node_env is :", node_env);
 node_env =
@@ -108,7 +110,7 @@ mongoose
 let port = process.env.PORT || 8000;
 
 if (node_env === "production") {
-  port = 8001;
+  port = process.env.PORT || 8001;
 }
 
 app.listen(port, function () {
