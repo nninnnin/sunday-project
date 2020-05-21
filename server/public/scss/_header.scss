@@ -9,6 +9,7 @@ header {
   }
 }
 
+// 사실상 네브
 .logo {
   /* contents */
   text-align: center;
@@ -30,12 +31,14 @@ header {
     color: black;
   }
   i {
-    position: absolute;
-    right: 23px;
-    top: 25px;
+    // 요것이 버튼
+    position: relative;
+    right: 0px;
+    // top: 25px;
     cursor: pointer;
   }
 }
+// 얘가 link wrapper
 nav {
   display: none;
   text-align: center;
@@ -55,5 +58,13 @@ nav {
   }
   a:hover {
     text-decoration: underline;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .logo {
+    i {
+      top: 10px;
+    }
   }
 }

@@ -9,14 +9,14 @@ main {
     max-width: 330px;
     min-width: 330px;
     font-family: "Noto Sans KR";
-    box-shadow: 0px 0px 5px black;
+    box-shadow: 0.3px 1px 3px rgb(32, 46, 5);
 
     font-size: 0.6em;
 
     position: relative;
 
     .profile-info {
-      background-color: rgb(5, 2, 49);
+      background-color: rgb(41, 57, 9);
       color: white;
       padding: 2em;
 
@@ -83,23 +83,24 @@ footer {
 
 @media only screen and (max-width: 480px) {
   main {
-    margin: 0 auto;
     max-width: 100%;
-    box-shadow: 0px 0px 0px black;
     line-height: 2em;
-  }
-  section {
-    display: block;
-  }
+    .profile-container {
+      margin: 2em auto;
+      min-width: 200px;
+    }
+    section {
+      display: block;
+    }
 
-  #img-wrapper img {
-    width: 12em;
-    height: auto;
-  }
+    #img-wrapper img {
+      height: auto;
+    }
 
-  .profile-info {
-    background-color: black;
-    color: white;
-    padding: 2em;
+    .profile-info {
+      background-color: black;
+      color: white;
+      padding: 2em;
+    }
   }
 }
