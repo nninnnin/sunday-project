@@ -21,6 +21,7 @@ header {
   color: rgb(43, 43, 43);
   padding: 1em;
   box-shadow: 0px 2px 5px rgb(79, 79, 79);
+  min-height: 67.38px;
 
   /* location */
   position: relative;
@@ -33,12 +34,13 @@ header {
   align-items: center;
   #logo {
     font-size: 0.8em;
+    color: black;
   }
   i {
-    // margin-left: auto;
-    // cursor: pointer;
-
-    display: none;
+    display: block;
+    position: absolute;
+    right: 25px;
+    cursor: pointer;
   }
 }
 // 얘가 link wrapper
@@ -46,7 +48,10 @@ nav {
   display: none;
   text-align: center;
 
+  align-content: center;
+
   a {
+    color: black;
     padding: 0.6em 0.8em;
     border-radius: 3px;
 
@@ -66,8 +71,17 @@ nav {
 
 @media only screen and (max-width: 480px) {
   .logo {
+    min-height: 0;
+    #logo {
+      color: white;
+      display: block;
+    }
     i {
       top: 10px;
+      display: none;
+    }
+    a {
+      color: white;
     }
   }
 }
