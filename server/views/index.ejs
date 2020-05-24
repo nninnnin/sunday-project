@@ -61,7 +61,7 @@
           <% for ([index,visitor] of visitors.entries()) { %>
           <a href="/visitor#<%= index %>">
             <div class="visitor" style="--bg-color: <%= visitor.bg_color %>;">
-              <span id="name">작성자</span>
+              <span id="name">#</span>
               <span id="content"><%= visitor.content %></span>
               <i style="--bg-color: <%= visitor.bg_color %>;"></i>
             </div>

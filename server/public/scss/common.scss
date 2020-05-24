@@ -69,7 +69,7 @@ main {
   margin: 1.5em auto;
 
   /* font */
-  font-size: 0.8em; /* 기본사이즈! */
+  font-size: 0.9em; /* 기본사이즈! */
 
   /* 기본 line height! */
   line-height: 2em;
@@ -89,10 +89,13 @@ footer {
   background-color: black;
 
   /* position */
-  position: relative;
   width: 100%;
   bottom: 0;
   left: 0;
+}
+
+html:not([data-scroll="0"]) footer {
+  position: relative;
 }
 
 #home {
@@ -108,10 +111,10 @@ footer {
   bottom: 55px;
 }
 .appear {
-  display: block;
+  display: block !important;
 }
 .disappear {
-  display: none;
+  display: none !important;
 }
 
 /* only smartphones ~ 480px */

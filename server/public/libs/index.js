@@ -9,6 +9,10 @@ window.onload = () => {
   footer.style = "display:block;";
 
   main.classList.add("fade-in");
+
+  if (document.querySelector("footer").offsetTop < window.innerHeight) {
+    document.querySelector("footer").style.position = "absolute";
+  }
 };
 
 const heart = document.getElementById("heart");

@@ -1,9 +1,4 @@
-body {
-  display: none;
-}
-
 main {
-  min-height: 90vh;
   .profile-container {
     margin: 3em auto;
     max-width: 330px;
@@ -72,13 +67,6 @@ main {
       }
     }
   }
-}
-
-footer {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
 }
 
 @media only screen and (max-width: 480px) {

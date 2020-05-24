@@ -67,6 +67,7 @@
                 })})` %></span
               >
 
+              <% if (node_env === 'development') { %>
               <div class="checkbox">
                 <label for="hidden">숨기기</label>
                 <input
@@ -77,6 +78,7 @@
                   data-post-id="<%= guestPost._id %>"
                 />
               </div>
+              <% } %>
             </header>
 
             <p>

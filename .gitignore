@@ -1,11 +1,12 @@
 data/diary/
 
-client/node_modules
 server/node_modules
+node_modules
 
 .env
 
 dist/
 
 devlog
-node_modules
+
+server/public/css/

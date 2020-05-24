@@ -103,7 +103,7 @@ img {
   color: white;
   border-radius: 5px;
   margin: 1em auto;
-  padding: 1em;
+  padding: 1em 1.5em;
 
   display: flex;
   align-items: center;
@@ -114,9 +114,17 @@ img {
   }
   i {
     margin-left: auto;
-    transition: 0.2s;
-    &:active {
-      transform: scale(1.3);
+    &.fas {
+      animation: heartbeat 0.5s;
+    }
+  }
+  @keyframes heartbeat {
+    0% {
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
     }
   }
 }
@@ -146,7 +154,6 @@ img {
 
   // font
   color: black;
-  font-size: 0.65rem;
 
   &:hover {
     font-weight: 800;
@@ -187,7 +194,7 @@ img {
     border-radius: 1em;
   }
   #name {
-    font-weight: 900;
+    // font-weight: 900;
   }
 
   #content {
