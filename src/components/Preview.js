@@ -8,12 +8,15 @@ class Preview extends Component {
   };
 
   render() {
+
+    const {active, handleClick , handleHover} = this.props;
+
     return (
-      <div className="Preview">
+      <div className={`Preview ${(active? 'active': '')}`} onClick={handleClick} >
         <div
           className="frame-container"
-          onMouseEnter={this.props.handleHover}
-          onMouseOut={this.props.handleHover}
+          onMouseEnter={handleHover}
+          onMouseOut={handleHover}
           data-hover="프로젝트 첫 화면 미리보기가 가능합니다. 클릭 및 휠 사용 불가!"
         >
           <iframe

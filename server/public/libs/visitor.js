@@ -19,12 +19,13 @@ postTextArea.addEventListener("keypress", (e) => {
 function sendForm(e, form) {
   e.preventDefault();
 
-  // 먼저 FormData 객체를 새로 만들어 form data 담아주기
+  // 먼저 FormData 객체를 새로 만들어 form data 담아주기 - 왜? 이렇게 안하면 배열화가 안되어서 non enumerable인가?
   const formData = new FormData(form);
   console.log(formData);
 
   const data = {};
 
+  // key는 input name일거고 value는 input value
   for (var [key, value] of formData.entries()) {
     console.log(key, value);
     data[key] = value;
@@ -35,7 +36,7 @@ function sendForm(e, form) {
   console.log(textarea);
   textarea.value = "";
 
-  // 만든 데이터를 post method로 fetch!
+  // 만든 데이터를 post method로 fetch! (data는 물론 JSON.stringify 해준다!)
   fetch("/visitor", {
     method: "POST",
     headers: {
@@ -49,7 +50,7 @@ function sendForm(e, form) {
     .then((data) => {
       console.log(data);
       const date = new Date().toLocaleString("ko-KR", { timeZone: "UTC" });
-      // ui update
+      // ui update -> 요부분 객체화 시킬 수 있을 것 같은데
       const guestPosts = document.getElementById("guestPosts");
       guestPosts.insertAdjacentHTML(
         "afterbegin",

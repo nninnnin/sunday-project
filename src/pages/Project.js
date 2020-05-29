@@ -28,6 +28,7 @@ class Project extends Component {
     },
     statusMsg: "버튼에 마우스를 올려보세요 :)",
     status: "",
+    activeComponent:"Preview"
   };
 
   getHref = (href) => {
@@ -42,19 +43,29 @@ class Project extends Component {
     });
   };
 
+  handleClick = (e)=>{
+    const target = e.currentTarget.classList[0];
+    console.log(target)
+    this.setState({
+      activeComponent:target
+    })
+  }
+
   render() {
-    const { href, project, status, statusMsg, loading } = this.state;
+    const { href, project, status, statusMsg, loading , activeComponent} = this.state;
     const { projects } = this.props;
     return (
       <Fragment>
         <Nav />
         <div className="Container">
-          <Preview href={href} handleHover={this.handleHover} />
+          <Preview href={href} handleHover={this.handleHover} handleClick={this.handleClick} active={activeComponent==='Preview'? true:false}/>
           <Main
             project={project}
             handleHover={this.handleHover}
+            handleClick={this.handleClick}
             activeTab={0}
             key={project._id} // 이게 포인트!!
+            active = {activeComponent==='Main'? true:false} 
           />
         </div>
         <Dock

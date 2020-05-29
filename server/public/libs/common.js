@@ -16,8 +16,17 @@ const logo = document.getElementById("logo");
 const nav = document.querySelector("nav");
 if (menu !== null) {
   menu.addEventListener("click", (e) => {
-    nav.classList.toggle("appear");
-    logo.classList.toggle("disappear");
+    if(nav.classList[0] === 'disappear'){
+      nav.classList.toggle("appear");
+      nav.classList.toggle("disappear");
+      logo.classList.toggle("appear");
+      logo.classList.toggle("disappear");
+    }else{
+      nav.classList.toggle("appear");
+      nav.classList.toggle("disappear");
+      logo.classList.toggle("appear");
+      logo.classList.toggle("disappear");
+    }
   });
 }
 

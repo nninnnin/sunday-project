@@ -63,3 +63,21 @@
     font-family: "DungGeunMo";
   }
 }
+
+
+@media only screen and (max-width:480px){
+  .Preview{
+    left:38%;
+    transform:translate(-35%,-10%) scale(0.9);
+    position: relative;
+    z-index:-1;
+
+    transition: 0.3s;
+
+    &.active{
+      transform:translate(-35%) scale(1);
+      z-index:10;
+      border:green 10px solid;
+    }
+  }
+}

@@ -77,10 +77,6 @@
         bottom: 50px;
         z-index: 10;
       }
-      &:active .imgBox {
-        width: 60px;
-        height: 60px;
-      }
       &:active .title {
         bottom: 60px;
       }
@@ -109,6 +105,18 @@
         height: 30px;
 
         transition: 0.3s;
+
+        &.clicked{
+          animation: scale-up 0.5s;
+          @keyframes scale-up{
+            0%{
+            }50%{
+              transform: scale(1.2);
+            }100%{
+
+            }
+        }
+        }
         &:hover {
           width: 50px;
           height: 50px;
@@ -149,6 +157,9 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .dock{
+    bottom:45px;
+  }
   ::-webkit-scrollbar {
     display: none;
   }

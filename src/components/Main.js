@@ -19,7 +19,8 @@ class Main extends React.Component {
 
   // hover등으로 status바가 rerender 되는경우, 해당 컴포넌트의 리렌더를 막기 위해
   shouldComponentUpdate(nextProps, nextState) {
-    if (this.state !== nextState || this.props.project !== nextProps.project) {
+    // Main 컴포넌트가 리렌더링 되기 원하는 경우들을 임의로 지정..다 이렇게 해야만하나?
+    if (this.state !== nextState || this.props.project !== nextProps.project || this.props.active !== nextProps.active) {
       return true;
     } else {
       return false;
@@ -83,7 +84,7 @@ class Main extends React.Component {
     }
 
     return (
-      <div className="Main">
+      <div className={`Main ${this.props.active===true? 'active':'' }`} onClick={this.props.handleClick}>
         <h2 className="title">{title}</h2>
 
         <div className="content">

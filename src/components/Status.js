@@ -7,7 +7,11 @@ class Status extends Component {
   }
   render() {
     const { msg, status } = this.props;
-    return <div className={`Status ${status}`}>{msg}</div>;
+    return <div className={`Status ${status}`}>
+        <div className="content">
+          {msg}
+        </div>
+      </div>;
   }
 }
 

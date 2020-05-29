@@ -11,16 +11,18 @@
     </header>
 
     <main>
+      <div class="blank">
+        안녕하세요! 저스틴 블로그입니다 :)
+        <span>∨∨더보기∨∨</span>
+      </div>
+
+      
+
+      <hr>
+
       <!-- main section -->
       <section>
-        <!-- 오늘의 한마디 -->
-        <div class="word-of-the-day">
-          <span>
-            오늘의 한마디 - 확실한 것만 추구하자
-          </span>
-          <i class="far fa-heart" id="heart"></i>
-        </div>
-
+        최근에 쓴 일기들
         <!-- articles -->
         <div class="article">
           <% for (post of posts){ %>
@@ -56,16 +58,30 @@
                 <% }) %>
             </div> -->
 
+        <!-- 오늘의 한마디 -->
+        <h2>오늘의 방명록 주제는..</h2>
+        <div class="word-of-the-day">
+          <span>
+            "보이지 않는 소중한 것들"
+          </span>
+          <i class="far fa-heart" id="heart"></i>
+        </div>
+
         <!-- newest visitors (최신 방명록) -->
         <div class="visitors">
+          <div class="header">
+            일촌평 하나 남기고가세요 'ㅅ' 
+          </div>
           <% for ([index,visitor] of visitors.entries()) { %>
+
           <a href="/visitor#<%= index %>">
             <div class="visitor" style="--bg-color: <%= visitor.bg_color %>;">
-              <span id="name">#</span>
+              <span id="name">@</span>
               <span id="content"><%= visitor.content %></span>
               <i style="--bg-color: <%= visitor.bg_color %>;"></i>
             </div>
           </a>
+
           <% } %>
         </div>
       </section>

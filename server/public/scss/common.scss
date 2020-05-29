@@ -81,7 +81,7 @@ main {
 /* footer */
 footer {
   text-align: center;
-  padding: 10px;
+  padding: 1rem;
 
   font-family: "Oswald";
   font-size: 0.7em;
@@ -111,9 +111,11 @@ html:not([data-scroll="0"]) footer {
   bottom: 55px;
 }
 .appear {
+  animation:fadeIn 0.5s;
   display: block !important;
 }
 .disappear {
+  animation:fadeOut 0.5s;
   display: none !important;
 }
 
