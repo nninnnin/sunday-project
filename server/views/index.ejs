@@ -16,86 +16,92 @@
         <span>∨∨더보기∨∨</span>
       </div>
 
-      
-
       <hr>
 
-      <!-- main section -->
       <section>
-        최근에 쓴 일기들
-        <!-- articles -->
-        <div class="article">
-          <% for (post of posts){ %>
-          <a href="/diary/<%= post._id %>">
-            <div class="post">
+        <div class="main">
+          <h1>최신글</h1>
+          <!-- articles -->
+          <div class="article">
+            <% for (post of posts){ %>
+            <a href="/diary/<%= post._id %>">
               <h1>
                 <%= post.title %>
               </h1>
 
+              <% if(post.postImage !== '{}' && post.postImage.data !== undefined){
+              %> <% const postImage = post.postImage.data.toString('base64'); %>
+              <img src="data:image/png;base64,<%= postImage %>" alt="" />
+              <% } else{ %>
+              <img
+                src="https://pbs.twimg.com/profile_images/757974066011770880/ae2Eop2g.jpg"
+                alt="Undefined postImage"
+              />
+              <% } %>
+
               <p>
                 <%= post.content %>
               </p>
-            </div>
-            <% if(post.postImage !== '{}' && post.postImage.data !== undefined){
-            %> <% const postImage = post.postImage.data.toString('base64'); %>
-            <img src="data:image/png;base64,<%= postImage %>" alt="" />
-            <% } else{ %>
-            <img
-              src="https://pbs.twimg.com/profile_images/757974066011770880/ae2Eop2g.jpg"
-              alt="Undefined postImage"
-            />
+            </a>
             <% } %>
-          </a>
-          <% } %>
-        </div>
-
-        <!-- drawings -->
-        <!-- <div class="drawing">
-                <% imgs.forEach(img => { %>
-                    <div>
-                        <img src="imgs/music/<%= img.id %>.jpg" alt="<%= img.id %> ">
-                    </div>
-                <% }) %>
-            </div> -->
-
-        <!-- 오늘의 한마디 -->
-        <h2>오늘의 방명록 주제는..</h2>
-        <div class="word-of-the-day">
-          <span>
-            "보이지 않는 소중한 것들"
-          </span>
-          <i class="far fa-heart" id="heart"></i>
-        </div>
-
-        <!-- newest visitors (최신 방명록) -->
-        <div class="visitors">
-          <div class="header">
-            일촌평 하나 남기고가세요 'ㅅ' 
           </div>
-          <% for ([index,visitor] of visitors.entries()) { %>
 
-          <a href="/visitor#<%= index %>">
-            <div class="visitor" style="--bg-color: <%= visitor.bg_color %>;">
-              <span id="name">@</span>
-              <span id="content"><%= visitor.content %></span>
-              <i style="--bg-color: <%= visitor.bg_color %>;"></i>
+          <!-- drawings -->
+          <!-- <div class="drawing">
+                  <% imgs.forEach(img => { %>
+                      <div>
+                          <img src="imgs/music/<%= img.id %>.jpg" alt="<%= img.id %> ">
+                      </div>
+                  <% }) %>
+              </div> -->
+
+          <hr>
+
+          <div class="footprint">
+            <!-- 오늘의 한마디 -->
+            <h1>오늘의 방명록 주제는..</h1>
+            <div class="word-of-the-day">
+              <span>
+                "보이지 않는 소중한 것들"
+              </span>
+              <i class="far fa-heart" id="heart"></i>
             </div>
-          </a>
-
-          <% } %>
+    
+            <!-- newest visitors (최신 방명록) -->
+            <div class="visitors">
+              <div class="header">
+                일촌평 하나 남기고가세요 'ㅅ' 
+              </div>
+              <% for ([index,visitor] of visitors.entries()) { %>
+    
+              <a href="/visitor#<%= index %>">
+                <div class="visitor" style="--bg-color: <%= visitor.bg_color %>;">
+                  <span id="name">@</span>
+                  <span id="content"><%= visitor.content %></span>
+                  <i style="--bg-color: <%= visitor.bg_color %>;"></i>
+                </div>
+              </a>
+    
+              <% } %>
+            </div>
+          </div>
         </div>
+        
+        <aside>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam rem sunt quia debitis quae sequi nobis inventore quidem ullam nostrum! Aspernatur natus unde expedita necessitatibus reiciendis modi laborum ipsum, ad consequatur accusantium. Accusamus magnam ea delectus reprehenderit quaerat pariatur distinctio cumque perferendis saepe sint illum alias ex tempore temporibus libero quibusdam, tempora similique ipsam ab labore fuga magni sunt possimus quae! Aperiam, veniam! Beatae labore voluptatum deserunt ipsam perferendis, a quo at voluptate sint. Sint maiores aperiam nobis blanditiis tempora autem fuga est eos veniam nostrum magnam, ea ullam similique deleniti tenetur, fugiat vitae eveniet porro aliquam, neque consequatur assumenda corrupti repellendus repellat. Reprehenderit ex voluptates necessitatibus molestias quae, ratione iure tempore? Nemo vitae neque quaerat placeat sint similique magni ducimus atque corporis! Maiores tempore ratione nostrum nesciunt earum aspernatur saepe ex expedita sed eum, quas eius officia sapiente facere cupiditate fuga deleniti repellendus ducimus, optio minus illo et iste! Soluta iste corrupti sit expedita pariatur perspiciatis ad explicabo cumque voluptatibus beatae, incidunt at molestiae, quasi, saepe possimus qui! Quam nobis dolorum minima enim facilis eligendi illo repellat. Perferendis cum odit consectetur dicta eveniet reprehenderit ipsum vel reiciendis? A praesentium quibusdam beatae architecto, earum totam hic accusantium in dolorum natus cupiditate ex eius neque non necessitatibus quam? Expedita ratione quaerat deleniti voluptas minima excepturi vel ab perferendis laborum doloremque eius, ipsum officia nostrum, molestias maxime? Illo ab ut fuga non? Perferendis dicta eius ipsum modi aspernatur similique velit deleniti ex in omnis, illo reprehenderit dolorum? Quaerat voluptate amet illum aperiam ex vero, error labore laudantium non numquam sunt, aliquid neque, itaque iste doloremque corporis necessitatibus. Vitae magni quisquam ad! Quam minus sit excepturi dolorem, officia dicta dolor! Molestias exercitationem aperiam similique, soluta rem ut quibusdam maxime facilis molestiae commodi incidunt necessitatibus sapiente? Quaerat blanditiis mollitia vel ad voluptate unde aut.
+
+
+          <!-- <div class="insta-photo">
+            <b>INSTAGRAM</b>
+            <a href="https://instagram.com/justindglee" target="_blank">
+              <div id="instagram-embed">
+                <img alt="instagram-image" id="img1" />
+              </div>
+            </a>
+          </div> -->
+        </aside>
       </section>
 
-      <!-- <aside>
-        <div class="insta-photo">
-          <b>INSTAGRAM</b>
-          <a href="https://instagram.com/justindglee" target="_blank">
-            <div id="instagram-embed">
-              <img alt="instagram-image" id="img1" />
-            </div>
-          </a>
-        </div>
-      </aside> -->
     </main>
 
     <!-- footer -->

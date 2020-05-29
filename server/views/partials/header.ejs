@@ -1,14 +1,14 @@
 <div class="logo" id="logobar" onmousedown="return false">
   <!-- logo -->
   <% if(process.env.NODE_ENV==="development"){ %>
-  <a href="/" id="logo">Justin's blog (dev)</a>
+  <a class="appear" href="/" id="logo">Justin's blog (dev)</a>
   <% }else{ %>
-  <a href="/" id="logo">Justin's blog</a>
+  <a class="appear" href="/" id="logo">Justin's blog</a>
   <% } %>
 
   <i class="fas fa-bars" id="menu"></i>
 
-  <nav>
+  <nav class="disappear">
     <!-- links -->
     <a href="/">홈</a>
     <a href="/profile">프로필</a>

@@ -1,3 +1,8 @@
+//480 이하에서 nav display
+if(window.innerWidth <= 480){
+  document.querySelector('nav').classList.remove('disappear');
+}
+
 // 페이지별 footer 위치선정
 if (document.querySelector("footer").offsetTop < window.innerHeight) {
   document.querySelector("footer").style.position = "absolute";
@@ -14,21 +19,19 @@ nav_items.forEach((nav_item) => {
 const menu = document.getElementById("menu");
 const logo = document.getElementById("logo");
 const nav = document.querySelector("nav");
-if (menu !== null) {
-  menu.addEventListener("click", (e) => {
-    if(nav.classList[0] === 'disappear'){
-      nav.classList.toggle("appear");
-      nav.classList.toggle("disappear");
-      logo.classList.toggle("appear");
-      logo.classList.toggle("disappear");
-    }else{
-      nav.classList.toggle("appear");
-      nav.classList.toggle("disappear");
-      logo.classList.toggle("appear");
-      logo.classList.toggle("disappear");
+menu.addEventListener('click',()=>{
+  if(logo.classList.contains('disappear')){
+    logo.classList.toggle('disappear');
+    nav.classList.toggle('disappear');
+    logo.classList.toggle('appear');
+    nav.classList.toggle('appear');
+  }else{
+    logo.classList.toggle('disappear');
+    nav.classList.toggle('disappear');
+    logo.classList.toggle('appear');
+    nav.classList.toggle('appear');
     }
-  });
-}
+})
 
 // 480px 이하 + 다운스크롤에서 네브바(.logo) fixed position으로
 function fixedNav() {

@@ -135,7 +135,7 @@ html:not([data-scroll="0"]) footer {
 
   nav {
     /* feature*/
-    display: block;
+    display: block !important;
     background-color: var(--main-bg-color);
 
     /* 하단고정 */
