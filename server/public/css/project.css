@@ -1,0 +1,35 @@
+main {
+  color: black;
+
+  line-height: 1.8em;
+  display: none;
+
+  text-align: center;
+}
+main .loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main #slime-container {
+  display: none;
+}
+main #pf-container {
+  display: block;
+}
+main #trigger {
+  margin: 0 auto;
+  padding: 1em;
+  font-family: "DungGeunMo";
+  background-color: white;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media only screen and (min-width: 481px) {
+}
