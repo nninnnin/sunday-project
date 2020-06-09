@@ -1,0 +1,50 @@
+.Status {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fff;
+  color: black;
+  -webkit-box-shadow: 0px 0px 4px black;
+          box-shadow: 0px 0px 4px black;
+  min-height: 50px;
+  font-family: "DungGeunMo";
+}
+
+.normal {
+  color: black;
+}
+
+.alert {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+@media only screen and (max-width: 480px) {
+  .Status {
+    min-height: 35px;
+    max-height: 35px;
+    white-space: nowrap;
+  }
+  .Status .content {
+    overflow: scroll;
+    margin: 0 10px;
+  }
+  nav {
+    display: none;
+  }
+}
+/*# sourceMappingURL=Status.css.map */
